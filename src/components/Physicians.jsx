@@ -27,7 +27,7 @@ const physicians = [
     name: 'Sofie Wiklund',
     role: 'Medireadys kirurgiexpert',
     specialty: 'Kirurgi',
-    image: '/IMG_5717.PNG',
+    image: '/sofie.JPG',
     bio: 'ST-läkare i kirurgi i Västra Götalandsregionen. Utbildad och arbetat i Köpenhamn med erfarenhet som utländsk läkare. Tidigare leg. sjuksköterska med 10 års erfarenhet inom akut/ambulanssjukvård.'
   }
 ]
