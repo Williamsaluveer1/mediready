@@ -291,6 +291,11 @@
     top: -16px;
     left: 16px;
   }
+
+  /* Hide the "Kunskapsprovet" badge text on mobile */
+  .badge-text {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
