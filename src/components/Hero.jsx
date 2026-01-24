@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
 import './Hero.css'
+import { useI18n } from '../i18n/I18nProvider'
 
 function Hero() {
+  const { t } = useI18n()
+  const trust = t('hero.trust')
   return (
     <section className="hero" aria-labelledby="hero-heading">
       <div className="hero-background">
@@ -13,29 +16,27 @@ function Hero() {
         <div className="hero-content">
           <div className="hero-badge">
             <span className="badge-dot"></span>
-            Anmälan öppen för 2026
+            {t('hero.badge')}
           </div>
           
           <h1 id="hero-heading" className="hero-title">
-            Optimera dina förberedelser fram till
-            <span className="title-highlight"> svensk läkarlegitimation</span>
+            {t('hero.titleLine1')}
+            <span className="title-highlight">{t('hero.titleHighlight')}</span>
           </h1>
           
           <p className="hero-description">
-            Vi erbjuder interaktiva föreläsningar för dig som vill få bästa möjliga 
-            förutsättningar inför kunskapsprovet och fortsatt väg in i det svenska 
-            sjukvårdssystemet, samtidigt som du övar upp dina språkfärdigheter.
+            {t('hero.description')}
           </p>
           
           <div className="hero-actions">
             <Link to="/services" className="btn-primary">
-              Prova din kunskapsnivå
+              {t('hero.primaryCta')}
               <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </Link>
             <Link to="/physicians" className="btn-secondary">
-              Möt våra experter
+              {t('hero.secondaryCta')}
             </Link>
           </div>
           
@@ -48,8 +49,8 @@ function Hero() {
                 </svg>
               </div>
               <div className="trust-text">
-                <strong>Interaktiva kurser</strong>
-                <span>Live föreläsningar</span>
+                <strong>{trust[0].strong}</strong>
+                <span>{trust[0].span}</span>
               </div>
             </div>
             
@@ -64,8 +65,8 @@ function Hero() {
                 </svg>
               </div>
               <div className="trust-text">
-                <strong>4 experter</strong>
-                <span>ST & överläkare</span>
+                <strong>{trust[1].strong}</strong>
+                <span>{trust[1].span}</span>
               </div>
             </div>
             
@@ -78,8 +79,8 @@ function Hero() {
                 </svg>
               </div>
               <div className="trust-text">
-                <strong>Svenska riktlinjer</strong>
-                <span>Aktuell handläggning</span>
+                <strong>{trust[2].strong}</strong>
+                <span>{trust[2].span}</span>
               </div>
             </div>
           </div>
@@ -90,7 +91,7 @@ function Hero() {
             <div className="visual-accent"></div>
             <img 
               src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=600&fit=crop" 
-              alt="Läkare i utbildningsmiljö" 
+              alt={t('hero.imageAlt')}
               className="hero-image"
               loading="eager"
             />

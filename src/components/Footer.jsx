@@ -1,27 +1,11 @@
 import { Link } from 'react-router-dom'
 import './Footer.css'
-
-const footerLinks = {
-  programs: [
-    { label: 'Interaktiva föreläsningar', to: '/services#lectures' },
-    { label: 'Diagnostiskt prov', to: '/services#test' },
-    { label: 'Kliniska ämnen', to: '/services#clinical' },
-    { label: 'Prekliniska ämnen', to: '/services#preclinical' },
-    { label: 'Språkträning', to: '/services#language' },
-  ],
-  institute: [
-    { label: 'Om oss', to: '/physicians' },
-    { label: 'Kontakt', to: '/contact' },
-  ],
-  resources: [
-    { label: 'Prova kunskapsprovet', to: '/services' },
-    { label: 'Prenumeration', to: '/contact' },
-    { label: 'Vanliga frågor', to: '/contact' },
-  ]
-}
+import { useI18n } from '../i18n/I18nProvider'
 
 function Footer() {
   const currentYear = new Date().getFullYear()
+  const { t } = useI18n()
+  const footerLinks = t('footer.links')
 
   return (
     <footer className="footer" role="contentinfo">
@@ -32,8 +16,7 @@ function Footer() {
               <img src="/mediready logga.JPEG" alt="Mediready" className="footer-logo-image" />
             </Link>
             <p className="footer-tagline">
-              Vi hjälper utlandsutbildade läkare att förbereda sig för kunskapsprovet 
-              och vägen till svensk läkarlegitimation.
+              {t('footer.tagline')}
             </p>
             <div className="footer-social">
               <a href="https://instagram.com/mediready.se" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
@@ -52,7 +35,7 @@ function Footer() {
 
           <div className="footer-links">
             <div className="footer-column">
-              <h3>Tjänster</h3>
+              <h3>{t('footer.servicesTitle')}</h3>
               <ul>
                 {footerLinks.programs.map(link => (
                   <li key={link.label}>
@@ -63,7 +46,7 @@ function Footer() {
             </div>
 
             <div className="footer-column">
-              <h3>Mediready</h3>
+              <h3>{t('footer.brandTitle')}</h3>
               <ul>
                 {footerLinks.institute.map(link => (
                   <li key={link.label}>
@@ -74,7 +57,7 @@ function Footer() {
             </div>
 
             <div className="footer-column">
-              <h3>Resurser</h3>
+              <h3>{t('footer.resourcesTitle')}</h3>
               <ul>
                 {footerLinks.resources.map(link => (
                   <li key={link.label}>
@@ -86,8 +69,8 @@ function Footer() {
           </div>
 
           <div className="footer-contact">
-            <h3>Kontakta oss</h3>
-            <p className="emergency-text">Har du frågor om våra tjänster eller vill veta mer? Hör av dig!</p>
+            <h3>{t('footer.contactTitle')}</h3>
+            <p className="emergency-text">{t('footer.contactText')}</p>
             <div className="contact-cta">
               <a href="mailto:hej@mediready.se" className="phone-link">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -102,11 +85,11 @@ function Footer() {
 
         <div className="footer-bottom">
           <p className="copyright">
-            © {currentYear} Mediready. Alla rättigheter förbehållna.
+            {t('footer.copyright', { year: currentYear })}
           </p>
           <div className="footer-legal">
-            <Link to="/privacy">Integritetspolicy</Link>
-            <Link to="/terms">Användarvillkor</Link>
+            <Link to="/privacy">{t('footer.legalPrivacy')}</Link>
+            <Link to="/terms">{t('footer.legalTerms')}</Link>
           </div>
         </div>
       </div>

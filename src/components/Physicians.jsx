@@ -1,51 +1,29 @@
 import { Link } from 'react-router-dom'
 import './Physicians.css'
-
-const physicians = [
-  {
-    name: 'Christian Unge',
-    role: 'Medireadys internmedicinexpert',
-    specialty: 'Internmedicin',
-    image: '/Christian.JPG',
-    bio: 'Överläkare i internmedicin på Danderyds sjukhus. Doktorerat i Global Hälsa. Tidigare studierektor för AT-läkarna på Karolinska sjukhuset.'
-  },
-  {
-    name: 'Mats Ek',
-    role: 'Medireadys psykiatriexpert',
-    specialty: 'Psykiatri',
-    image: '/Mats.JPEG',
-    bio: 'Överläkare i psykiatri på WeMind Psykiatri. Ordförande i Region Stockholms Läkemedelskommitté. Disputerad i psykiatrisk epidemiologi vid Karolinska Institutet.'
-  },
-  {
-    name: 'Oskar Pettersson',
-    role: 'Medireadys allmänmedicinexpert',
-    specialty: 'Allmänmedicin',
-    image: '/Oskar.png',
-    bio: 'ST-läkare i allmänmedicin i Region Skåne. Över tre års erfarenhet av undervisning inför kunskapsprovet. Hjälper läkare förbereda sig strukturerat och effektivt.'
-  },
-  {
-    name: 'Sofie Wiklund',
-    role: 'Medireadys kirurgiexpert',
-    specialty: 'Kirurgi',
-    image: '/sofie.JPG',
-    bio: 'ST-läkare i kirurgi i Västra Götalandsregionen. Utbildad och arbetat i Köpenhamn med erfarenhet som utländsk läkare. Tidigare leg. sjuksköterska med 10 års erfarenhet inom akut/ambulanssjukvård.'
-  }
-]
+import { useI18n } from '../i18n/I18nProvider'
 
 function Physicians({ limit }) {
+  const { t } = useI18n()
+  const members = t('team.members')
+  const physicians = members.map((m) => ({
+    name: m.name,
+    role: m.role,
+    specialty: m.specialty,
+    image: m.image,
+    bio: m.shortBio,
+  }))
   const displayedPhysicians = limit ? physicians.slice(0, limit) : physicians
 
   return (
     <section className="physicians" id="physicians" aria-labelledby="physicians-heading">
       <div className="physicians-container">
         <div className="physicians-header">
-          <span className="section-label">Vilka är vi?</span>
+          <span className="section-label">{t('team.sectionLabel')}</span>
           <h2 id="physicians-heading" className="section-title">
-            Möt <span className="highlight">teamet</span>
+            {t('team.title')}<span className="highlight">{t('team.highlight')}</span>
           </h2>
           <p className="section-description">
-            Vi är fyra läkare som vill hjälpa dig öka motivation, språk och 
-            förståelse i svensk medicinsk handläggning.
+            {t('team.description')}
           </p>
         </div>
 
@@ -77,7 +55,7 @@ function Physicians({ limit }) {
 
         <div className="physicians-cta">
           <Link to="/physicians" className="btn-secondary">
-            Läs mer om oss
+            {t('team.cta')}
             <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>

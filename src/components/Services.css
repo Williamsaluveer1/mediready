@@ -68,6 +68,28 @@
   gap: var(--space-lg);
 }
 
+/* Video (replaces cards) */
+.services-video {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.services-video-frame {
+  background: #000;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+}
+
+.services-video-el {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
 /* Service Card */
 .service-card {
   display: flex;
@@ -196,5 +218,9 @@
   
   .service-card {
     padding: var(--space-lg);
+  }
+  
+  .services-video-frame {
+    border-radius: var(--radius-lg);
   }
 }

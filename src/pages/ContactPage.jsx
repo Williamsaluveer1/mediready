@@ -1,18 +1,21 @@
 import Contact from '../components/Contact'
 import './PageStyles.css'
+import { useI18n } from '../i18n/I18nProvider'
 
 function ContactPage() {
+  const { t } = useI18n()
+  const copy = t('pages.contact')
+
   return (
     <main className="page-main contact-page">
       {/* Hero Banner */}
       <section className="page-hero page-hero--compact">
         <div className="page-hero-background"></div>
         <div className="page-hero-content">
-          <span className="page-label">Kontakt</span>
-          <h1 className="page-title">Hör av dig till <span className="highlight">oss</span></h1>
+          <span className="page-label">{copy.label}</span>
+          <h1 className="page-title">{copy.title}<span className="highlight">{copy.highlight}</span></h1>
           <p className="page-description">
-            Har du frågor om våra tjänster eller vill veta mer om hur vi kan hjälpa dig? 
-            Vi svarar så snart vi kan!
+            {copy.description}
           </p>
         </div>
       </section>
@@ -23,23 +26,23 @@ function ContactPage() {
       {/* FAQ Preview */}
       <section className="faq-preview">
         <div className="faq-container">
-          <h2 className="section-title">Vanliga frågor</h2>
+          <h2 className="section-title">{copy.faqTitle}</h2>
           <div className="faq-grid">
             <div className="faq-item">
-              <h3>Vad är kunskapsprovet?</h3>
-              <p>Kunskapsprovet är ett prov som läkare utbildade utanför EU/EES måste klara för att få svensk läkarlegitimation. Det testar både prekliniska och kliniska kunskaper.</p>
+              <h3>{copy.faqs[0].q}</h3>
+              <p>{copy.faqs[0].a}</p>
             </div>
             <div className="faq-item">
-              <h3>Hur fungerar era föreläsningar?</h3>
-              <p>Vi erbjuder interaktiva Zoom/videobaserade föreläsningar där du som deltagare aktivt deltar och kan ställa frågor i realtid till våra experter.</p>
+              <h3>{copy.faqs[1].q}</h3>
+              <p>{copy.faqs[1].a}</p>
             </div>
             <div className="faq-item">
-              <h3>Vad kostar prenumerationen?</h3>
-              <p>Kontakta oss på hej@mediready.se för information om priser och prenumerationsalternativ.</p>
+              <h3>{copy.faqs[2].q}</h3>
+              <p>{copy.faqs[2].a}</p>
             </div>
             <div className="faq-item">
-              <h3>Kan jag testa min kunskapsnivå först?</h3>
-              <p>Ja! Vi har ett diagnostiskt kunskapsprov med 150 frågor som hjälper dig förstå var du ligger och vilka områden du behöver fokusera på.</p>
+              <h3>{copy.faqs[3].q}</h3>
+              <p>{copy.faqs[3].a}</p>
             </div>
           </div>
         </div>
@@ -48,9 +51,9 @@ function ContactPage() {
       {/* Social Media Section */}
       <section className="social-section">
         <div className="social-container">
-          <h2 className="section-title">Följ oss</h2>
+          <h2 className="section-title">{copy.followTitle}</h2>
           <p className="section-description">
-            Håll dig uppdaterad om våra senaste nyheter och tips!
+            {copy.followDesc}
           </p>
           <div className="social-links">
             <a href="https://instagram.com/mediready.se" target="_blank" rel="noopener noreferrer" className="social-card">
