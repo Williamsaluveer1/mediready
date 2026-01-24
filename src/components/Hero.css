@@ -256,10 +256,11 @@
   .hero-visual {
     order: 1;
     max-width: 100%;
+    margin-top: calc(-1 * var(--space-sm));
   }
   
   .hero-trust {
-    justify-content: flex-start;
+    display: none;
   }
   
 }

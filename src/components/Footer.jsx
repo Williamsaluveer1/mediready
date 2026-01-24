@@ -12,9 +12,11 @@ function Footer() {
       <div className="footer-container">
         <div className="footer-main">
           <div className="footer-brand">
-            <Link to="/" className="footer-logo" aria-label="Mediready - Hem">
-              <img src="/mediready logga.JPEG" alt="Mediready" className="footer-logo-image" />
-            </Link>
+            <h2 className="footer-title">
+              <Link to="/" className="footer-title-link" aria-label="Mediready - Hem">
+                {t('footer.brandTitle')}
+              </Link>
+            </h2>
             <p className="footer-tagline">
               {t('footer.tagline')}
             </p>
@@ -34,7 +36,7 @@ function Footer() {
           </div>
 
           <div className="footer-links">
-            <div className="footer-column">
+            <div className="footer-column footer-column--services">
               <h3>{t('footer.servicesTitle')}</h3>
               <ul>
                 {footerLinks.programs.map(link => (
@@ -45,10 +47,10 @@ function Footer() {
               </ul>
             </div>
 
-            <div className="footer-column">
-              <h3>{t('footer.brandTitle')}</h3>
+            <div className="footer-column footer-column--resources">
+              <h3>{t('footer.resourcesTitle')}</h3>
               <ul>
-                {footerLinks.institute.map(link => (
+                {footerLinks.resources.map(link => (
                   <li key={link.label}>
                     <Link to={link.to}>{link.label}</Link>
                   </li>
@@ -56,10 +58,10 @@ function Footer() {
               </ul>
             </div>
 
-            <div className="footer-column">
-              <h3>{t('footer.resourcesTitle')}</h3>
+            <div className="footer-column footer-column--institute">
+              <h3>{t('footer.brandTitle')}</h3>
               <ul>
-                {footerLinks.resources.map(link => (
+                {footerLinks.institute.map(link => (
                   <li key={link.label}>
                     <Link to={link.to}>{link.label}</Link>
                   </li>
