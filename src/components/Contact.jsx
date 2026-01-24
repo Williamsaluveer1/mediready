@@ -8,15 +8,14 @@ function Contact({ showFullForm = false }) {
     name: '',
     email: '',
     institution: '',
-    program: '',
-    message: ''
+    message: '',
   })
 
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log('Form submitted:', formData)
     alert(t('contact.alert'))
-    setFormData({ name: '', email: '', institution: '', program: '', message: '' })
+    setFormData({ name: '', email: '', institution: '', message: '' })
   }
 
   const handleChange = (e) => {
@@ -125,35 +124,16 @@ function Contact({ showFullForm = false }) {
             </div>
 
             <div className="form-group">
-              <label htmlFor="program">{t('contact.interestLabel')}</label>
-              <select
-                id="program"
-                name="program"
-                value={formData.program}
+              <label htmlFor="message">{t('contact.messageLabel')}</label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
                 onChange={handleChange}
-                required
-              >
-                <option value="">{t('contact.selectPlaceholder')}</option>
-                <option value="subscription">{t('contact.optSubscription')}</option>
-                <option value="test">{t('contact.optTest')}</option>
-                <option value="lectures">{t('contact.optLectures')}</option>
-                <option value="info">{t('contact.optInfo')}</option>
-              </select>
+                placeholder={t('contact.messagePlaceholder')}
+                rows="4"
+              />
             </div>
-
-            {showFullForm && (
-              <div className="form-group">
-                <label htmlFor="message">{t('contact.messageLabel')}</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder={t('contact.messagePlaceholder')}
-                  rows="4"
-                />
-              </div>
-            )}
 
             <button type="submit" className="btn-primary form-submit">
               {t('contact.submit')}

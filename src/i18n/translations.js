@@ -119,7 +119,7 @@ export const translations = {
     team: {
       sectionLabel: 'Vilka är vi?',
       title: 'Vi är ',
-      highlight: 'Mediready',
+      highlight: 'Mediready!',
       description:
         'Vi är fyra läkare som vill hjälpa dig öka motivation, språk och förståelse i svensk medicinsk handläggning.',
       cta: 'Läs mer om oss',
@@ -330,7 +330,7 @@ export const translations = {
         label: 'Köp kurs',
         title: 'Interaktiv kunskapsprovskurs',
         description: 'Få tillgång till våra interaktiva föreläsningar och förbered dig optimalt.',
-        badge: 'Populärast',
+        badge: 'Standard',
         courseTitle: 'Komplett kunskapsprovskurs',
         courseDescription: 'En heltäckande kurs med interaktiva föreläsningar inom alla medicinska områden. Perfekt för dig som vill förbereda dig strukturerat inför kunskapsprovet.',
         priceLabel: 'Pris',

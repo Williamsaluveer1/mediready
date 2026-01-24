@@ -239,6 +239,11 @@
   .contact {
     padding: var(--space-3xl) var(--space-md);
   }
+
+  /* Left align the intro text on mobile */
+  .contact-content {
+    text-align: left;
+  }
   
   .contact-form-wrapper {
     padding: var(--space-lg);
