@@ -149,8 +149,24 @@
   }
   
   .physicians-grid {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  /* Disable hover effects on mobile */
+  .physician-card:hover .physician-image img {
+    transform: none;
+  }
+
+  .physician-card:hover .physician-overlay {
+    opacity: 0;
+  }
+
+  .physician-card:hover .physician-bio {
+    transform: translateY(10px);
+  }
+
+  .physicians-cta .btn-secondary:hover svg {
+    transform: none;
   }
 }

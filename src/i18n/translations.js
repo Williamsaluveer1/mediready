@@ -806,7 +806,7 @@ export const translations = {
         label: 'Buy course',
         title: 'Interactive knowledge test course',
         description: 'Get access to our interactive lectures and prepare optimally.',
-        badge: 'Most popular',
+        badge: 'Standard',
         courseTitle: 'Complete knowledge test course',
         courseDescription: 'A comprehensive course with interactive lectures across all medical fields. Perfect for those who want to prepare systematically for the knowledge test.',
         priceLabel: 'Price',
