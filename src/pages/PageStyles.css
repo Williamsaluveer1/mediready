@@ -63,8 +63,8 @@
 }
 
 .page-title .highlight {
-  color: var(--primary-dark);
-  font-style: italic;
+  color: inherit;
+  font-style: normal;
 }
 
 .page-description {

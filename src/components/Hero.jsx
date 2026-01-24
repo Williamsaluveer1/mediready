@@ -35,7 +35,7 @@ function Hero() {
           
           <h1 id="hero-heading" className="hero-title">
             {t('hero.titleLine1')}
-            <span className="title-highlight">{t('hero.titleHighlight')}</span>
+            <span>{t('hero.titleHighlight')}</span>
           </h1>
           
           <p className="hero-description">

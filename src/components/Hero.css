@@ -106,8 +106,8 @@
 }
 
 .title-highlight {
-  color: var(--primary-dark);
-  font-style: italic;
+  color: inherit;
+  font-style: normal;
 }
 
 /* Description */
@@ -242,6 +242,7 @@
 }
 
 .trust-text strong {
+  font-family: var(--font-display);
   font-size: 1rem;
   font-weight: 600;
   color: var(--slate-800);

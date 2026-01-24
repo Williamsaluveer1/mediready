@@ -51,8 +51,8 @@
 }
 
 .section-title .highlight {
-  color: var(--primary-dark);
-  font-style: italic;
+  color: inherit;
+  font-style: normal;
 }
 
 .section-description {
