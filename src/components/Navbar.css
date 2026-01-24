@@ -115,10 +115,11 @@
   transition: all 0.2s ease;
 }
 
+/* No hover/active styles (keep the navbar clean) */
 .nav-links--desktop li a:hover,
 .nav-links--desktop li a.active {
   color: #000;
-  background: var(--sage-50);
+  background: transparent;
 }
 
 .nav-links--desktop li a:focus-visible {
@@ -310,9 +311,10 @@
   transition: all 0.2s ease;
 }
 
+/* No hover/active styles in mobile menu */
 .mobile-nav-links li a.active {
-  color: var(--primary-dark);
-  border-bottom-color: var(--primary-dark);
+  color: var(--slate-800);
+  border-bottom-color: transparent;
 }
 
 .mobile-nav-icon {
