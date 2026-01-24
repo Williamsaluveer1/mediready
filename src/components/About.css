@@ -292,8 +292,8 @@
     left: 16px;
   }
 
-  /* Hide the "Kunskapsprovet" badge text on mobile */
-  .badge-text {
+  /* Hide the "Kunskapsprovet" badge on mobile */
+  .visual-badge {
     display: none;
   }
 }
