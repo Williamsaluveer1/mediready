@@ -1,0 +1,156 @@
+/* ====================================
+   PHYSICIANS SECTION
+   ==================================== */
+
+.physicians {
+  padding: var(--space-4xl) var(--space-xl);
+  background: var(--surface);
+  position: relative;
+}
+
+.physicians::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+.physicians-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Header */
+.physicians-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--space-3xl);
+}
+
+/* Grid */
+.physicians-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+/* Physician Card */
+.physician-card {
+  animation: fadeInUp 0.6s var(--ease-out) both;
+}
+
+.physician-image {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-md);
+  aspect-ratio: 4/5;
+}
+
+.physician-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.physician-card:hover .physician-image img {
+  transform: scale(1.05);
+}
+
+.physician-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(15, 23, 42, 0.9) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-lg);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-out);
+}
+
+.physician-card:hover .physician-overlay {
+  opacity: 1;
+}
+
+.physician-bio {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: white;
+  transform: translateY(10px);
+  transition: transform 0.4s var(--ease-out);
+}
+
+.physician-card:hover .physician-bio {
+  transform: translateY(0);
+}
+
+.physician-info {
+  text-align: center;
+}
+
+.physician-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--slate-800);
+  margin-bottom: var(--space-xs);
+}
+
+.physician-role {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: var(--space-xs);
+}
+
+.physician-specialty {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* CTA */
+.physicians-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-2xl);
+}
+
+.physicians-cta .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.physicians-cta .btn-secondary svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s ease;
+}
+
+.physicians-cta .btn-secondary:hover svg {
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .physicians-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .physicians {
+    padding: var(--space-3xl) var(--space-md);
+  }
+  
+  .physicians-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
