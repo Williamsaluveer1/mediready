@@ -1,10 +1,24 @@
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import './Hero.css'
 import { useI18n } from '../i18n/I18nProvider'
 
 function Hero() {
   const { t } = useI18n()
   const trust = t('hero.trust')
+  const [isVideoOpen, setIsVideoOpen] = useState(false)
+
+  useEffect(() => {
+    if (!isVideoOpen) return
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') setIsVideoOpen(false)
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [isVideoOpen])
+
+  const videoSrc = '/services.mp4'
+
   return (
     <section className="hero" aria-labelledby="hero-heading">
       <div className="hero-background">
@@ -29,15 +43,24 @@ function Hero() {
           </p>
           
           <div className="hero-actions">
-            <Link to="/services" className="btn-primary">
+            <Link to="/kunskapstest" className="btn-primary">
               {t('hero.primaryCta')}
               <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </Link>
-            <Link to="/physicians" className="btn-secondary">
-              {t('hero.secondaryCta')}
-            </Link>
+            <button
+              type="button"
+              className="btn-secondary hero-video-btn"
+              onClick={() => setIsVideoOpen(true)}
+              aria-label={t('hero.videoOpenLabel')}
+            >
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M10 8.5v7l6-3.5-6-3.5z" fill="currentColor" />
+                <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" />
+              </svg>
+              {t('hero.videoCta')}
+            </button>
           </div>
           
           <div className="hero-trust">
@@ -98,6 +121,34 @@ function Hero() {
           </div>
         </div>
       </div>
+
+      {isVideoOpen && (
+        <div
+          className="hero-video-overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-label={t('hero.videoOpenLabel')}
+          onClick={() => setIsVideoOpen(false)}
+        >
+          <div className="hero-video-modal" onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              className="hero-video-close"
+              onClick={() => setIsVideoOpen(false)}
+              aria-label={t('hero.videoCloseLabel')}
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M18 6L6 18" />
+                <path d="M6 6l12 12" />
+              </svg>
+            </button>
+
+            <video className="hero-video" controls autoPlay playsInline>
+              <source src={videoSrc} type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

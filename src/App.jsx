@@ -1,12 +1,14 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
-import ServicesPage from './pages/ServicesPage'
 import AboutPage from './pages/AboutPage'
 import PhysiciansPage from './pages/PhysiciansPage'
 import ContactPage from './pages/ContactPage'
+import SwishPage from './pages/SwishPage'
+import KunskapstestPage from './pages/KunskapstestPage'
+import BuyCoursePage from './pages/BuyCoursePage'
 import './App.css'
 
 // Scroll to top on route change
@@ -28,10 +30,13 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services" element={<Navigate to="/kop-kurs" replace />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/physicians" element={<PhysiciansPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/swish" element={<SwishPage />} />
+          <Route path="/kunskapstest" element={<KunskapstestPage />} />
+          <Route path="/kop-kurs" element={<BuyCoursePage />} />
         </Routes>
         <Footer />
       </div>
