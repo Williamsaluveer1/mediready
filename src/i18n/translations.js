@@ -2,7 +2,7 @@ export const translations = {
   sv: {
     nav: {
       links: [
-        { to: '/kop-kurs', label: 'Beställ kurs' },
+        { to: '/kop-kurs', label: 'Anmäl dig till kurs' },
         { to: '/kunskapstest', label: 'Kunskapstest' },
         { to: '/physicians', label: 'Om oss' },
         { to: '/contact', label: 'Kontakta Oss' },
