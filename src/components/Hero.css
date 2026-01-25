@@ -199,6 +199,11 @@
   height: auto;
   display: block;
   aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.hero-video::-webkit-media-controls-panel {
+  background-color: transparent;
 }
 
 /* Trust Indicators */

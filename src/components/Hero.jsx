@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import './Hero.css'
 import { useI18n } from '../i18n/I18nProvider'
 
@@ -7,6 +7,7 @@ function Hero() {
   const { t } = useI18n()
   const trust = t('hero.trust')
   const [isVideoOpen, setIsVideoOpen] = useState(false)
+  const videoRef = useRef(null)
 
   useEffect(() => {
     if (!isVideoOpen) return
@@ -15,6 +16,27 @@ function Hero() {
     }
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
+  }, [isVideoOpen])
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video || !isVideoOpen) return
+
+    const handleLoadedMetadata = () => {
+      // Set video to first frame (0:00) to show thumbnail
+      video.currentTime = 0
+    }
+
+    video.addEventListener('loadedmetadata', handleLoadedMetadata)
+    
+    // Also try to load first frame immediately
+    if (video.readyState >= 1) {
+      video.currentTime = 0
+    }
+
+    return () => {
+      video.removeEventListener('loadedmetadata', handleLoadedMetadata)
+    }
   }, [isVideoOpen])
 
   const videoSrc = '/file_example_MP4_1920_18MG.mp4'
@@ -143,7 +165,7 @@ function Hero() {
               </svg>
             </button>
 
-            <video className="hero-video" controls autoPlay playsInline preload="auto">
+            <video ref={videoRef} className="hero-video" controls autoPlay playsInline preload="metadata">
               <source src={videoSrc} type="video/mp4" />
             </video>
           </div>
