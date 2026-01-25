@@ -58,9 +58,6 @@ function PhysiciansPage() {
                     </ul>
                   </div>
                 </div>
-                <Link to="/services" className="btn-secondary physician-cta">
-                  {page.viewCourses}
-                </Link>
               </div>
             </div>
           ))}

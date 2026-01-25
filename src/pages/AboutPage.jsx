@@ -131,7 +131,7 @@ function AboutPage() {
                 <li><strong>~1/3 prekliniska frågor:</strong> Cellbiologi, fysiologi, genetik, immunologi</li>
                 <li><strong>~2/3 kliniska frågor:</strong> Internmedicin, kirurgi, pediatrik, gynekologi, psykiatri, neurologi, infektion</li>
               </ul>
-              <Link to="/services" className="btn-primary">
+              <Link to="/kunskapstest" className="btn-primary">
                 Prova din kunskapsnivå
                 <svg viewBox="0 0 20 20" fill="none">
                   <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

@@ -118,7 +118,7 @@ function Navbar() {
           ))}
         </ul>
         
-        <Link to="/contact" className="nav-cta nav-cta--desktop">
+        <Link to="/kunskapstest" className="nav-cta nav-cta--desktop">
           {t('nav.cta')}
           <svg className="cta-arrow" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

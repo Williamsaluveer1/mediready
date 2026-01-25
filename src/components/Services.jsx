@@ -6,7 +6,7 @@ function Services({ showAll = false }) {
   const { t } = useI18n()
   // Put your video file in /public and update this path if needed.
   // Example: /services.mp4
-  const videoSrc = '/services.mp4'
+  const videoSrc = '/file_example_MP4_1920_18MG.mp4'
 
   return (
     <section className="services" id="services" aria-labelledby="services-heading">
@@ -27,7 +27,7 @@ function Services({ showAll = false }) {
               className="services-video-el"
               controls
               playsInline
-              preload="metadata"
+              preload="auto"
             >
               <source src={videoSrc} type="video/mp4" />
               Your browser does not support the video tag.

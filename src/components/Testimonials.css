@@ -3,6 +3,7 @@
    ==================================== */
 
 .testimonials {
+  display: none; /* Hidden but not removed */
   padding: var(--space-4xl) var(--space-xl);
   background: var(--sage-50);
   position: relative;

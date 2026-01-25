@@ -17,7 +17,7 @@ function Hero() {
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [isVideoOpen])
 
-  const videoSrc = '/services.mp4'
+  const videoSrc = '/file_example_MP4_1920_18MG.mp4'
 
   return (
     <section className="hero" aria-labelledby="hero-heading">
@@ -143,7 +143,7 @@ function Hero() {
               </svg>
             </button>
 
-            <video className="hero-video" controls autoPlay playsInline>
+            <video className="hero-video" controls autoPlay playsInline preload="auto">
               <source src={videoSrc} type="video/mp4" />
             </video>
           </div>
