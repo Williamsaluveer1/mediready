@@ -258,7 +258,7 @@
   }
   
   .form-submit {
-    padding-top: var(--space-lg);
-    padding-bottom: var(--space-lg);
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
   }
 }

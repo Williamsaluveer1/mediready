@@ -43,7 +43,7 @@ function Services({ showAll = false }) {
             {t('homeServices.description')}
           </p>
         </div>
-
+        
         <div className="services-video">
           <div className="services-video-frame">
             <video
@@ -56,9 +56,9 @@ function Services({ showAll = false }) {
               <source src={videoSrc} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-          </div>
+              </div>
         </div>
-
+        
         {/* CTA removed as requested */}
       </div>
     </section>

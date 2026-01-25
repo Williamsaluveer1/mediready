@@ -15,7 +15,7 @@ function Footer() {
             <h2 className="footer-title">
               <Link to="/" className="footer-title-link" aria-label="Mediready - Hem">
                 {t('footer.brandTitle')}
-              </Link>
+            </Link>
             </h2>
             <p className="footer-tagline">
               {t('footer.tagline')}

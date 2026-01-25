@@ -125,15 +125,15 @@ function Contact({ showFullForm = false }) {
 
             <div className="form-group">
               <label htmlFor="message">{t('contact.messageLabel')}</label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                 placeholder={t('contact.messagePlaceholder')}
-                rows="4"
-              />
-            </div>
+                  rows="4"
+                />
+              </div>
 
             <button type="submit" className="btn-primary form-submit">
               {t('contact.submit')}
