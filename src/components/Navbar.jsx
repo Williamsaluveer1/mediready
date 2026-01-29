@@ -95,45 +95,28 @@ function Navbar() {
           </div>
         </div>
         
-        {/* Mobile Login CTA - positioned before menu button */}
-        {!user && (
-          <Link to="/login" className="nav-mobile-login">
-            {t('nav.login')}
-          </Link>
-        )}
-        
-        {/* Mobile Menu Button */}
-        <button 
-          className={`mobile-menu-btn ${isMobileMenuOpen ? 'mobile-menu-btn--open' : ''}`}
-          aria-label={t('nav.menuToggle')}
-          aria-expanded={isMobileMenuOpen}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        {/* Mobile: Log in CTA + menu button side by side */}
+        <div className="nav-mobile-right">
+          {!user && (
+            <Link to="/login" className="nav-mobile-login">
+              {t('nav.login')}
+            </Link>
+          )}
+          <button 
+            className={`mobile-menu-btn ${isMobileMenuOpen ? 'mobile-menu-btn--open' : ''}`}
+            aria-label={t('nav.menuToggle')}
+            aria-expanded={isMobileMenuOpen}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu - Fullscreen */}
       <div className={`mobile-menu ${isMobileMenuOpen ? 'mobile-menu--open' : ''}`}>
-        {/* Header */}
-        <div className="mobile-menu-header">
-          <Link to="/" className="mobile-menu-logo" onClick={() => setIsMobileMenuOpen(false)}>
-            <img src="/mediready logga.JPEG" alt="Mediready" />
-          </Link>
-          <button 
-            className="mobile-menu-close"
-            aria-label={t('nav.menuClose')}
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button>
-        </div>
-
         {/* Navigation */}
         <nav className="mobile-menu-nav">
           <ul className="mobile-nav-links">
