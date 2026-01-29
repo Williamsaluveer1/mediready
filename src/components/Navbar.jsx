@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import './Navbar.css'
 import { useI18n } from '../i18n/I18nProvider'
+import { useAuth } from '../context/AuthContext'
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -35,6 +36,7 @@ function Navbar() {
 
   const navLinks = t('nav.links')
   const isSv = lang === 'sv'
+  const { user } = useAuth()
 
   return (
     <nav className={`navbar ${isScrolled ? 'navbar--scrolled' : ''}`} role="navigation" aria-label="Main navigation">
@@ -43,7 +45,7 @@ function Navbar() {
           <img src="/mediready logga.JPEG" alt="Mediready" className="logo-image" />
         </Link>
         
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation - Centered */}
         <ul className="nav-links nav-links--desktop">
           {navLinks.map(link => (
             <li key={link.to}>
@@ -57,33 +59,48 @@ function Navbar() {
           ))}
         </ul>
         
-        <Link to="/kunskapstest" className="nav-cta nav-cta--desktop">
-          {t('nav.cta')}
-          <svg className="cta-arrow" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </Link>
+        {/* Right side actions */}
+        <div className="nav-right">
+          <div className="nav-actions nav-actions--desktop">
+            {user ? (
+              <Link to="/dashboard" className="nav-cta nav-cta--secondary">
+                Dashboard
+              </Link>
+            ) : (
+              <Link to="/login" className="nav-cta nav-cta--secondary">
+                {t('nav.login')}
+              </Link>
+            )}
+          </div>
 
-        <div className="lang-toggle lang-toggle--desktop" role="group" aria-label={t('nav.langToggle')}>
-          <button
-            type="button"
-            className={`lang-btn ${isSv ? 'is-active' : ''}`}
-            onClick={() => setLang('sv')}
-            aria-pressed={isSv}
-          >
-            <img src="/sweflag.svg" alt="" className="lang-flag-icon" />
-            SV
-          </button>
-          <button
-            type="button"
-            className={`lang-btn ${!isSv ? 'is-active' : ''}`}
-            onClick={() => setLang('en')}
-            aria-pressed={!isSv}
-          >
-            <img src="/tobias-Flag-of-the-United-Kingdom.svg" alt="" className="lang-flag-icon" />
-            EN
-          </button>
+          <div className="lang-toggle lang-toggle--desktop" role="group" aria-label={t('nav.langToggle')}>
+            <button
+              type="button"
+              className={`lang-btn ${isSv ? 'is-active' : ''}`}
+              onClick={() => setLang('sv')}
+              aria-pressed={isSv}
+            >
+              <img src="/sweflag.svg" alt="" className="lang-flag-icon" />
+              SV
+            </button>
+            <button
+              type="button"
+              className={`lang-btn ${!isSv ? 'is-active' : ''}`}
+              onClick={() => setLang('en')}
+              aria-pressed={!isSv}
+            >
+              <img src="/tobias-Flag-of-the-United-Kingdom.svg" alt="" className="lang-flag-icon" />
+              EN
+            </button>
+          </div>
         </div>
+        
+        {/* Mobile Login CTA - positioned before menu button */}
+        {!user && (
+          <Link to="/login" className="nav-mobile-login">
+            {t('nav.login')}
+          </Link>
+        )}
         
         {/* Mobile Menu Button */}
         <button 

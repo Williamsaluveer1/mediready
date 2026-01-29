@@ -1,0 +1,117 @@
+/* ====================================
+   DASHBOARD NAVBAR
+   ==================================== */
+
+.dashboard-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: white;
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.dashboard-nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--space-md) var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+}
+
+.dashboard-nav-logo {
+  display: flex;
+  align-items: center;
+  cursor: default;
+}
+
+.dashboard-nav-logo img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+.dashboard-nav-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.dashboard-nav-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-md);
+  background: linear-gradient(135deg, #d4a934 0%, #b8942d 100%);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-md);
+}
+
+.dashboard-nav-badge svg {
+  width: 14px;
+  height: 14px;
+}
+
+.dashboard-nav-logout {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-md);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--slate-600);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.dashboard-nav-logout:hover {
+  background: transparent;
+  border-color: var(--slate-400);
+}
+
+.dashboard-nav-logout svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-nav-container {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .dashboard-nav-logo img {
+    height: 40px;
+  }
+
+  .dashboard-nav-badge {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: 0.7rem;
+  }
+
+  .dashboard-nav-logout {
+    padding: var(--space-sm);
+  }
+
+  .dashboard-nav-logout span {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-nav-logout {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: 0.85rem;
+  }
+}
