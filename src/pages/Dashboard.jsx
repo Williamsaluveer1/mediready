@@ -235,8 +235,11 @@ function Dashboard() {
     return timeStr?.slice(0, 5) || ''
   }
 
+  // Visa endast lektioner där zoom_meeting_id är ifyllt (edge-funktionen har kört klart)
+  const lessonsReady = lessons.filter((lesson) => lesson.zoom_meeting_id)
+
   // Group lessons by date
-  const groupedLessons = lessons.reduce((groups, lesson) => {
+  const groupedLessons = lessonsReady.reduce((groups, lesson) => {
     const date = lesson.date
     if (!groups[date]) {
       groups[date] = []
@@ -502,11 +505,11 @@ function Dashboard() {
                   </form>
                 )}
 
-                {/* Admin Lessons List */}
-                {lessons.length > 0 && (
+                {/* Admin Lessons List – visar endast lektioner med zoom_meeting_id */}
+                {lessonsReady.length > 0 && (
                   <div className="admin-lessons-list">
-                    <h3>Kommande lektioner ({lessons.length})</h3>
-                    {lessons.map(lesson => (
+                    <h3>Kommande lektioner ({lessonsReady.length})</h3>
+                    {lessonsReady.map(lesson => (
                       <div key={lesson.id} className="admin-lesson-item">
                         <div className="admin-lesson-info">
                           <strong>{lesson.title}</strong>
@@ -699,7 +702,7 @@ function Dashboard() {
                 <div className="loading-spinner"></div>
                 <p>Laddar schema...</p>
               </div>
-            ) : lessons.length === 0 ? (
+            ) : lessonsReady.length === 0 ? (
               <div className="schedule-empty">
                 <svg viewBox="0 0 24 24" fill="none">
                   <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" strokeWidth="2"/>
@@ -708,7 +711,7 @@ function Dashboard() {
                   <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" strokeWidth="2"/>
                 </svg>
                 <p>Inga schemalagda lektioner ännu</p>
-                {isAdmin && <span>Lägg till din första lektion ovan</span>}
+                {isAdmin && <span>Lägg till din första lektion ovan. Lektioner visas när Zoom-länk är skapad.</span>}
               </div>
             ) : (
               <div className="schedule-list">
