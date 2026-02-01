@@ -86,7 +86,7 @@ function LoginPage() {
               )}
 
               <div className="form-group">
-                <label htmlFor="email">E-post</label>
+                <label htmlFor="email">E- post</label>
                 <input
                   type="email"
                   id="email"
