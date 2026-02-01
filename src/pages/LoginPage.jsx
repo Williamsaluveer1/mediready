@@ -69,7 +69,7 @@ function LoginPage() {
       <section className="login-section">
         <div className="login-container">
           <div className="login-logo">
-            <img src="/mediready logga.JPEG" alt="Mediready" />
+            <img src="/Screenshot 2026-02-01 at 18.41.51.png" alt="Mediready" />
           </div>
           <div className="login-card">
             <h1 className="login-title">Logga in</h1>

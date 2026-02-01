@@ -1260,7 +1260,7 @@
 .dashboard-card {
   background: white;
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border-radius: 4px;
   padding: var(--space-2xl);
   box-shadow: var(--shadow-sm);
   animation: fadeInUp 0.6s var(--ease-out) both;
@@ -1354,7 +1354,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border-radius: var(--radius-md);
+  border-radius: 4px;
 }
 
 .admin-badge svg {
@@ -1426,7 +1426,7 @@
   color: var(--primary);
   background: var(--sage-50);
   border: 1px solid var(--sage-200);
-  border-radius: var(--radius-md);
+  border-radius: 4px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -1458,7 +1458,7 @@
   align-items: center;
   padding: var(--space-md);
   background: var(--warm-50);
-  border-radius: var(--radius-md);
+  border-radius: 4px;
 }
 
 .info-label {
@@ -1966,7 +1966,7 @@
 .lesson-form {
   background: white;
   border: 2px solid #000;
-  border-radius: var(--radius-md);
+  border-radius: 4px;
   padding: var(--space-lg);
   margin-bottom: var(--space-lg);
   box-shadow: var(--shadow-sm);
@@ -1993,7 +1993,7 @@
   color: var(--text-primary);
   background: white;
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: 4px;
   transition: border-color 0.2s ease;
 }
 
@@ -2033,7 +2033,7 @@
   color: var(--text-primary);
   background: #ffffff !important;
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: 4px;
   transition: border-color 0.2s ease;
   cursor: pointer;
 }
@@ -2063,7 +2063,7 @@
   padding: var(--space-xs) var(--space-md);
   font-size: 0.85rem;
   font-weight: 500;
-  border-radius: var(--radius-sm);
+  border-radius: 4px;
   box-shadow: none;
   transition: none;
 }
@@ -2150,7 +2150,7 @@
   height: 28px;
   background: transparent;
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: 4px;
   color: var(--slate-600);
   cursor: pointer;
   transition: border-color 0.2s ease;
@@ -2174,7 +2174,7 @@
   height: 28px;
   background: transparent;
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: 4px;
   color: var(--slate-600);
   cursor: pointer;
   transition: border-color 0.2s ease;
@@ -2252,7 +2252,7 @@
   color: var(--text-primary);
   background: white;
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: 4px;
   transition: border-color 0.2s ease;
 }
 
@@ -2268,7 +2268,7 @@
 }
 
 .email-form .btn-primary {
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 .email-form .btn-primary:hover {
@@ -2425,7 +2425,7 @@
   justify-content: space-between;
   padding: var(--space-lg);
   background: var(--primary);
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  border-radius: 4px 4px 0 0;
 }
 
 .dashboard-card-header h2 {
@@ -2448,7 +2448,7 @@
   background: rgba(255, 255, 255, 0.2);
   color: white;
   padding: 0.25rem 0.75rem;
-  border-radius: 20px;
+  border-radius: 6px;
   font-size: 0.85rem;
   font-weight: 500;
 }
@@ -2469,7 +2469,7 @@
   background: white;
   border: 1px solid var(--border);
   border-top: none;
-  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  border-radius: 0 0 4px 4px;
   padding: var(--space-lg);
 }
 
@@ -2486,7 +2486,7 @@
   justify-content: space-between;
   padding: var(--space-lg);
   background: var(--primary);
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  border-radius: 4px 4px 0 0;
 }
 
 .schedule-card-header h2 {
@@ -2508,7 +2508,7 @@
   background: rgba(255, 255, 255, 0.2);
   color: white;
   padding: 0.25rem 0.75rem;
-  border-radius: 20px;
+  border-radius: 6px;
   font-size: 0.85rem;
   font-weight: 500;
 }
@@ -2517,7 +2517,7 @@
   background: white;
   border: 1px solid var(--border);
   border-top: none;
-  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  border-radius: 0 0 4px 4px;
   padding: var(--space-lg);
 }
 
@@ -2582,7 +2582,7 @@
   padding: var(--space-sm) var(--space-sm);
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   border: 2px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: 4px;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
   transition: all 0.2s ease;
@@ -2628,7 +2628,7 @@
   padding: var(--space-md);
   background: white;
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border-radius: 4px;
   border-left: 4px solid var(--primary);
   transition: all 0.2s ease;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
@@ -2655,7 +2655,7 @@
   color: white;
   font-size: 0.8rem;
   font-weight: 600;
-  border-radius: 20px;
+  border-radius: 6px;
 }
 
 .lesson-time svg {
@@ -2668,7 +2668,7 @@
   color: var(--slate-500);
   padding: 0.25rem 0.5rem;
   background: var(--slate-100);
-  border-radius: var(--radius-sm);
+  border-radius: 4px;
 }
 
 /* Lesson Content */
@@ -2718,7 +2718,7 @@
 .meta-item.instructor-item {
   background: var(--slate-100);
   padding: 0.3rem 0.6rem;
-  border-radius: var(--radius-sm);
+  border-radius: 4px;
 }
 
 .meta-item.instructor-item svg {
@@ -2736,7 +2736,7 @@
   font-size: 0.85rem;
   font-weight: 600;
   border: none;
-  border-radius: var(--radius-md);
+  border-radius: 4px;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -2748,6 +2748,13 @@
   height: 18px;
 }
 
+.join-meeting-btn .external-link-icon {
+  width: 14px;
+  height: 14px;
+  margin-left: 4px;
+  opacity: 0.9;
+}
+
 .location-item {
   display: inline-flex;
   align-items: center;
@@ -2756,7 +2763,7 @@
   background: var(--sage-100);
   color: var(--primary);
   font-size: 0.85rem;
-  border-radius: var(--radius-sm);
+  border-radius: 4px;
 }
 
 .location-item svg {
@@ -2790,7 +2797,7 @@
     flex-wrap: wrap;
     gap: var(--space-sm);
     padding: var(--space-sm) var(--space-md);
-    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    border-radius: 4px 4px 0 0;
   }
 
   .dashboard-card-header h2 {
@@ -2799,7 +2806,7 @@
 
   .dashboard-card-body {
     padding: var(--space-sm) var(--space-md);
-    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    border-radius: 0 0 4px 4px;
   }
 
   .form-row,
@@ -2810,7 +2817,7 @@
   /* Schedule overview – mindre på mobil, datum vänster / info höger */
   .schedule-card-header {
     padding: var(--space-sm) var(--space-md);
-    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    border-radius: 4px 4px 0 0;
   }
 
   .schedule-card-header h2 {
@@ -2824,7 +2831,7 @@
 
   .schedule-card-body {
     padding: var(--space-sm) var(--space-md);
-    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    border-radius: 0 0 4px 4px;
   }
 
   .schedule-card .schedule-list {
@@ -2882,7 +2889,7 @@
   .schedule-card .schedule-lesson {
     padding: var(--space-xs) var(--space-sm);
     border-left-width: 3px;
-  }
+    Plats / Länk  }
 
   .lesson-header {
     flex-direction: row;
@@ -2979,7 +2986,7 @@
     gap: var(--space-xs);
     padding: var(--space-md);
     background: var(--warm-50);
-    border-radius: var(--radius-md);
+    border-radius: 4px;
     border-bottom: none;
     margin-bottom: var(--space-sm);
   }

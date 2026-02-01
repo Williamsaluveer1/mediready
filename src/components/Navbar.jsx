@@ -42,7 +42,7 @@ function Navbar() {
     <nav className={`navbar ${isScrolled ? 'navbar--scrolled' : ''}`} role="navigation" aria-label="Main navigation">
       <div className="nav-container">
         <Link to="/" className="logo" aria-label="Mediready - Home" onClick={() => setIsMobileMenuOpen(false)}>
-          <img src="/mediready logga.JPEG" alt="Mediready" className="logo-image" />
+          <img src="/Screenshot 2026-02-01 at 18.41.51.png" alt="Mediready" className="logo-image" />
         </Link>
         
         {/* Desktop Navigation - Centered */}

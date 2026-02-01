@@ -15,7 +15,7 @@ function DashboardNavbar() {
     <nav className="dashboard-navbar">
       <div className="dashboard-nav-container">
         <div className="dashboard-nav-logo">
-          <img src="/mediready logga.JPEG" alt="Mediready" />
+          <img src="/Screenshot 2026-02-01 at 18.41.51.png" alt="Mediready" />
         </div>
 
         <div className="dashboard-nav-right">
