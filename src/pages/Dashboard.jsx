@@ -359,19 +359,33 @@ function Dashboard() {
                                   </span>
                                 )}
                                 {(isAdmin ? lesson.host_zoom_link : lesson.participant_zoom_link) ? (
-                                  <a 
-                                    href={(isAdmin ? lesson.host_zoom_link : lesson.participant_zoom_link)} 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    className="join-meeting-btn"
-                                  >
-                                    {isAdmin ? 'Gå med i mötet som host' : 'Gå med i mötet'}
-                                    <svg className="external-link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                      <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                      <polyline points="15 3 21 3 21 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                      <line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
-                                  </a>
+                                  <>
+                                    <a 
+                                      href={(isAdmin ? lesson.host_zoom_link : lesson.participant_zoom_link)} 
+                                      target="_blank" 
+                                      rel="noopener noreferrer"
+                                      className="join-meeting-btn"
+                                    >
+                                      {isAdmin ? 'Gå med i mötet som host' : 'Gå med i mötet'}
+                                      <svg className="external-link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                        <polyline points="15 3 21 3 21 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                        <line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                      </svg>
+                                    </a>
+                                    {lesson.zoom_meeting_id && (
+                                      <div className="zoom-credentials">
+                                        <span className="zoom-info">
+                                          <strong>Mötes-ID:</strong> {lesson.zoom_meeting_id}
+                                        </span>
+                                        {lesson.zoom_password && (
+                                          <span className="zoom-info">
+                                            <strong>Lösenord:</strong> {lesson.zoom_password}
+                                          </span>
+                                        )}
+                                      </div>
+                                    )}
+                                  </>
                                 ) : lesson.location ? (
                                   <span className="meta-item location-item">
                                     <svg viewBox="0 0 24 24" fill="none">
