@@ -424,187 +424,16 @@ function Dashboard() {
                   <h2>Hantera lektioner</h2>
                   <button 
                     className="btn-primary"
-                    onClick={() => showForm ? handleCancelForm() : setShowForm(true)}
+                    onClick={() => setShowForm(true)}
                   >
-                    {showForm ? (
-                      <>
-                        <svg viewBox="0 0 24 24" fill="none">
-                          <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                          <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                        </svg>
-                        Avbryt
-                      </>
-                    ) : (
-                      <>
-                        <svg viewBox="0 0 24 24" fill="none">
-                          <line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                          <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                        </svg>
-                        Lägg till lektion
-                      </>
-                    )}
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                      <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    </svg>
+                    Lägg till lektion
                   </button>
                 </div>
                 <div className="dashboard-card-body">
-                {showForm && (
-                  <form className="lesson-form" onSubmit={handleSubmitLesson}>
-                    {editingLesson && (
-                      <div className="form-edit-notice">
-                        <svg viewBox="0 0 24 24" fill="none">
-                          <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                        Redigerar: {editingLesson.title}
-                      </div>
-                    )}
-                    {formError && (
-                      <div className="form-error">
-                        <svg viewBox="0 0 24 24" fill="none">
-                          <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-                          <path d="M12 8v4M12 16h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                        </svg>
-                        {formError}
-                      </div>
-                    )}
-                    
-                    <div className="form-row">
-                      <div className="form-group">
-                        <label htmlFor="title">Titel *</label>
-                        <input
-                          type="text"
-                          id="title"
-                          name="title"
-                          value={formData.title}
-                          onChange={handleFormChange}
-                          required
-                          disabled={formLoading}
-                        />
-                      </div>
-                      <div className="form-group">
-                        <label htmlFor="instructor">Föreläsare</label>
-                        <input
-                          type="text"
-                          id="instructor"
-                          name="instructor"
-                          value={formData.instructor}
-                          onChange={handleFormChange}
-                          disabled={formLoading}
-                        />
-                      </div>
-                    </div>
-
-                    <div className="form-group">
-                      <label htmlFor="description">Beskrivning</label>
-                      <textarea
-                        id="description"
-                        name="description"
-                        value={formData.description}
-                        onChange={handleFormChange}
-                        rows="2"
-                        disabled={formLoading}
-                      />
-                    </div>
-
-                    <div className="form-row form-row--3">
-                      <div className="form-group">
-                        <label htmlFor="date">Datum *</label>
-                        <input
-                          type="date"
-                          id="date"
-                          name="date"
-                          value={formData.date}
-                          onChange={handleFormChange}
-                          required
-                          disabled={formLoading}
-                        />
-                      </div>
-                      <div className="form-group">
-                        <label htmlFor="start_time">Starttid *</label>
-                        <div className="time-selector">
-                          <select
-                            id="start_time_hour"
-                            value={parseTime(formData.start_time).hour}
-                            onChange={(e) => handleTimeChange('start_time', 'hour', e.target.value)}
-                            disabled={formLoading}
-                            className="time-select"
-                          >
-                            {hourOptions.map(hour => (
-                              <option key={hour} value={hour}>{hour}</option>
-                            ))}
-                          </select>
-                          <span className="time-separator">:</span>
-                          <select
-                            id="start_time_minute"
-                            value={parseTime(formData.start_time).minute}
-                            onChange={(e) => handleTimeChange('start_time', 'minute', e.target.value)}
-                            disabled={formLoading}
-                            className="time-select"
-                          >
-                            {minuteOptions.map(minute => (
-                              <option key={minute} value={minute}>{minute}</option>
-                            ))}
-                          </select>
-                        </div>
-                      </div>
-                      <div className="form-group">
-                        <label htmlFor="end_time">Sluttid *</label>
-                        <div className="time-selector">
-                          <select
-                            id="end_time_hour"
-                            value={parseTime(formData.end_time).hour}
-                            onChange={(e) => handleTimeChange('end_time', 'hour', e.target.value)}
-                            disabled={formLoading}
-                            className="time-select"
-                          >
-                            {hourOptions.map(hour => (
-                              <option key={hour} value={hour}>{hour}</option>
-                            ))}
-                          </select>
-                          <span className="time-separator">:</span>
-                          <select
-                            id="end_time_minute"
-                            value={parseTime(formData.end_time).minute}
-                            onChange={(e) => handleTimeChange('end_time', 'minute', e.target.value)}
-                            disabled={formLoading}
-                            className="time-select"
-                          >
-                            {minuteOptions.map(minute => (
-                              <option key={minute} value={minute}>{minute}</option>
-                            ))}
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-
-                    <button type="submit" className="btn-primary" disabled={formLoading}>
-                      {formLoading ? (
-                        <>
-                          <div className="loading-spinner" style={{ width: '18px', height: '18px', borderWidth: '2px' }}></div>
-                          Sparar...
-                        </>
-                      ) : editingLesson ? (
-                        <>
-                          <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            <polyline points="17,21 17,13 7,13 7,21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            <polyline points="7,3 7,8 15,8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          </svg>
-                          Uppdatera lektion
-                        </>
-                      ) : (
-                        <>
-                          <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            <polyline points="17,21 17,13 7,13 7,21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            <polyline points="7,3 7,8 15,8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          </svg>
-                          Spara lektion
-                        </>
-                      )}
-                    </button>
-                  </form>
-                )}
-
                 {/* Admin Lessons List – visar endast lektioner med zoom_meeting_id */}
                 {lessonsReady.length > 0 && (
                   <div className="admin-lessons-list">
@@ -765,6 +594,173 @@ function Dashboard() {
           )}
         </div>
       </section>
+
+      {/* Lesson Modal */}
+      {showForm && (
+        <div className="lesson-modal-overlay" onClick={handleCancelForm}>
+          <div className="lesson-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="lesson-modal-header">
+              <h2>{editingLesson ? 'Redigera lektion' : 'Lägg till lektion'}</h2>
+              <button className="modal-close-btn" onClick={handleCancelForm} aria-label="Stäng">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </button>
+            </div>
+            <form className="lesson-modal-form" onSubmit={handleSubmitLesson}>
+              {editingLesson && (
+                <div className="form-edit-notice">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Redigerar: {editingLesson.title}
+                </div>
+              )}
+              {formError && (
+                <div className="form-error">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M12 8v4M12 16h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                  {formError}
+                </div>
+              )}
+              
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="title">Titel *</label>
+                  <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    value={formData.title}
+                    onChange={handleFormChange}
+                    required
+                    disabled={formLoading}
+                    placeholder="T.ex. Introduktion till svensk sjukvård"
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="instructor">Föreläsare</label>
+                  <input
+                    type="text"
+                    id="instructor"
+                    name="instructor"
+                    value={formData.instructor}
+                    onChange={handleFormChange}
+                    disabled={formLoading}
+                    placeholder="T.ex. Dr. Andersson"
+                  />
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="description">Beskrivning</label>
+                <textarea
+                  id="description"
+                  name="description"
+                  value={formData.description}
+                  onChange={handleFormChange}
+                  rows="3"
+                  disabled={formLoading}
+                  placeholder="Beskriv lektionens innehåll..."
+                />
+              </div>
+
+              <div className="form-row form-row--3">
+                <div className="form-group">
+                  <label htmlFor="date">Datum *</label>
+                  <input
+                    type="date"
+                    id="date"
+                    name="date"
+                    value={formData.date}
+                    onChange={handleFormChange}
+                    required
+                    disabled={formLoading}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="start_time">Starttid *</label>
+                  <div className="time-selector">
+                    <select
+                      id="start_time_hour"
+                      value={parseTime(formData.start_time).hour}
+                      onChange={(e) => handleTimeChange('start_time', 'hour', e.target.value)}
+                      disabled={formLoading}
+                      className="time-select"
+                    >
+                      {hourOptions.map(hour => (
+                        <option key={hour} value={hour}>{hour}</option>
+                      ))}
+                    </select>
+                    <span className="time-separator">:</span>
+                    <select
+                      id="start_time_minute"
+                      value={parseTime(formData.start_time).minute}
+                      onChange={(e) => handleTimeChange('start_time', 'minute', e.target.value)}
+                      disabled={formLoading}
+                      className="time-select"
+                    >
+                      {minuteOptions.map(minute => (
+                        <option key={minute} value={minute}>{minute}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="end_time">Sluttid *</label>
+                  <div className="time-selector">
+                    <select
+                      id="end_time_hour"
+                      value={parseTime(formData.end_time).hour}
+                      onChange={(e) => handleTimeChange('end_time', 'hour', e.target.value)}
+                      disabled={formLoading}
+                      className="time-select"
+                    >
+                      {hourOptions.map(hour => (
+                        <option key={hour} value={hour}>{hour}</option>
+                      ))}
+                    </select>
+                    <span className="time-separator">:</span>
+                    <select
+                      id="end_time_minute"
+                      value={parseTime(formData.end_time).minute}
+                      onChange={(e) => handleTimeChange('end_time', 'minute', e.target.value)}
+                      disabled={formLoading}
+                      className="time-select"
+                    >
+                      {minuteOptions.map(minute => (
+                        <option key={minute} value={minute}>{minute}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div className="lesson-modal-actions">
+                <button type="button" className="btn-secondary" onClick={handleCancelForm} disabled={formLoading}>
+                  Avbryt
+                </button>
+                <button type="submit" className="btn-primary" disabled={formLoading}>
+                  {formLoading ? (
+                    <>
+                      <div className="loading-spinner" style={{ width: '18px', height: '18px', borderWidth: '2px' }}></div>
+                      Sparar...
+                    </>
+                  ) : editingLesson ? (
+                    'Uppdatera lektion'
+                  ) : (
+                    'Spara lektion'
+                  )}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </main>
   )
 }
