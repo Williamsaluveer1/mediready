@@ -51,9 +51,26 @@ function Dashboard() {
       }
       setLessonsLoading(false)
     }
-    
-    if (user) {
-      fetchLessons()
+
+    if (!user) return
+
+    fetchLessons()
+
+    // Realtime: uppdatera lektioner när en rad ändras (t.ex. zoom_meeting_id sätts av edge-funktionen)
+    const channel = supabase
+      .channel('lessons-changes')
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'lessons' },
+        async () => {
+          const { data } = await getLessons()
+          if (data) setLessons(data)
+        }
+      )
+      .subscribe()
+
+    return () => {
+      supabase.removeChannel(channel)
     }
   }, [user])
 
