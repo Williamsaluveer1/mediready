@@ -1441,6 +1441,13 @@
   height: 14px;
 }
 
+.subscription-btn .external-link-icon {
+  width: 18px;
+  height: 18px;
+  margin-left: 6px;
+  opacity: 0.9;
+}
+
 .dashboard-header .dashboard-logout {
   flex-shrink: 0;
 }

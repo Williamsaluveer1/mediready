@@ -295,7 +295,30 @@ function Dashboard() {
             <h1 className="dashboard-admin-title">Admin</h1>
           )}
 
-          {/* Schedule – högst upp för alla */}
+          {/* Welcome Card - Only for non-admin users - FIRST */}
+          {!isAdmin && (
+            <div className="dashboard-card welcome-card">
+              <div className="welcome-header">
+                <div className="welcome-avatar">
+                  {userName.charAt(0).toUpperCase()}
+                </div>
+                <div className="welcome-info">
+                  <h1>Välkommen, {userName}!</h1>
+                  <p>{user.email}</p>
+                </div>
+                <button className="btn-secondary subscription-btn">
+                  Hantera prenumeration (via Stripe)
+                  <svg className="external-link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <polyline points="15 3 21 3 21 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Schedule – för alla */}
           <div className="dashboard-card schedule-card">
             <div className="schedule-card-header">
               <h2>
@@ -406,28 +429,6 @@ function Dashboard() {
               )}
             </div>
           </div>
-
-          {/* Welcome Card - Only for non-admin users */}
-          {!isAdmin && (
-            <div className="dashboard-card welcome-card">
-              <div className="welcome-header">
-                <div className="welcome-avatar">
-                  {userName.charAt(0).toUpperCase()}
-                </div>
-                <div className="welcome-info">
-                  <h1>Välkommen, {userName}!</h1>
-                  <p>{user.email}</p>
-                </div>
-                <button className="btn-secondary subscription-btn">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2" stroke="currentColor" strokeWidth="2"/>
-                    <line x1="1" y1="10" x2="23" y2="10" stroke="currentColor" strokeWidth="2"/>
-                  </svg>
-                  Hantera prenumeration
-                </button>
-              </div>
-            </div>
-          )}
 
           {/* Admin: Two Column Layout */}
           {isAdmin && (
