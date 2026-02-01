@@ -1955,56 +1955,11 @@
   gap: var(--space-lg);
 }
 
-/* Lessons Admin Card */
+/* Lessons Admin Card – samma design som Schema */
 .lessons-admin-card {
-  padding: var(--space-lg);
-  border: 1px solid var(--border);
-  background: white;
-}
-
-.lessons-admin-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-md);
-  margin-bottom: var(--space-md);
-  padding-bottom: var(--space-md);
-  border-bottom: 1px solid var(--border);
-}
-
-.lessons-admin-header h2 {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--slate-700);
-  margin: 0;
-  text-transform: none;
-  letter-spacing: normal;
-}
-
-.lessons-admin-header .btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-xs);
-  font-size: 0.85rem;
-  padding: var(--space-xs) var(--space-md);
-  border-radius: var(--radius-sm);
-  transition: none;
-}
-
-.lessons-admin-header .btn-primary:hover {
-  background: var(--primary);
-  transform: none;
-  box-shadow: 0 4px 16px rgba(30, 58, 95, 0.25);
-}
-
-.lessons-admin-header .btn-primary:hover svg {
-  transform: none;
-}
-
-.lessons-admin-header .btn-primary svg {
-  width: 16px;
-  height: 16px;
-  transition: none;
+  padding: 0;
+  border: none;
+  background: transparent;
 }
 
 /* Lesson Form */
@@ -2257,71 +2212,19 @@
   flex-shrink: 0;
 }
 
-/* Users Card (Admin) */
+/* Users Card (Admin) – samma design som Schema */
 .users-card {
-  padding: var(--space-lg);
-  border: 1px solid var(--border);
-  background: white;
+  padding: 0;
+  border: none;
+  background: transparent;
 }
 
-.users-card h2 {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--slate-700);
-  margin-bottom: var(--space-md);
-  padding-bottom: var(--space-md);
-  border-bottom: 1px solid var(--border);
-}
-
-/* Email Card (Admin) */
+/* Email Card (Admin) – samma design som Schema */
 .email-card {
-  padding: var(--space-lg);
-  border: 1px solid var(--border);
-  background: white;
+  padding: 0;
+  border: none;
+  background: transparent;
   grid-column: 1 / -1;
-}
-
-.email-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-md);
-  margin-bottom: var(--space-md);
-  padding-bottom: var(--space-md);
-  border-bottom: 1px solid var(--border);
-}
-
-.email-card-header h2 {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--slate-700);
-  margin: 0;
-}
-
-.email-card-header .btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-xs);
-  font-size: 0.85rem;
-  padding: var(--space-xs) var(--space-md);
-  border-radius: var(--radius-sm);
-  transition: none;
-}
-
-.email-card-header .btn-primary:hover {
-  background: var(--primary);
-  transform: none;
-  box-shadow: 0 4px 16px rgba(30, 58, 95, 0.25);
-}
-
-.email-card-header .btn-primary:hover svg {
-  transform: none;
-}
-
-.email-card-header .btn-primary svg {
-  width: 16px;
-  height: 16px;
-  transition: none;
 }
 
 .email-form {
@@ -2362,6 +2265,20 @@
 .email-form textarea {
   resize: vertical;
   min-height: 120px;
+}
+
+.email-form .btn-primary {
+  border-radius: 10px;
+}
+
+.email-form .btn-primary:hover {
+  background: var(--primary);
+  transform: none;
+  box-shadow: none;
+}
+
+.email-form .btn-primary:hover svg {
+  transform: none;
 }
 
 .email-info {
@@ -2501,20 +2418,107 @@
   color: var(--text-muted);
 }
 
-/* Schedule Card */
-.schedule-card {
+/* Dashboard Card – gemensam design (Schema, Hantera lektioner, Deltagare, Skicka e-post) */
+.dashboard-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: var(--space-lg);
-  border: 1px solid var(--border);
-  background: white;
+  background: var(--primary);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
-.schedule-card h2 {
-  font-size: 1rem;
+.dashboard-card-header h2 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.dashboard-card-header h2 svg {
+  width: 24px;
+  height: 24px;
+}
+
+.dashboard-card-header .lesson-count,
+.dashboard-card-header .card-badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
   font-weight: 500;
-  color: var(--slate-700);
-  margin-bottom: var(--space-md);
-  padding-bottom: var(--space-md);
-  border-bottom: 1px solid var(--border);
+}
+
+.dashboard-card-header .btn-primary {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.dashboard-card-header .btn-primary:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.dashboard-card-body {
+  background: white;
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  padding: var(--space-lg);
+}
+
+/* Schedule Card */
+.schedule-card {
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.schedule-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg);
+  background: var(--primary);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.schedule-card-header h2 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.schedule-card-header h2 svg {
+  width: 24px;
+  height: 24px;
+}
+
+.schedule-card-header .lesson-count {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.schedule-card-body {
+  background: white;
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  padding: var(--space-lg);
 }
 
 .schedule-loading,
@@ -2523,25 +2527,27 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--space-xl);
+  padding: var(--space-2xl);
   text-align: center;
   color: var(--text-secondary);
 }
 
 .schedule-empty svg {
-  width: 32px;
-  height: 32px;
+  width: 56px;
+  height: 56px;
   color: var(--slate-300);
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-md);
 }
 
 .schedule-empty p {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--slate-600);
   margin-bottom: var(--space-xs);
 }
 
 .schedule-empty span {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
 }
 
@@ -2549,15 +2555,14 @@
 .schedule-list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: var(--space-lg);
 }
 
 .schedule-day {
-  display: grid;
-  grid-template-columns: 70px 1fr;
-  gap: var(--space-md);
-  padding-bottom: var(--space-md);
-  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: var(--space-lg);
+  padding: 0;
+  border: none;
 }
 
 .schedule-day:last-child {
@@ -2565,118 +2570,209 @@
   padding-bottom: 0;
 }
 
+/* Date Badge - Modern Calendar Style */
 .schedule-date {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 0;
-  background: transparent;
-  border-radius: 0;
-  text-align: left;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  width: 80px;
   height: fit-content;
-}
-
-.date-day {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: var(--slate-700);
-  line-height: 1;
-}
-
-.date-month {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--slate-500);
-  text-transform: none;
-  letter-spacing: normal;
+  padding: var(--space-sm) var(--space-sm);
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
 }
 
 .date-weekday {
   font-size: 0.7rem;
-  color: var(--slate-400);
-  text-transform: none;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
 }
 
+.date-day {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--slate-800);
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.date-month {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--slate-500);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* Lessons Container */
 .schedule-lessons {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-md);
+  flex: 1;
 }
 
+/* Individual Lesson Card */
 .schedule-lesson {
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: var(--space-sm);
-  padding: var(--space-sm) 0;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--border);
-  border-radius: 0;
-  transition: none;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-md);
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--primary);
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .schedule-lesson:last-child {
-  border-bottom: none;
+  border-bottom: 1px solid var(--border);
 }
 
-.schedule-lesson:hover {
-  border-color: var(--border);
-  box-shadow: none;
+/* Lesson Header with Time Badge */
+.lesson-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
 }
 
 .lesson-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.35rem 0.75rem;
+  background: var(--primary);
+  color: white;
   font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--slate-600);
-  padding-top: 2px;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+.lesson-time svg {
+  width: 14px;
+  height: 14px;
+}
+
+.lesson-duration {
+  font-size: 0.75rem;
+  color: var(--slate-500);
+  padding: 0.25rem 0.5rem;
+  background: var(--slate-100);
+  border-radius: var(--radius-sm);
+}
+
+/* Lesson Content */
+.lesson-content {
+  flex: 1;
 }
 
 .lesson-content h4 {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--slate-700);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--slate-800);
   margin-bottom: var(--space-xs);
 }
 
 .lesson-content p {
-  font-size: 0.85rem;
-  color: var(--slate-500);
-  line-height: 1.4;
-  margin-bottom: var(--space-xs);
+  font-size: 0.9rem;
+  color: var(--slate-600);
+  line-height: 1.5;
+  margin-bottom: var(--space-sm);
 }
 
+/* Lesson Meta Info */
 .lesson-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-sm);
+  align-items: center;
+  gap: var(--space-md);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--border);
+  margin-top: var(--space-sm);
 }
 
 .meta-item {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-xs);
-  font-size: 0.75rem;
-  color: var(--slate-500);
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--slate-600);
 }
 
 .meta-item svg {
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
+  color: var(--slate-400);
 }
 
-.meta-item .zoom-link {
+.meta-item.instructor-item {
+  background: var(--slate-100);
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+.meta-item.instructor-item svg {
   color: var(--primary);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease;
-  word-break: break-all;
-  max-width: 100%;
-  display: inline-block;
 }
 
-.meta-item .zoom-link:hover {
-  color: var(--primary-dark);
-  text-decoration: underline;
+/* Join Meeting Button */
+.join-meeting-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.5rem 1rem;
+  background: var(--primary);
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(30, 58, 95, 0.3);
+}
+
+.join-meeting-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.location-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.3rem 0.6rem;
+  background: var(--sage-100);
+  color: var(--primary);
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+}
+
+.location-item svg {
+  color: var(--primary);
+}
+
+/* Schedule – större avstånd på mindre skärmar (mobil/tablet) */
+@media (max-width: 1024px) {
+  .schedule-card .schedule-list {
+    gap: 24px !important;
+    row-gap: 24px !important;
+  }
+  .schedule-card .schedule-lessons {
+    gap: 20px !important;
+    row-gap: 20px !important;
+  }
 }
 
 /* Schedule Responsive */
@@ -2690,9 +2786,20 @@
     gap: var(--space-md);
   }
 
-  .lessons-admin-header {
-    flex-direction: column;
-    align-items: flex-start;
+  .dashboard-card-header {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+  }
+
+  .dashboard-card-header h2 {
+    font-size: 0.95rem;
+  }
+
+  .dashboard-card-body {
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
   }
 
   .form-row,
@@ -2700,46 +2807,157 @@
     grid-template-columns: 1fr;
   }
 
+  /* Schedule overview – mindre på mobil, datum vänster / info höger */
+  .schedule-card-header {
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+  }
+
+  .schedule-card-header h2 {
+    font-size: 0.95rem;
+  }
+
+  .schedule-card-header .lesson-count {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .schedule-card-body {
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+  }
+
+  .schedule-card .schedule-list {
+    gap: 24px !important;
+    row-gap: 24px !important;
+  }
+
   .schedule-day {
-    grid-template-columns: 1fr;
-    gap: var(--space-md);
+    flex-direction: row;
+    gap: var(--space-sm);
+    align-items: flex-start;
+    padding-bottom: 24px;
+  }
+
+  .schedule-day:not(:last-child) {
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 0;
+    padding-bottom: 24px;
   }
 
   .schedule-date {
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: var(--space-sm);
-    padding: var(--space-sm) 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 52px;
+    width: 52px;
+    padding: var(--space-xs) var(--space-xs);
+    flex-shrink: 0;
+  }
+
+  .date-weekday {
+    order: 1;
+    font-size: 0.6rem;
   }
 
   .date-day {
-    font-size: 1.25rem;
+    order: 2;
+    font-size: 1.15rem;
   }
 
-  .schedule-lesson {
-    grid-template-columns: 1fr;
-    gap: var(--space-sm);
+  .date-month {
+    order: 3;
+    font-size: 0.6rem;
+  }
+
+  .schedule-card .schedule-lessons {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px !important;
+    row-gap: 20px !important;
+  }
+
+  .schedule-card .schedule-lesson {
+    padding: var(--space-xs) var(--space-sm);
+    border-left-width: 3px;
+  }
+
+  .lesson-header {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 2px;
   }
 
   .lesson-time {
-    font-size: 0.85rem;
-    text-align: left;
+    font-size: 0.65rem;
+    padding: 0.2rem 0.45rem;
   }
 
-  .lesson-content {
-    text-align: left;
+  .lesson-time svg {
+    width: 10px;
+    height: 10px;
   }
 
   .lesson-content h4 {
-    text-align: left;
+    font-size: 0.85rem;
+    margin-bottom: 2px;
   }
 
   .lesson-content p {
-    text-align: left;
+    font-size: 0.75rem;
+    margin-bottom: 2px;
   }
 
   .lesson-meta {
-    justify-content: flex-start;
+    padding-top: var(--space-xs);
+    margin-top: var(--space-xs);
+    gap: var(--space-xs);
+    border-top-width: 1px;
+  }
+
+  .meta-item {
+    font-size: 0.7rem;
+  }
+
+  .meta-item svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .meta-item.instructor-item {
+    padding: 0.2rem 0.4rem;
+  }
+
+  .join-meeting-btn {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.7rem;
+    width: auto;
+    justify-content: center;
+  }
+
+  .join-meeting-btn svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .location-item {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .schedule-empty svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .schedule-empty p {
+    font-size: 0.9rem;
+  }
+
+  .schedule-empty span {
+    font-size: 0.8rem;
   }
 
   .admin-lesson-item {
