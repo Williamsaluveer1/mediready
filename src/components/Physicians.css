@@ -25,9 +25,8 @@
 
 /* Header */
 .physicians-header {
-  text-align: center;
-  max-width: 640px;
-  margin: 0 auto var(--space-3xl);
+  text-align: left;
+  margin: 0 auto var(--space-xl);
 }
 
 /* Grid */

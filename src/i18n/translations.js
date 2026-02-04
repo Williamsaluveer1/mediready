@@ -94,7 +94,7 @@ export const translations = {
       description2:
         'Våra interaktiva föreläsningar ger dig bästa möjliga förutsättningar inför kunskapsprovet och fortsatt väg in i det svenska sjukvårdssystemet.',
       primaryCta: 'Läs mer om oss',
-      secondaryCta: 'Möt våra läkare',
+      secondaryCta: 'Möt oss',
       imageAltMain: 'Medicinsk föreläsningssal med läkare',
       imageAltSecondary: 'Läkare i diskussion',
       badge: 'Kunskapsprovet',
@@ -121,8 +121,6 @@ export const translations = {
       sectionLabel: 'Vilka är vi?',
       title: 'Vi är ',
       highlight: 'Mediready!',
-      description:
-        'Vi är fyra läkare som vill hjälpa dig öka motivation, språk och förståelse i svensk medicinsk handläggning.',
       cta: 'Läs mer om oss',
       members: [
         {
@@ -186,8 +184,8 @@ export const translations = {
       ],
       page: {
         label: 'Om oss',
-        title: 'Möt ',
-        highlight: 'teamet',
+        title: 'Vi är ',
+        highlight: 'läkarna',
         titleRest: ' bakom Mediready',
         description:
           'Vi är fyra läkare som brinner för att hjälpa utlandsutbildade kollegor på vägen mot svensk läkarlegitimation. Här är vi!',
@@ -312,7 +310,7 @@ export const translations = {
       },
       kunskapstest: {
         label: 'Diagnostiskt kunskapsprov',
-        title: 'Välkommen till Medireadys diagnostiska kunskapsprov',
+        title: 'Välkommen till Medireadys diagnostiskt prov',
         description: 'För läkare med utbildning utanför Sverige.',
         infoTitle: 'Om provet',
         infoIntro: 'Detta prov består av 150 flervalsfrågor och är utformat för att ge en övergripande bild av ditt nuvarande kunskapsläge inför det svenska kunskapsprovet för legitimation. Var god läs igenom informationen nedan noga innan du påbörjar provet.',
@@ -583,7 +581,7 @@ export const translations = {
       description2:
         'Our interactive lectures give you the best possible preparation for the knowledge test and your path into the Swedish healthcare system.',
       primaryCta: 'Read about us',
-      secondaryCta: 'Meet the team',
+      secondaryCta: 'Meet us',
       imageAltMain: 'Medical lecture hall',
       imageAltSecondary: 'Doctors discussing a case',
       badge: 'Knowledge test',
@@ -607,8 +605,6 @@ export const translations = {
       sectionLabel: 'Who are we?',
       title: 'Meet the ',
       highlight: 'team',
-      description:
-        'We are four doctors who want to help you build motivation, language skills, and confidence in Swedish clinical practice.',
       cta: 'Read more about us',
       members: [
         {
@@ -665,8 +661,8 @@ export const translations = {
       ],
       page: {
         label: 'About us',
-        title: 'Meet the ',
-        highlight: 'team',
+        title: 'We are the ',
+        highlight: 'doctors',
         titleRest: ' behind Mediready',
         description:
           'We are four doctors passionate about helping internationally trained colleagues on the path to Swedish medical licensure. Here we are!',
@@ -791,7 +787,7 @@ export const translations = {
       },
       kunskapstest: {
         label: 'Diagnostic knowledge test',
-        title: 'Welcome to Mediready\'s diagnostic knowledge test',
+        title: 'Welcome to Mediready\'s diagnostic test',
         description: 'For doctors educated outside Sweden.',
         infoTitle: 'About the test',
         infoIntro: 'This test consists of 150 multiple-choice questions and is designed to give you an overview of your current knowledge level ahead of the Swedish medical licensing exam. Please read the information below carefully before starting the test.',

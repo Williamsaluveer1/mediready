@@ -16,6 +16,7 @@ import AuthCallback from './pages/AuthCallback'
 import LoginPage from './pages/LoginPage'
 import ForgotPasswordPage from './pages/ForgotPasswordPage'
 import ResetPasswordPage from './pages/ResetPasswordPage'
+import CheckEmailPage from './pages/CheckEmailPage'
 import './App.css'
 
 // Scroll to top on route change (instant, no animation)
@@ -40,11 +41,12 @@ function AppContent() {
   const isResetPasswordPage = location.pathname === '/auth/reset-password'
   const isLoginPage = location.pathname === '/login'
   const isForgotPasswordPage = location.pathname === '/forgot-password'
+  const isCheckEmailPage = location.pathname === '/check-email'
   
   // Show dashboard navbar on dashboard, hide all navs on auth pages
   const showDashboardNavbar = user && isDashboardPage
-  const showMainNavbar = !isDashboardPage && !isAuthCallbackPage && !isResetPasswordPage && !isLoginPage && !isForgotPasswordPage
-  const showFooter = !isDashboardPage && !isAuthCallbackPage && !isResetPasswordPage && !isLoginPage && !isForgotPasswordPage
+  const showMainNavbar = !isDashboardPage && !isAuthCallbackPage && !isResetPasswordPage && !isLoginPage && !isForgotPasswordPage && !isCheckEmailPage
+  const showFooter = !isDashboardPage && !isAuthCallbackPage && !isResetPasswordPage && !isLoginPage && !isForgotPasswordPage && !isCheckEmailPage
 
   return (
     <>
@@ -66,6 +68,7 @@ function AppContent() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/auth/callback" element={<AuthCallback />} />
           <Route path="/auth/reset-password" element={<ResetPasswordPage />} />
+          <Route path="/check-email" element={<CheckEmailPage />} />
         </Routes>
         {showFooter && <Footer />}
       </div>

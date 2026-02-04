@@ -153,18 +153,6 @@ function Hero() {
           onClick={() => setIsVideoOpen(false)}
         >
           <div className="hero-video-modal" onClick={(e) => e.stopPropagation()}>
-            <button
-              type="button"
-              className="hero-video-close"
-              onClick={() => setIsVideoOpen(false)}
-              aria-label={t('hero.videoCloseLabel')}
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M18 6L6 18" />
-                <path d="M6 6l12 12" />
-              </svg>
-            </button>
-
             <video ref={videoRef} className="hero-video" controls autoPlay playsInline preload="metadata">
               <source src={videoSrc} type="video/mp4" />
             </video>

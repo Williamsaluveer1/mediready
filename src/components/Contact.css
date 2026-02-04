@@ -258,7 +258,8 @@
   }
   
   .form-submit {
-    padding-top: var(--space-xl);
-    padding-bottom: var(--space-xl);
+    min-height: 52px;
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
   }
 }

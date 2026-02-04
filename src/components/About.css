@@ -298,6 +298,16 @@
   }
 }
 
+@media (max-width: 768px) {
+  .about-actions .btn-primary,
+  .about-actions .btn-secondary {
+    border-radius: var(--radius-md);
+    min-height: 48px;
+    padding-top: var(--space-sm);
+    padding-bottom: var(--space-sm);
+  }
+}
+
 @media (max-width: 480px) {
   .about-actions {
     flex-direction: column;

@@ -324,9 +324,6 @@ function Dashboard() {
               <h2>
                 {isAdmin ? 'Schemaöversikt' : 'Ditt schema'}
               </h2>
-              {lessonsReady.length > 0 && (
-                <span className="lesson-count">{lessonsReady.length} lektion{lessonsReady.length !== 1 ? 'er' : ''}</span>
-              )}
             </div>
             
             <div className="schedule-card-body">
@@ -383,6 +380,18 @@ function Dashboard() {
                                 )}
                                 {(isAdmin ? lesson.host_zoom_link : lesson.participant_zoom_link) ? (
                                   <>
+                                    {lesson.zoom_meeting_id && (
+                                      <div className="zoom-credentials">
+                                        <span className="zoom-info">
+                                          <strong>Mötes-ID:</strong> {lesson.zoom_meeting_id}
+                                        </span>
+                                        {lesson.zoom_password && (
+                                          <span className="zoom-info">
+                                            <strong>Lösenord:</strong> {lesson.zoom_password}
+                                          </span>
+                                        )}
+                                      </div>
+                                    )}
                                     <a 
                                       href={(isAdmin ? lesson.host_zoom_link : lesson.participant_zoom_link)} 
                                       target="_blank" 
@@ -396,18 +405,6 @@ function Dashboard() {
                                         <line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                       </svg>
                                     </a>
-                                    {lesson.zoom_meeting_id && (
-                                      <div className="zoom-credentials">
-                                        <span className="zoom-info">
-                                          <strong>Mötes-ID:</strong> {lesson.zoom_meeting_id}
-                                        </span>
-                                        {lesson.zoom_password && (
-                                          <span className="zoom-info">
-                                            <strong>Lösenord:</strong> {lesson.zoom_password}
-                                          </span>
-                                        )}
-                                      </div>
-                                    )}
                                   </>
                                 ) : lesson.location ? (
                                   <span className="meta-item location-item">
@@ -489,55 +486,6 @@ function Dashboard() {
                 </div>
               </div>
 
-              {/* Admin: Users List */}
-              <div className="dashboard-card users-card">
-                <div className="dashboard-card-header">
-                  <h2>Registrerade deltagare ({users.length})</h2>
-                </div>
-                <div className="dashboard-card-body">
-                {usersLoading ? (
-                  <div className="users-loading">
-                    <div className="loading-spinner"></div>
-                    <p>Laddar deltagare...</p>
-                  </div>
-                ) : users.length === 0 ? (
-                  <div className="users-empty">
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                    <p>Inga registrerade deltagare ännu</p>
-                  </div>
-                ) : (
-                  <div className="users-list">
-                    <div className="users-table-header">
-                      <span>Namn</span>
-                      <span>E-post</span>
-                      <span>Registrerad</span>
-                    </div>
-                    {users.map(profile => (
-                      <div key={profile.id} className="user-item">
-                        <div className="user-name">
-                          <div className="user-avatar">
-                            {(profile.full_name || profile.email)?.charAt(0).toUpperCase()}
-                          </div>
-                          <span>{profile.full_name || 'Ej angivet'}</span>
-                        </div>
-                        <span className="user-email">{profile.email}</span>
-                        <span className="user-date">
-                          {new Date(profile.created_at).toLocaleDateString('sv-SE', {
-                            year: 'numeric',
-                            month: 'short',
-                            day: 'numeric'
-                          })}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-                </div>
-              </div>
-
               {/* Admin: Skicka utskick – sparas i public.messages */}
               <div className="dashboard-card email-card">
                 <div className="dashboard-card-header">
@@ -605,6 +553,55 @@ function Dashboard() {
                   </form>
                 </div>
               </div>
+
+              {/* Admin: Users List – sist på sidan */}
+              <div className="dashboard-card users-card">
+                <div className="dashboard-card-header">
+                  <h2>Registrerade deltagare ({users.length})</h2>
+                </div>
+                <div className="dashboard-card-body">
+                {usersLoading ? (
+                  <div className="users-loading">
+                    <div className="loading-spinner"></div>
+                    <p>Laddar deltagare...</p>
+                  </div>
+                ) : users.length === 0 ? (
+                  <div className="users-empty">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    <p>Inga registrerade deltagare ännu</p>
+                  </div>
+                ) : (
+                  <div className="users-list">
+                    <div className="users-table-header">
+                      <span>Namn</span>
+                      <span>E-post</span>
+                      <span>Registrerad</span>
+                    </div>
+                    {users.map(profile => (
+                      <div key={profile.id} className="user-item">
+                        <div className="user-name">
+                          <div className="user-avatar">
+                            {(profile.full_name || profile.email)?.charAt(0).toUpperCase()}
+                          </div>
+                          <span>{profile.full_name || 'Ej angivet'}</span>
+                        </div>
+                        <span className="user-email">{profile.email}</span>
+                        <span className="user-date">
+                          {new Date(profile.created_at).toLocaleDateString('sv-SE', {
+                            year: 'numeric',
+                            month: 'short',
+                            day: 'numeric'
+                          })}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                </div>
+              </div>
             </div>
           )}
         </div>
@@ -624,15 +621,6 @@ function Dashboard() {
               </button>
             </div>
             <form className="lesson-modal-form" onSubmit={handleSubmitLesson}>
-              {editingLesson && (
-                <div className="form-edit-notice">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  Redigerar: {editingLesson.title}
-                </div>
-              )}
               {formError && (
                 <div className="form-error">
                   <svg viewBox="0 0 24 24" fill="none">

@@ -385,6 +385,16 @@
   }
 }
 
+@media (max-width: 768px) {
+  .hero .btn-primary,
+  .hero .btn-secondary {
+    min-height: 48px;
+    border-radius: var(--radius-md);
+    padding-top: var(--space-sm);
+    padding-bottom: var(--space-sm);
+  }
+}
+
 @media (max-width: 480px) {
   .hero {
     padding-left: var(--space-md);
@@ -396,8 +406,8 @@
     width: 100%;
   }
   
-  .btn-primary,
-  .btn-secondary {
+  .hero .btn-primary,
+  .hero .btn-secondary {
     width: 100%;
     justify-content: center;
   }

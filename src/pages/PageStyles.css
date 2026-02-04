@@ -1687,6 +1687,34 @@
   margin-bottom: var(--space-lg);
 }
 
+/* Check Email Page – egen sida med bara rutan */
+.check-email-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+  background: linear-gradient(180deg, var(--sage-50) 0%, var(--warm-50) 100%);
+}
+
+.check-email-section {
+  width: 100%;
+  max-width: 480px;
+}
+
+.check-email-container {
+  width: 100%;
+}
+
+.check-email-card {
+  width: 100%;
+}
+
+.check-email-back {
+  display: inline-flex;
+  margin-top: var(--space-md);
+}
+
 /* Form Error Message */
 .form-error {
   display: flex;
@@ -2446,6 +2474,7 @@
   padding: 0;
   border: none;
   background: transparent;
+  grid-column: 1 / -1;
 }
 
 /* Email Card (Admin) – samma design som Schema */
@@ -2453,7 +2482,6 @@
   padding: 0;
   border: none;
   background: transparent;
-  grid-column: 1 / -1;
 }
 
 .email-form {
@@ -2966,10 +2994,10 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.25rem;
   background: var(--primary);
   color: white;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 600;
   border: none;
   border-radius: 4px;
@@ -2977,17 +3005,18 @@
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 2px 4px rgba(30, 58, 95, 0.3);
+  margin-left: auto;
 }
 
 .join-meeting-btn svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
 }
 
 .join-meeting-btn .external-link-icon {
-  width: 14px;
-  height: 14px;
-  margin-left: 4px;
+  width: 16px;
+  height: 16px;
+  margin-left: 6px;
   opacity: 0.9;
 }
 
@@ -3058,7 +3087,7 @@
 /* Schedule Responsive */
 @media (max-width: 768px) {
   .dashboard-container--wide {
-    gap: var(--space-md);
+    gap: var(--space-2xl);
   }
 
   .admin-cards-grid {
@@ -3074,7 +3103,7 @@
   }
 
   .dashboard-card-header h2 {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
   }
 
   .dashboard-card-body {
@@ -3094,7 +3123,7 @@
   }
 
   .schedule-card-header h2 {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
   }
 
   .schedule-card-header .lesson-count {
@@ -3193,8 +3222,28 @@
   .lesson-meta {
     padding-top: var(--space-xs);
     margin-top: var(--space-xs);
-    gap: var(--space-xs);
+    gap: var(--space-sm);
     border-top-width: 1px;
+  }
+
+  .schedule-card .lesson-meta .join-meeting-btn {
+    flex-basis: 100%;
+    width: 100%;
+    justify-content: center;
+    margin-left: 0;
+    margin-top: var(--space-xs);
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .schedule-card .lesson-meta .join-meeting-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .schedule-card .lesson-meta .join-meeting-btn .external-link-icon {
+    width: 14px;
+    height: 14px;
   }
 
   .meta-item {
@@ -3262,6 +3311,10 @@
     border-radius: 4px;
     border-bottom: none;
     margin-bottom: var(--space-sm);
+  }
+
+  .user-item:hover {
+    background: var(--warm-50);
   }
 
   .user-name {

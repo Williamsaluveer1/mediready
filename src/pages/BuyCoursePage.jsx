@@ -17,8 +17,6 @@ function BuyCoursePage() {
   })
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
-  const [success, setSuccess] = useState(false)
-  const [submittedEmail, setSubmittedEmail] = useState('')
 
   // Redirect to dashboard if already logged in
   useEffect(() => {
@@ -45,9 +43,8 @@ function BuyCoursePage() {
       return
     }
 
-    // Success - show confirmation message
-    setSubmittedEmail(formData.email)
-    setSuccess(true)
+    // Success - redirect to check-email page
+    navigate('/check-email', { state: { email: formData.email } })
     setLoading(false)
   }
 
@@ -95,23 +92,7 @@ function BuyCoursePage() {
 
           {/* Purchase Form */}
           <div className="purchase-form-wrapper">
-            {success ? (
-              <div className="purchase-form">
-                <div className="signup-success">
-                  <div className="success-icon">
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M22 4L12 14.01l-3-3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                  <h3>Kontrollera din e-post!</h3>
-                  <p>Vi har skickat en verifieringslänk till:</p>
-                  <span className="email-sent-to">{submittedEmail}</span>
-                  <p>Klicka på länken i e-postmeddelandet för att bekräfta din adress och komma igång.</p>
-                </div>
-              </div>
-            ) : (
-              <form className="purchase-form" onSubmit={handleSubmit}>
+            <form className="purchase-form" onSubmit={handleSubmit}>
                 <h3>{content.formTitle}</h3>
                 <p className="form-intro">{content.formIntro}</p>
 
@@ -186,7 +167,6 @@ function BuyCoursePage() {
 
                 <p className="form-note">{content.formNote}</p>
               </form>
-            )}
           </div>
         </div>
       </section>

@@ -22,9 +22,6 @@ function Physicians({ limit }) {
           <h2 id="physicians-heading" className="section-title">
             {t('team.title')}<span className="highlight">{t('team.highlight')}</span>
           </h2>
-          <p className="section-description">
-            {t('team.description')}
-          </p>
         </div>
 
         <div className="physicians-grid">
