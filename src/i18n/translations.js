@@ -956,7 +956,7 @@ export const translations = {
           {
             heading: 'Acceptance of terms',
             paragraphs: [
-              'By using Mediready\'s services, you agree to these terms of service. If you do not accept the terms, you may not use the services.',
+              'By using Mediready\'s services, you agree to thesee terms of service. If you do not accept the terms, you may not use the services.',
             ],
           },
           {
