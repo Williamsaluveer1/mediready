@@ -567,6 +567,13 @@
 
   .nav-mobile-login {
     display: flex;
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.9rem;
+  }
+
+  .nav-mobile-login .nav-login-icon {
+    width: 14px;
+    height: 14px;
   }
 
   .logo-image {

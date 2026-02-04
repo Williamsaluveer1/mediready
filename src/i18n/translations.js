@@ -16,7 +16,7 @@ export const translations = {
       langEn: 'EN',
     },
     hero: {
-      badge: 'Välkommen 2026',
+      badge: 'Anmälan öppen för 2026',
       titleLine1: 'Vi hjälper dig på väg mot',
       titleHighlight: ' svensk läkarlegitimation',
       description:
@@ -574,7 +574,7 @@ export const translations = {
       langEn: 'EN',
     },
     hero: {
-      badge: 'Welcome 2026',
+      badge: 'Application open for 2026',
       titleLine1: 'We help you on your way to',
       titleHighlight: ' Swedish medical licensure',
       description:
