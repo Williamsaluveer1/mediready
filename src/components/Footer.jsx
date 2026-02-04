@@ -36,10 +36,10 @@ function Footer() {
           </div>
 
           <div className="footer-links">
-            <div className="footer-column footer-column--services">
-              <h3>{t('footer.servicesTitle')}</h3>
+            <div className="footer-column footer-column--institute">
+              <h3>{t('footer.brandTitle')}</h3>
               <ul>
-                {footerLinks.programs.map(link => (
+                {footerLinks.institute.map(link => (
                   <li key={link.label}>
                     <Link to={link.to}>{link.label}</Link>
                   </li>
@@ -58,23 +58,10 @@ function Footer() {
               </ul>
             </div>
 
-            <div className="footer-column footer-column--institute">
-              <h3>{t('footer.brandTitle')}</h3>
-              <ul>
-                {footerLinks.institute.map(link => (
-                  <li key={link.label}>
-                    <Link to={link.to}>{link.label}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="footer-contact">
-            <h3>{t('footer.contactTitle')}</h3>
-            <p className="emergency-text">{t('footer.contactText')}</p>
-            <div className="contact-cta">
-              <a href="mailto:hej@mediready.se" className="phone-link">
+            <div className="footer-column footer-column--contact">
+              <h3>{t('footer.contactTitle')}</h3>
+              <p className="footer-contact-text">{t('footer.contactText')}</p>
+              <a href="mailto:hej@mediready.se" className="footer-contact-email">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                   <path d="M22 6l-10 7L2 6"/>

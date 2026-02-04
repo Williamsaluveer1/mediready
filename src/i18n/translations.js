@@ -2,8 +2,8 @@ export const translations = {
   sv: {
     nav: {
       links: [
-        { to: '/kop-kurs', label: 'Anmäl dig till kurs' },
-        { to: '/kunskapstest', label: 'Kunskapstest' },
+        { to: '/kop-kurs', label: 'Kom igång' },
+        { to: '/kunskapstest', label: 'Diagnostiskt test' },
         { to: '/physicians', label: 'Om oss' },
         { to: '/contact', label: 'Kontakta Oss' },
       ],
@@ -16,11 +16,11 @@ export const translations = {
       langEn: 'EN',
     },
     hero: {
-      badge: 'Anmälan öppen för 2026',
-      titleLine1: 'Optimera dina förberedelser fram till',
+      badge: 'Välkommen 2026',
+      titleLine1: 'Vi hjälper dig på väg mot',
       titleHighlight: ' svensk läkarlegitimation',
       description:
-        'Vi erbjuder interaktiva föreläsningar för dig som vill få bästa möjliga förutsättningar inför kunskapsprovet och fortsatt väg in i det svenska sjukvårdssystemet, samtidigt som du övar upp dina språkfärdigheter.',
+        'Interaktiva föreläsningar med erfarna läkare – så du får god förberedelse inför kunskapsprovet och vägen in i svensk sjukvård, samtidigt som du tränar din medicinska svenska.',
       primaryCta: 'Prova din kunskapsnivå',
       videoCta: 'Se video',
       videoOpenLabel: 'Se video',
@@ -271,7 +271,7 @@ export const translations = {
         'Vi hjälper utlandsutbildade läkare att förbereda sig för kunskapsprovet och vägen till svensk läkarlegitimation.',
       servicesTitle: 'Tjänster',
       brandTitle: 'Mediready',
-      resourcesTitle: 'Resurser',
+      resourcesTitle: 'Tjänster',
       contactTitle: 'Kontakta oss',
       contactText: 'Har du frågor om våra tjänster eller vill veta mer? Hör av dig!',
       legalPrivacy: 'Integritetspolicy',
@@ -288,12 +288,12 @@ export const translations = {
         institute: [
           { label: 'Om oss', to: '/physicians' },
           { label: 'Kontakt', to: '/contact' },
+          { label: 'Integritetspolicy', to: '/privacy' },
+          { label: 'Användarvillkor', to: '/terms' },
         ],
         resources: [
-          { label: 'Prova kunskapsprovet', to: '/services' },
-          { label: 'Prenumeration', to: '/contact' },
-          { label: 'Vanliga frågor', to: '/contact' },
-          { label: 'Swish', to: '/swish' },
+          { label: 'Kom igång', to: '/kop-kurs' },
+          { label: 'Diagnostiskt test', to: '/kunskapstest' },
         ],
       },
     },
@@ -309,8 +309,8 @@ export const translations = {
         note: 'Tips: Öppna sidan på mobilen för att länken ska fungera direkt i Swish-appen.',
       },
       kunskapstest: {
-        label: 'Diagnostiskt kunskapsprov',
-        title: 'Välkommen till Medireadys diagnostiskt prov',
+        label: 'Diagnostiskt test',
+        title: 'Välkommen till Medireadys diagnostiska test',
         description: 'För läkare med utbildning utanför Sverige.',
         infoTitle: 'Om provet',
         infoIntro: 'Detta prov består av 150 flervalsfrågor och är utformat för att ge en övergripande bild av ditt nuvarande kunskapsläge inför det svenska kunskapsprovet för legitimation. Var god läs igenom informationen nedan noga innan du påbörjar provet.',
@@ -326,25 +326,25 @@ export const translations = {
         ctaButton: 'Kontakta oss',
       },
       buyCourse: {
-        label: 'Köp kurs',
-        title: 'Interaktiv kunskapsprovskurs',
-        description: 'Få tillgång till våra interaktiva föreläsningar och förbered dig optimalt.',
-        badge: 'Standard',
-        courseTitle: 'Komplett kunskapsprovskurs',
-        courseDescription: 'En heltäckande kurs med interaktiva föreläsningar inom alla medicinska områden. Perfekt för dig som vill förbereda dig strukturerat inför kunskapsprovet.',
+        label: 'Prenumeration',
+        title: 'Live-föreläsningar inför kunskapsprovet',
+        description: 'Betala månadsvis och få tillgång till alla live-föreläsningar via Zoom. Vi är läkare som undervisar utlandsutbildade läkare så att du ska klara kunskapsprovet.',
+        badge: 'Prenum.',
+        courseTitle: 'Prenumeration – alla live-föreläsningar',
+        courseDescription: 'Mediready är läkare som undervisar andra utlandsutbildade läkare inför det svenska kunskapsprovet. Du betalar månadsvis och får tillgång till alla live-föreläsningar som sker via Zoom.',
         priceLabel: 'Pris',
-        price: '4 990 kr',
-        pricePeriod: '/ engångsbetalning',
+        price: '999 kr',
+        pricePeriod: '/ månad',
         includesTitle: 'Detta ingår:',
         includes: [
-          'Tillgång till alla interaktiva föreläsningar',
-          'Kliniska ämnen (internmedicin, kirurgi, m.m.)',
+          'Tillgång till alla live-föreläsningar via Zoom',
+          'Läkare som undervisar – inriktat på kunskapsprovet',
+          'Kliniska ämnen (internmedicin, kirurgi, pediatrik, m.m.)',
           'Prekliniska ämnen (fysiologi, immunologi, m.m.)',
-          'Språkträning med medicinska termer',
-          'Inspelningar av alla sessioner',
-          'Tillgång i 12 månader',
+          'Språkträning med medicinska termer på svenska',
+          'Månadsvis betalning – du kan avsluta när som helst',
         ],
-        formTitle: 'Anmäl dig till kursen',
+        formTitle: 'Kom igång – skapa ditt konto',
         formIntro: 'Fyll i dina uppgifter för att gå vidare till betalning.',
         nameLabel: 'Fullständigt namn',
         namePlaceholder: 'Ditt namn',
@@ -355,11 +355,82 @@ export const translations = {
         messageLabel: 'Meddelande (valfritt)',
         messagePlaceholder: 'Skriv eventuella frågor här...',
         submitButton: 'Gå vidare till betalning',
-        formNote: 'Vi återkommer inom 1-2 arbetsdagar.',
+        formNote: 'Du får direkt tillgång till kursen efter aktiv prenumeration.',
         successMessage: 'Tack för din anmälan! Vi kontaktar dig snart.',
         ctaTitle: 'Har du frågor?',
         ctaDescription: 'Tveka inte att höra av dig om du har funderingar.',
         ctaButton: 'Kontakta oss',
+      },
+      privacy: {
+        label: 'Juridik',
+        title: 'Integritetspolicy',
+        lastUpdated: 'Senast uppdaterad: februari 2026',
+        sections: [
+          {
+            heading: 'Introduktion',
+            paragraphs: [
+              'Mediready (vi, oss) värnar om din integritet. Denna policy beskriver hur vi samlar in, använder och skyddar dina personuppgifter när du använder våra tjänster.',
+            ],
+          },
+          {
+            heading: 'Personuppgifter vi samlar in',
+            paragraphs: [
+              'Vi samlar in uppgifter som du anger vid registrering och användning av tjänsten, till exempel namn och e-postadress. Vi lagrar även information kopplad till din prenumeration och deltagande i våra sessioner.',
+            ],
+          },
+          {
+            heading: 'Betalningar via Stripe',
+            paragraphs: [
+              'Betalningar för vår månadsprenumeration hanteras av betalningsleverantören Stripe. När du betalar delar vi nödvändiga uppgifter (t.ex. e-post, betalningsreferens) med Stripe för att genomföra transaktionen. Kortuppgifter hanteras direkt av Stripe och lagras inte av oss.',
+              'Mer information om hur Stripe hanterar dina uppgifter finns i Stripes integritetspolicy: https://stripe.com/privacy',
+            ],
+          },
+          {
+            heading: 'Möten via Zoom',
+            paragraphs: [
+              'Våra live-föreläsningar och möten sker via videotjänsten Zoom. När du deltar i en session hanterar Zoom personuppgifter i samband med mötet, till exempel ditt namn, e-postadress samt video- och ljuddata under mötet.',
+              'Zoom agerar som underleverantör för oss. Läs mer om Zooms hantering av personuppgifter här: https://zoom.us/privacy',
+            ],
+          },
+          {
+            heading: 'Kontakt',
+            paragraphs: [
+              'Vid frågor om denna integritetspolicy eller vår hantering av personuppgifter, kontakta oss på hej@mediready.se.',
+            ],
+          },
+        ],
+      },
+      terms: {
+        label: 'Juridik',
+        title: 'Användarvillkor',
+        lastUpdated: 'Senast uppdaterad: februari 2026',
+        sections: [
+          {
+            heading: 'Godkännande av villkor',
+            paragraphs: [
+              'Genom att använda Medireadys tjänster godkänner du dessa användarvillkor. Om du inte accepterar villkoren får du inte använda tjänsterna.',
+            ],
+          },
+          {
+            heading: 'Prenumeration och betalning',
+            paragraphs: [
+              'Prenumerationen på våra tjänster löper månadsvis och debiteras via betalningsleverantören Stripe. Du kan när som helst avsluta din prenumeration; den löper då till slutet av den betalda perioden.',
+              'Villkor för återbetalning och avbokning framgår av den information som ges vid köp. Stripe hanterar själva betalningsflödet; deras villkor finns på https://stripe.com/legal.',
+            ],
+          },
+          {
+            heading: 'Deltagande i sessioner via Zoom',
+            paragraphs: [
+              'Live-föreläsningar och möten genomförs via tjänsten Zoom. Genom att delta godkänner du att Zoom används för mötena och att du följer Zooms användarvillkor såväl som våra instruktioner under sessionerna.',
+            ],
+          },
+          {
+            heading: 'Kontakt',
+            paragraphs: [
+              'För frågor om användarvillkoren, kontakta oss på hej@mediready.se.',
+            ],
+          },
+        ],
       },
       services: {
         label: 'Våra tjänster',
@@ -489,8 +560,8 @@ export const translations = {
   en: {
     nav: {
       links: [
-        { to: '/kop-kurs', label: 'Engage in course' },
-        { to: '/kunskapstest', label: 'Knowledge test' },
+        { to: '/kop-kurs', label: 'Get started' },
+        { to: '/kunskapstest', label: 'Diagnostic test' },
         { to: '/physicians', label: 'About us' },
         { to: '/contact', label: 'Contact us' },
       ],
@@ -503,11 +574,11 @@ export const translations = {
       langEn: 'EN',
     },
     hero: {
-      badge: 'Enrollment open for 2026',
-      titleLine1: 'Optimize your preparation for',
+      badge: 'Welcome 2026',
+      titleLine1: 'We help you on your way to',
       titleHighlight: ' Swedish medical licensure',
       description:
-        'We offer interactive lectures for you who want the best possible preparation for the knowledge test and your path into the Swedish healthcare system—while improving your Swedish language skills.',
+        'Interactive lectures with experienced doctors—so you get solid preparation for the licensing exam and your path into Swedish healthcare, while building your medical Swedish.',
       primaryCta: 'Test your knowledge level',
       videoCta: 'Watch video',
       videoOpenLabel: 'Watch video',
@@ -748,7 +819,7 @@ export const translations = {
         'We help internationally trained doctors prepare for the knowledge test and the path to Swedish medical licensure.',
       servicesTitle: 'Services',
       brandTitle: 'Mediready',
-      resourcesTitle: 'Resources',
+      resourcesTitle: 'Services',
       contactTitle: 'Contact',
       contactText: 'Questions about our services? Reach out—we’re happy to help.',
       legalPrivacy: 'Privacy policy',
@@ -765,12 +836,12 @@ export const translations = {
         institute: [
           { label: 'About us', to: '/physicians' },
           { label: 'Contact', to: '/contact' },
+          { label: 'Privacy policy', to: '/privacy' },
+          { label: 'Terms of service', to: '/terms' },
         ],
         resources: [
-          { label: 'Try the test', to: '/services' },
-          { label: 'Subscription', to: '/contact' },
-          { label: 'FAQ', to: '/contact' },
-          { label: 'Swish', to: '/swish' },
+          { label: 'Get started', to: '/kop-kurs' },
+          { label: 'Diagnostic test', to: '/kunskapstest' },
         ],
       },
     },
@@ -786,7 +857,7 @@ export const translations = {
         note: 'Tip: Open this page on your phone to launch the Swish app.',
       },
       kunskapstest: {
-        label: 'Diagnostic knowledge test',
+        label: 'Diagnostic test',
         title: 'Welcome to Mediready\'s diagnostic test',
         description: 'For doctors educated outside Sweden.',
         infoTitle: 'About the test',
@@ -803,25 +874,25 @@ export const translations = {
         ctaButton: 'Contact us',
       },
       buyCourse: {
-        label: 'Buy course',
-        title: 'Interactive knowledge test course',
-        description: 'Get access to our interactive lectures and prepare optimally.',
-        badge: 'Standard',
-        courseTitle: 'Complete knowledge test course',
-        courseDescription: 'A comprehensive course with interactive lectures across all medical fields. Perfect for those who want to prepare systematically for the knowledge test.',
+        label: 'Subscription',
+        title: 'Live lectures for the knowledge test',
+        description: 'Pay monthly and get access to all live lectures via Zoom. We are doctors teaching internationally trained doctors so you can pass the Swedish knowledge test.',
+        badge: 'Sub.',
+        courseTitle: 'Subscription – all live lectures',
+        courseDescription: 'Mediready is doctors teaching other internationally trained doctors for the Swedish medical licensing knowledge test. You pay monthly and get access to all live lectures held via Zoom.',
         priceLabel: 'Price',
-        price: 'SEK 4,990',
-        pricePeriod: '/ one-time payment',
+        price: '999 kr',
+        pricePeriod: '/ month',
         includesTitle: 'What\'s included:',
         includes: [
-          'Access to all interactive lectures',
-          'Clinical subjects (internal medicine, surgery, etc.)',
+          'Access to all live lectures via Zoom',
+          'Doctors teaching – focused on the knowledge test',
+          'Clinical subjects (internal medicine, surgery, pediatrics, etc.)',
           'Pre-clinical subjects (physiology, immunology, etc.)',
-          'Language training with medical terminology',
-          'Recordings of all sessions',
-          'Access for 12 months',
+          'Language training with Swedish medical terminology',
+          'Monthly payment – cancel anytime',
         ],
-        formTitle: 'Sign up for the course',
+        formTitle: 'Get started – create your account',
         formIntro: 'Fill in your details to proceed to payment.',
         nameLabel: 'Full name',
         namePlaceholder: 'Your name',
@@ -832,11 +903,82 @@ export const translations = {
         messageLabel: 'Message (optional)',
         messagePlaceholder: 'Write any questions here...',
         submitButton: 'Go to payment',
-        formNote: 'We\'ll get back to you within 1-2 business days.',
+        formNote: 'You get immediate access to the course after an active subscription.',
         successMessage: 'Thank you for your registration! We\'ll contact you soon.',
         ctaTitle: 'Any questions?',
         ctaDescription: 'Don\'t hesitate to reach out if you have any questions.',
         ctaButton: 'Contact us',
+      },
+      privacy: {
+        label: 'Legal',
+        title: 'Privacy policy',
+        lastUpdated: 'Last updated: February 2026',
+        sections: [
+          {
+            heading: 'Introduction',
+            paragraphs: [
+              'Mediready ("we", "us") is committed to protecting your privacy. This policy describes how we collect, use, and protect your personal data when you use our services.',
+            ],
+          },
+          {
+            heading: 'Personal data we collect',
+            paragraphs: [
+              'We collect information you provide when registering and using the service, such as name and email address. We also store information related to your subscription and participation in our sessions.',
+            ],
+          },
+          {
+            heading: 'Payments via Stripe',
+            paragraphs: [
+              'Payments for our monthly subscription are processed by our payment provider Stripe. When you pay, we share necessary details (e.g. email, payment reference) with Stripe to complete the transaction. Card details are processed directly by Stripe and are not stored by us.',
+              'For more information on how Stripe handles your data, see Stripe\'s privacy policy: https://stripe.com/privacy',
+            ],
+          },
+          {
+            heading: 'Meetings via Zoom',
+            paragraphs: [
+              'Our live lectures and meetings are held via the Zoom video service. When you join a session, Zoom processes personal data in connection with the meeting, such as your name, email address, and video/audio during the session.',
+              'Zoom acts as a sub-processor for us. Read more about Zoom\'s handling of personal data here: https://zoom.us/privacy',
+            ],
+          },
+          {
+            heading: 'Contact',
+            paragraphs: [
+              'If you have questions about this privacy policy or our handling of personal data, contact us at hej@mediready.se.',
+            ],
+          },
+        ],
+      },
+      terms: {
+        label: 'Legal',
+        title: 'Terms of service',
+        lastUpdated: 'Last updated: February 2026',
+        sections: [
+          {
+            heading: 'Acceptance of terms',
+            paragraphs: [
+              'By using Mediready\'s services, you agree to these terms of service. If you do not accept the terms, you may not use the services.',
+            ],
+          },
+          {
+            heading: 'Subscription and payment',
+            paragraphs: [
+              'Subscription to our services runs on a monthly basis and is charged via our payment provider Stripe. You may cancel your subscription at any time; it will then run until the end of the paid period.',
+              'Refund and cancellation terms are set out in the information provided at purchase. Stripe handles the payment flow; their terms are available at https://stripe.com/legal.',
+            ],
+          },
+          {
+            heading: 'Participation in sessions via Zoom',
+            paragraphs: [
+              'Live lectures and meetings are conducted via the Zoom service. By participating, you agree that Zoom is used for the meetings and that you will follow Zoom\'s terms of use as well as our instructions during the sessions.',
+            ],
+          },
+          {
+            heading: 'Contact',
+            paragraphs: [
+              'For questions about the terms of service, contact us at hej@mediready.se.',
+            ],
+          },
+        ],
       },
       services: {
         label: 'Services',

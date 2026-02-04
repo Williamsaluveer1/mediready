@@ -1225,6 +1225,12 @@
     padding: var(--space-xl);
   }
 
+  .purchase-btn {
+    min-height: 52px;
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
+  }
+
   .course-title {
     font-size: 1.35rem;
   }
@@ -1713,6 +1719,69 @@
 .check-email-back {
   display: inline-flex;
   margin-top: var(--space-md);
+}
+
+/* Legal pages – Integritetspolicy / Användarvillkor */
+.legal-section {
+  padding: var(--space-2xl) var(--space-xl);
+  background: var(--surface);
+}
+
+.legal-content {
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.legal-block {
+  margin-bottom: var(--space-2xl);
+}
+
+.legal-block:last-child {
+  margin-bottom: 0;
+}
+
+.legal-heading {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--slate-900);
+  margin: 0 0 var(--space-md) 0;
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--border);
+}
+
+.legal-paragraph {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-md) 0;
+}
+
+.legal-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.legal-paragraph a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.legal-paragraph a:hover {
+  color: var(--primary-dark);
+}
+
+@media (max-width: 768px) {
+  .legal-section {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .legal-heading {
+    font-size: 1.1rem;
+  }
+
+  .legal-paragraph {
+    font-size: 0.95rem;
+  }
 }
 
 /* Form Error Message */

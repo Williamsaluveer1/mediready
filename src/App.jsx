@@ -17,6 +17,8 @@ import LoginPage from './pages/LoginPage'
 import ForgotPasswordPage from './pages/ForgotPasswordPage'
 import ResetPasswordPage from './pages/ResetPasswordPage'
 import CheckEmailPage from './pages/CheckEmailPage'
+import PrivacyPage from './pages/PrivacyPage'
+import TermsPage from './pages/TermsPage'
 import './App.css'
 
 // Scroll to top on route change (instant, no animation)
@@ -69,6 +71,8 @@ function AppContent() {
           <Route path="/auth/callback" element={<AuthCallback />} />
           <Route path="/auth/reset-password" element={<ResetPasswordPage />} />
           <Route path="/check-email" element={<CheckEmailPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
         </Routes>
         {showFooter && <Footer />}
       </div>

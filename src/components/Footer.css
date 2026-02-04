@@ -15,7 +15,7 @@
 
 .footer-main {
   display: grid;
-  grid-template-columns: 1.5fr 2fr 1fr;
+  grid-template-columns: 1.5fr 2fr;
   gap: var(--space-3xl);
   padding-bottom: var(--space-3xl);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -133,53 +133,37 @@
   outline-offset: 2px;
 }
 
-/* Footer Contact */
-.footer-contact h3 {
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--slate-300);
-  margin-bottom: var(--space-md);
-}
-
-.emergency-text {
+/* Footer Contact column (inside footer-links) */
+.footer-contact-text {
   font-size: 0.9rem;
   line-height: 1.5;
   color: var(--slate-400);
-  margin-bottom: var(--space-md);
+  margin: 0 0 var(--space-md) 0;
 }
 
-.contact-cta {
-  margin-top: var(--space-md);
-}
-
-.phone-link {
+.footer-contact-email {
   display: inline-flex;
   align-items: center;
   gap: var(--space-sm);
-  padding: var(--space-sm) var(--space-md);
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--slate-400);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-contact-email:hover {
   color: white;
-  background: var(--sage-600);
-  border-radius: var(--radius-md);
-  transition: all 0.2s ease;
 }
 
-.phone-link:hover {
-  background: var(--sage-500);
-}
-
-.phone-link:focus-visible {
+.footer-contact-email:focus-visible {
   outline: 2px solid var(--sage-400);
   outline-offset: 2px;
 }
 
-.phone-link svg {
+.footer-contact-email svg {
   width: 18px;
   height: 18px;
+  flex-shrink: 0;
 }
 
 /* Footer Bottom */
@@ -225,10 +209,6 @@
   
   .footer-links {
     grid-column: span 2;
-    order: 3;
-  }
-  
-  .footer-contact {
     order: 2;
   }
 }
@@ -270,11 +250,6 @@
     gap: var(--space-xl);
     text-align: left;
   }
-  
-  /* Put "Mediready" column on its own row */
-  .footer-column--institute {
-    grid-column: 1 / -1;
-  }
 
   .footer-column {
     margin-bottom: var(--space-lg);
@@ -294,29 +269,18 @@
     padding: var(--space-xs) 0;
   }
   
-  .footer-contact {
-    text-align: left;
-    margin-top: var(--space-lg);
+  .footer-column--contact {
+    margin-top: 0;
   }
-  
-  .footer-contact h3 {
-    font-size: 0.8rem;
-    margin-bottom: var(--space-sm);
-  }
-  
-  .emergency-text {
+
+  .footer-contact-text {
     font-size: 0.85rem;
-    margin-bottom: var(--space-md);
   }
-  
-  .phone-link {
+
+  .footer-contact-email {
     font-size: 0.9rem;
-    padding: var(--space-sm) var(--space-lg);
-    width: 100%;
-    max-width: 300px;
-    margin: 0;
   }
-  
+
   .footer-bottom {
     flex-direction: column;
     text-align: left;
@@ -375,9 +339,8 @@
     margin-bottom: var(--space-md);
   }
   
-  .phone-link {
+  .footer-contact-email {
     font-size: 0.85rem;
-    padding: var(--space-sm) var(--space-md);
   }
   
   .footer-legal {
