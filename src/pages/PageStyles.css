@@ -1970,6 +1970,12 @@
   .login-title {
     font-size: 1.5rem;
   }
+
+  .login-btn {
+    min-height: 52px;
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
+  }
 }
 
 /* ====================================
