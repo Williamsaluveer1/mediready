@@ -20,13 +20,13 @@ export const translations = {
       titleLine1: 'Vi hjälper dig på väg mot',
       titleHighlight: ' svensk läkarlegitimation',
       description:
-        'Interaktiva föreläsningar med erfarna läkare – så du får god förberedelse inför kunskapsprovet och vägen in i svensk sjukvård, samtidigt som du tränar din medicinska svenska.',
+        'Interaktiva föreläsningar via Zoom med erfarna läkare – så du får god förberedelse inför kunskapsprovet och vägen in i svensk sjukvård, samtidigt som du tränar din medicinska svenska.',
       primaryCta: 'Prova din kunskapsnivå',
       videoCta: 'Se video',
       videoOpenLabel: 'Se video',
       videoCloseLabel: 'Stäng video',
       trust: [
-        { strong: 'Interaktiva kurser', span: 'Live föreläsningar' },
+        { strong: 'Live via Zoom', span: 'Interaktiva föreläsningar' },
         { strong: '4 läkare', span: 'ST & överläkare' },
         { strong: 'Svenska riktlinjer', span: 'Aktuell handläggning' },
       ],
@@ -92,7 +92,7 @@ export const translations = {
       description1:
         'Vi är fyra läkare, på olika nivåer (ST och överläkare) som vill hjälpa er öka motivation, språk och förståelse/kunskap i svensk medicinsk handläggning.',
       description2:
-        'Våra interaktiva föreläsningar ger dig bästa möjliga förutsättningar inför kunskapsprovet och fortsatt väg in i det svenska sjukvårdssystemet.',
+        'Med prenumeration får du tillgång till alla våra lektioner via Zoom. Prenumerationen är månadsvis – du kan avsluta när som helst.',
       primaryCta: 'Läs mer om oss',
       secondaryCta: 'Möt oss',
       imageAltMain: 'Medicinsk föreläsningssal med läkare',
@@ -103,7 +103,7 @@ export const translations = {
         {
           title: 'Kunskapsprovet i fokus',
           description:
-            'Interaktiva föreläsningar inom samtliga medicinska områden, med utgångspunkt från kunskapsproven.',
+            'Föreläsningar via Zoom inom samtliga medicinska områden. Med månadsprenumeration får du tillgång till alla lektioner.',
         },
         {
           title: 'Svenska riktlinjer',
@@ -188,7 +188,7 @@ export const translations = {
         highlight: 'läkarna',
         titleRest: ' bakom Mediready',
         description:
-          'Vi är fyra läkare som brinner för att hjälpa utlandsutbildade kollegor på vägen mot svensk läkarlegitimation. Här är vi!',
+          'Mediready drivs av fyra läkare som föreläser via Zoom för blivande läkare. Prenumerera månadsvis och få tillgång till alla lektioner. Här är vi!',
         education: 'Utbildning',
         certifications: 'Certifieringar',
         ctaTitle: 'Redo att komma igång?',
@@ -578,13 +578,13 @@ export const translations = {
       titleLine1: 'We help you on your way to',
       titleHighlight: ' Swedish medical licensure',
       description:
-        'Interactive lectures with experienced doctors—so you get solid preparation for the licensing exam and your path into Swedish healthcare, while building your medical Swedish.',
+        'Interactive lectures via Zoom with experienced doctors—so you get solid preparation for the licensing exam and your path into Swedish healthcare, while building your medical Swedish.',
       primaryCta: 'Test your knowledge level',
       videoCta: 'Watch video',
       videoOpenLabel: 'Watch video',
       videoCloseLabel: 'Close video',
       trust: [
-        { strong: 'Interactive courses', span: 'Live lectures' },
+        { strong: 'Live via Zoom', span: 'Interactive lectures' },
         { strong: '4 instructors', span: 'Residents & consultants' },
         { strong: 'Swedish guidelines', span: 'Clinical practice' },
       ],

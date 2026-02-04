@@ -773,6 +773,15 @@
   .page-hero {
     padding: calc(80px + var(--space-2xl)) var(--space-md) var(--space-2xl);
   }
+
+  .page-hero--left-mobile {
+    text-align: left;
+  }
+
+  .page-hero--left-mobile .page-hero-content {
+    margin-left: 0;
+    margin-right: 0;
+  }
   
   .page-cta {
     padding: var(--space-3xl) var(--space-md);
@@ -3382,14 +3391,14 @@
     grid-template-columns: 1fr;
     gap: var(--space-xs);
     padding: var(--space-md);
-    background: var(--warm-50);
+    background: white;
     border-radius: 4px;
     border-bottom: none;
     margin-bottom: var(--space-sm);
   }
 
   .user-item:hover {
-    background: var(--warm-50);
+    background: var(--sage-50);
   }
 
   .user-name {

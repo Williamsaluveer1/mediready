@@ -10,7 +10,7 @@ function PhysiciansPage() {
   return (
     <main className="page-main">
       {/* Hero Banner */}
-      <section className="page-hero">
+      <section className="page-hero page-hero--left-mobile">
         <div className="page-hero-background"></div>
         <div className="page-hero-content">
           <span className="page-label">{page.label}</span>
