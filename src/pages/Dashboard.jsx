@@ -597,7 +597,7 @@ function Dashboard() {
               {/* Admin: Skicka utskick – sparas i public.messages */}
               <div className="dashboard-card email-card">
                 <div className="dashboard-card-header">
-                  <h2>Skicka e-post (Detta meddelande skickas till alla registrerade deltagare på deras e-postadress)</h2>
+                  <h2>Skicka e-post (Detta meddelande skickas då ut till alla deltagare som har aktiv prenumeration på deras e-postadress)</h2>
                 </div>
                 <div className="dashboard-card-body">
                 <form className="email-form" onSubmit={handleSendEmail}>
