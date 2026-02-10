@@ -59,19 +59,8 @@ function Navbar() {
           ))}
         </ul>
         
-        {/* Right side actions */}
+        {/* Right side actions: språk först, sedan Logga in */}
         <div className="nav-right">
-          <div className="nav-actions nav-actions--desktop">
-            <Link to="/login" className="nav-cta nav-cta--secondary">
-              <svg className="nav-login-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <polyline points="10 17 15 12 10 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <line x1="15" y1="12" x2="3" y2="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
-              {t('nav.login')}
-            </Link>
-          </div>
-
           <div className="lang-toggle lang-toggle--desktop" role="group" aria-label={t('nav.langToggle')}>
             <button
               type="button"
@@ -91,6 +80,17 @@ function Navbar() {
               <img src="/tobias-Flag-of-the-United-Kingdom.svg" alt="" className="lang-flag-icon" />
               EN
             </button>
+          </div>
+
+          <div className="nav-actions nav-actions--desktop">
+            <Link to="/login" className="nav-cta nav-cta--secondary">
+              <svg className="nav-login-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <polyline points="10 17 15 12 10 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <line x1="15" y1="12" x2="3" y2="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
+              {t('nav.login')}
+            </Link>
           </div>
         </div>
         

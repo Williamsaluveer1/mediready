@@ -7,7 +7,7 @@ export const translations = {
         { to: '/physicians', label: 'Om oss' },
         { to: '/contact', label: 'Kontakta Oss' },
       ],
-      cta: 'Prova din kunskapsnivå!',
+      cta: 'Testa din kunskapsnivå',
       login: 'Logga in',
       menuToggle: 'Öppna meny',
       menuClose: 'Stäng meny',
@@ -120,7 +120,7 @@ export const translations = {
     team: {
       sectionLabel: 'Vilka är vi?',
       title: 'Vi är ',
-      highlight: 'Mediready!',
+      highlight: 'Mediready',
       cta: 'Läs mer om oss',
       members: [
         {
@@ -188,7 +188,7 @@ export const translations = {
         highlight: 'läkarna',
         titleRest: ' bakom Mediready',
         description:
-          'Mediready drivs av fyra läkare som föreläser via Zoom för blivande läkare. Prenumerera månadsvis och få tillgång till alla lektioner. Här är vi!',
+          'Mediready drivs av fyra läkare som föreläser via Zoom för blivande läkare. Prenumerationen är månadsvis och ger tillgång till alla lektioner. Läs mer om oss nedan.',
         education: 'Utbildning',
         certifications: 'Certifieringar',
         ctaTitle: 'Redo att komma igång?',
@@ -230,7 +230,7 @@ export const translations = {
         {
           id: 3,
           content:
-            'Det bästa var att jag kunde träna på medicinska termer på svenska samtidigt som jag lärde mig om svenska behandlingsriktlinjer. Två flugor i en smäll!',
+            'Jag uppskattade att jag kunde träna medicinska termer på svenska samtidigt som jag lärde mig om svenska behandlingsriktlinjer.',
           author: 'Läkare från Syrien',
           role: 'Nu legitimerad i Sverige',
           rating: 5,
@@ -263,7 +263,7 @@ export const translations = {
       messageLabel: 'Meddelande',
       messagePlaceholder: 'Berätta mer om dina behov och frågor...',
       submit: 'Skicka meddelande',
-      note: 'Vi svarar så snart vi kan!',
+      note: 'Vi återkommer så snart vi kan.',
       alert: 'Tack för ditt intresse! Vi kontaktar dig inom kort.',
     },
     footer: {
@@ -273,7 +273,7 @@ export const translations = {
       brandTitle: 'Mediready',
       resourcesTitle: 'Tjänster',
       contactTitle: 'Kontakta oss',
-      contactText: 'Har du frågor om våra tjänster eller vill veta mer? Hör av dig!',
+      contactText: 'Har du frågor om våra tjänster eller vill veta mer? Kontakta oss.',
       legalPrivacy: 'Integritetspolicy',
       legalTerms: 'Användarvillkor',
       copyright: '© {{year}} Mediready. Alla rättigheter förbehållna.',
@@ -531,7 +531,7 @@ export const translations = {
         title: 'Fråga ',
         highlight: 'oss',
         description:
-          'Har du frågor om våra tjänster eller vill veta mer om hur vi kan hjälpa dig? Vi svarar så snart vi kan!',
+          'Har du frågor om våra tjänster eller vill veta mer? Vi återkommer så snart vi kan.',
         faqTitle: 'Vanliga frågor',
         faqs: [
           {
@@ -552,7 +552,7 @@ export const translations = {
           },
         ],
         followTitle: 'Följ oss',
-        followDesc: 'Håll dig uppdaterad om våra senaste nyheter och tips!',
+        followDesc: 'Håll dig uppdaterad om nyheter och tips.',
       },
     },
   },
@@ -565,7 +565,7 @@ export const translations = {
         { to: '/physicians', label: 'About us' },
         { to: '/contact', label: 'Contact us' },
       ],
-      cta: 'Test your knowledge level!',
+      cta: 'Test your knowledge level',
       login: 'Log in',
       menuToggle: 'Open menu',
       menuClose: 'Close menu',
@@ -650,7 +650,7 @@ export const translations = {
       description1:
         'We are four doctors at different stages (residents and consultants) who want to help you build motivation, language skills, and confidence in Swedish clinical practice.',
       description2:
-        'Our interactive lectures give you the best possible preparation for the knowledge test and your path into the Swedish healthcare system.',
+        'Our interactive lectures provide solid preparation for the knowledge test and your path into the Swedish healthcare system.',
       primaryCta: 'Read about us',
       secondaryCta: 'Meet us',
       imageAltMain: 'Medical lecture hall',
@@ -736,7 +736,7 @@ export const translations = {
         highlight: 'doctors',
         titleRest: ' behind Mediready',
         description:
-          'We are four doctors passionate about helping internationally trained colleagues on the path to Swedish medical licensure. Here we are!',
+          'We are four doctors supporting internationally trained colleagues on the path to Swedish medical licensure. Learn more about us below.',
         education: 'Education',
         certifications: 'Qualifications',
         ctaTitle: 'Ready to get started?',
@@ -778,7 +778,7 @@ export const translations = {
         {
           id: 3,
           content:
-            'Best of all, I could practice Swedish medical terms while learning Swedish guidelines—two birds with one stone!',
+            'I appreciated being able to practice Swedish medical terminology while learning Swedish guidelines.',
           author: 'Doctor from Syria',
           role: 'Now licensed in Sweden',
           rating: 5,
@@ -1100,7 +1100,7 @@ export const translations = {
           },
         ],
         followTitle: 'Follow us',
-        followDesc: 'Stay updated with news and tips!',
+        followDesc: 'Stay updated with news and tips.',
       },
     },
   },

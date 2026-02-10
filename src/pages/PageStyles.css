@@ -1309,7 +1309,8 @@
 }
 
 .welcome-header {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: var(--space-lg);
 }
@@ -1340,6 +1341,7 @@
 
 .welcome-info {
   flex: 1;
+  min-width: 0;
 }
 
 .welcome-info h1 {
@@ -1347,12 +1349,27 @@
   font-size: 1.35rem;
   font-weight: 500;
   color: var(--slate-900);
-  margin-bottom: var(--space-xs);
+  margin: 0;
 }
 
-.welcome-info p {
+.welcome-meta {
+  margin-top: var(--space-xs);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.welcome-email {
   font-size: 0.9rem;
   color: var(--text-secondary);
+  word-break: break-all;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+.welcome-card .subscription-btn {
+  white-space: nowrap;
 }
 
 .admin-badge {
@@ -1441,7 +1458,7 @@
   color: var(--primary);
   background: var(--sage-50);
   border: 1px solid var(--sage-200);
-  border-radius: 4px;
+  border-radius: 10px !important;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -1828,7 +1845,8 @@
   }
 
   .welcome-header {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    justify-items: center;
     text-align: center;
     gap: var(--space-md);
   }
@@ -2681,7 +2699,7 @@
 /* Users Table */
 .users-table-header {
   display: grid;
-  grid-template-columns: 1.5fr 1.5fr 1fr;
+  grid-template-columns: 1.5fr 1.5fr 1fr 0.9fr;
   gap: var(--space-md);
   padding: var(--space-xs) 0;
   background: transparent;
@@ -2702,13 +2720,45 @@
 
 .user-item {
   display: grid;
-  grid-template-columns: 1.5fr 1.5fr 1fr;
+  grid-template-columns: 1.5fr 1.5fr 1fr 0.9fr;
   gap: var(--space-md);
   align-items: center;
   padding: var(--space-sm) 0;
   border-bottom: 1px solid var(--border);
   transition: none;
   min-width: 0;
+}
+
+.user-subscription {
+  font-size: 0.8rem;
+}
+
+.subscription-badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.subscription-badge--active {
+  background: var(--sage-100, #e8f0e8);
+  color: var(--primary, #2d5a2d);
+}
+
+.subscription-badge--inactive {
+  background: var(--slate-100, #f1f5f9);
+  color: var(--slate-600, #64748b);
+}
+
+.subscription-badge--past_due {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.subscription-badge--canceled {
+  background: #fee2e2;
+  color: #b91c1c;
 }
 
 .user-item:last-child {
@@ -2812,6 +2862,22 @@
 
 .dashboard-card-header .btn-primary:hover svg {
   transform: none;
+}
+
+.users-filter-select {
+  padding: 0.35rem 0.6rem;
+  font-size: 0.85rem;
+  font-family: var(--font-body);
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.users-filter-select option {
+  color: var(--slate-800);
+  background: white;
 }
 
 .dashboard-card-body {

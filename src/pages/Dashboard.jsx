@@ -38,6 +38,7 @@ function Dashboard() {
   // Admin: Users state
   const [users, setUsers] = useState([])
   const [usersLoading, setUsersLoading] = useState(true)
+  const [userSubscriptionFilter, setUserSubscriptionFilter] = useState('all') // 'all' | 'active'
   
   // Admin: Email state
   const [emailData, setEmailData] = useState({
@@ -340,7 +341,12 @@ function Dashboard() {
                 </div>
                 <div className="welcome-info">
                   <h1>Välkommen, {userName}!</h1>
-                  <p>{user.email}</p>
+                  <div className="welcome-meta">
+                    <span className="welcome-email">{user.email}</span>
+                    <span className={`subscription-badge subscription-badge--${isSubscribed ? 'active' : 'inactive'}`}>
+                      {isSubscribed ? 'Aktiv prenumeration' : 'Ingen aktiv prenumeration'}
+                    </span>
+                  </div>
                 </div>
                 {isSubscribed && stripeCustomerId && (
                   <button
@@ -357,7 +363,7 @@ function Dashboard() {
                     }}
                     disabled={portalLoading}
                   >
-                    {portalLoading ? 'Laddar...' : 'Hantera prenumeration'}
+                    {portalLoading ? 'Laddar...' : 'Hantera prenumeration i Stripe'}
                     {!portalLoading && (
                       <svg className="external-link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                         <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -658,8 +664,20 @@ function Dashboard() {
 
               {/* Admin: Users List – sist på sidan */}
               <div className="dashboard-card users-card">
-                <div className="dashboard-card-header">
-                  <h2>Registrerade deltagare ({users.length})</h2>
+                <div className="dashboard-card-header dashboard-card-header--users">
+                  <h2>
+                    Registrerade deltagare ({userSubscriptionFilter === 'active' ? users.filter(p => (p.subscription_status || 'inactive') === 'active').length : users.length}
+                    {userSubscriptionFilter === 'active' ? ' aktiva' : ''})
+                  </h2>
+                  <select
+                    className="users-filter-select"
+                    value={userSubscriptionFilter}
+                    onChange={(e) => setUserSubscriptionFilter(e.target.value)}
+                    aria-label="Filtrera deltagare"
+                  >
+                    <option value="all">Alla deltagare</option>
+                    <option value="active">Endast aktiva prenumerationer</option>
+                  </select>
                 </div>
                 <div className="dashboard-card-body">
                 {usersLoading ? (
@@ -667,13 +685,17 @@ function Dashboard() {
                     <div className="loading-spinner"></div>
                     <p>Laddar deltagare...</p>
                   </div>
-                ) : users.length === 0 ? (
+                ) : (() => {
+                  const filteredUsers = userSubscriptionFilter === 'active'
+                    ? users.filter(p => (p.subscription_status || 'inactive') === 'active')
+                    : users
+                  return filteredUsers.length === 0 ? (
                   <div className="users-empty">
                     <svg viewBox="0 0 24 24" fill="none">
                       <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       <circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
-                    <p>Inga registrerade deltagare ännu</p>
+                    <p>{userSubscriptionFilter === 'active' ? 'Inga deltagare med aktiv prenumeration' : 'Inga registrerade deltagare ännu'}</p>
                   </div>
                 ) : (
                   <div className="users-list">
@@ -681,27 +703,36 @@ function Dashboard() {
                       <span>Namn</span>
                       <span>E-post</span>
                       <span>Registrerad</span>
+                      <span>Prenumeration</span>
                     </div>
-                    {users.map(profile => (
-                      <div key={profile.id} className="user-item">
-                        <div className="user-name">
-                          <div className="user-avatar">
-                            {(profile.full_name || profile.email)?.charAt(0).toUpperCase()}
+                    {filteredUsers.map(profile => {
+                      const subStatus = profile.subscription_status || 'inactive'
+                      const statusLabel = { active: 'Aktiv', inactive: 'Inaktiv', past_due: 'Förfallen', canceled: 'Avslutad' }[subStatus] || subStatus
+                      return (
+                        <div key={profile.id} className="user-item">
+                          <div className="user-name">
+                            <div className="user-avatar">
+                              {(profile.full_name || profile.email)?.charAt(0).toUpperCase()}
+                            </div>
+                            <span>{profile.full_name || 'Ej angivet'}</span>
                           </div>
-                          <span>{profile.full_name || 'Ej angivet'}</span>
+                          <span className="user-email">{profile.email}</span>
+                          <span className="user-date">
+                            {new Date(profile.created_at).toLocaleDateString('sv-SE', {
+                              year: 'numeric',
+                              month: 'short',
+                              day: 'numeric'
+                            })}
+                          </span>
+                          <span className={`user-subscription subscription-badge subscription-badge--${subStatus}`} title={statusLabel}>
+                            {statusLabel}
+                          </span>
                         </div>
-                        <span className="user-email">{profile.email}</span>
-                        <span className="user-date">
-                          {new Date(profile.created_at).toLocaleDateString('sv-SE', {
-                            year: 'numeric',
-                            month: 'short',
-                            day: 'numeric'
-                          })}
-                        </span>
-                      </div>
-                    ))}
+                      )
+                    })}
                   </div>
-                )}
+                )
+                })()}
                 </div>
               </div>
             </div>

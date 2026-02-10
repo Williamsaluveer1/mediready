@@ -46,14 +46,14 @@ function AboutPage() {
           <div className="mission-content">
             <h2 className="mission-title">Vårt uppdrag</h2>
             <p className="mission-text">
-              Vi erbjuder interaktiva föreläsningar för dig som vill få bästa möjliga 
+              Vi erbjuder interaktiva föreläsningar för dig som vill få goda 
               förutsättningar inför kunskapsprovet och fortsatt väg in i det svenska 
               sjukvårdssystemet, samtidigt som du övar upp dina språkfärdigheter.
             </p>
             <p className="mission-text">
               Interaktiva föreläsningar inom samtliga medicinska områden, med utgångspunkt 
               från kunskapsproven – allt i enlighet med svensk handläggning och riktlinjer 
-              samtidigt som du tränar på din svenska!
+              samtidigt som du tränar på din svenska.
             </p>
             <div className="mission-values">
               <div className="value-item">
@@ -121,7 +121,7 @@ function AboutPage() {
           <h2 className="section-title">Diagnostiskt kunskapsprov</h2>
           <p className="section-description">
             Vi har gjort ett övningsexempel för att tydliggöra vilken nivå du ligger på 
-            och om våra tjänster kan passa för dig!
+            och om våra tjänster kan vara relevanta för dig.
           </p>
           <div className="test-info">
             <div className="test-card">
