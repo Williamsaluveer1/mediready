@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { getLessons, addLesson, updateLesson, deleteLesson } from '../lib/lessons'
 import { getProfiles } from '../lib/profiles'
 import { supabase } from '../lib/supabase'
+import { createCheckoutSession, createPortalSession } from '../lib/stripe'
 import './PageStyles.css'
 
 const emptyFormData = {
@@ -17,8 +18,9 @@ const emptyFormData = {
 }
 
 function Dashboard() {
-  const { user, loading, isAdmin } = useAuth()
+  const { user, loading, isAdmin, isSubscribed, stripeCustomerId, fetchSubscriptionStatus } = useAuth()
   const navigate = useNavigate()
+  const [searchParams, setSearchParams] = useSearchParams()
   
   const [lessons, setLessons] = useState([])
   const [lessonsLoading, setLessonsLoading] = useState(true)
@@ -27,6 +29,11 @@ function Dashboard() {
   const [formLoading, setFormLoading] = useState(false)
   const [formError, setFormError] = useState(null)
   const [formData, setFormData] = useState(emptyFormData)
+  
+  // Stripe state
+  const [checkoutLoading, setCheckoutLoading] = useState(false)
+  const [portalLoading, setPortalLoading] = useState(false)
+  const [checkoutMessage, setCheckoutMessage] = useState(null)
   
   // Admin: Users state
   const [users, setUsers] = useState([])
@@ -41,7 +48,25 @@ function Dashboard() {
   const [emailError, setEmailError] = useState(null)
   const [emailSuccess, setEmailSuccess] = useState(false)
 
-  // Fetch lessons
+  // Handle Stripe checkout return (success/cancel URL params)
+  useEffect(() => {
+    const checkoutStatus = searchParams.get('checkout')
+    if (checkoutStatus === 'success') {
+      setCheckoutMessage('Betalningen lyckades! Din prenumeration aktiveras inom kort.')
+      // Refresh subscription status
+      if (user) fetchSubscriptionStatus(user.id)
+      // Clean up URL params
+      setSearchParams({}, { replace: true })
+      // Auto-dismiss after 8 seconds
+      setTimeout(() => setCheckoutMessage(null), 8000)
+    } else if (checkoutStatus === 'cancel') {
+      setCheckoutMessage('Betalningen avbröts. Du kan prova igen när du vill.')
+      setSearchParams({}, { replace: true })
+      setTimeout(() => setCheckoutMessage(null), 5000)
+    }
+  }, [searchParams, setSearchParams, user, fetchSubscriptionStatus])
+
+  // Fetch lessons (only for subscribers or admins – RLS blocks others anyway)
   useEffect(() => {
     const fetchLessons = async () => {
       const { data, error } = await getLessons()
@@ -52,6 +77,10 @@ function Dashboard() {
     }
 
     if (!user) return
+    if (!isSubscribed && !isAdmin) {
+      setLessonsLoading(false)
+      return
+    }
 
     fetchLessons()
 
@@ -71,7 +100,7 @@ function Dashboard() {
     return () => {
       supabase.removeChannel(channel)
     }
-  }, [user])
+  }, [user, isSubscribed, isAdmin])
 
   // Fetch users (admin only)
   useEffect(() => {
@@ -295,6 +324,13 @@ function Dashboard() {
             <h1 className="dashboard-admin-title">Admin</h1>
           )}
 
+          {/* Checkout return message */}
+          {checkoutMessage && (
+            <div className="dashboard-card" style={{ background: 'var(--bg-success, #f0fdf4)', borderLeft: '4px solid var(--color-success, #22c55e)', padding: '1rem 1.5rem' }}>
+              <p style={{ margin: 0, color: 'var(--text-primary)' }}>{checkoutMessage}</p>
+            </div>
+          )}
+
           {/* Welcome Card - Only for non-admin users - FIRST */}
           {!isAdmin && (
             <div className="dashboard-card welcome-card">
@@ -306,19 +342,84 @@ function Dashboard() {
                   <h1>Välkommen, {userName}!</h1>
                   <p>{user.email}</p>
                 </div>
-                <button className="btn-secondary subscription-btn">
-                  Hantera prenumeration (via Stripe)
-                  <svg className="external-link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <polyline points="15 3 21 3 21 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
+                {isSubscribed && stripeCustomerId && (
+                  <button
+                    className="btn-secondary subscription-btn"
+                    onClick={async () => {
+                      setPortalLoading(true)
+                      try {
+                        await createPortalSession()
+                      } catch (err) {
+                        console.error(err)
+                      } finally {
+                        setPortalLoading(false)
+                      }
+                    }}
+                    disabled={portalLoading}
+                  >
+                    {portalLoading ? 'Laddar...' : 'Hantera prenumeration'}
+                    {!portalLoading && (
+                      <svg className="external-link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <polyline points="15 3 21 3 21 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    )}
+                  </button>
+                )}
               </div>
             </div>
           )}
 
-          {/* Schedule – för alla */}
+          {/* Paywall – for non-subscribed, non-admin users */}
+          {!isAdmin && !isSubscribed && (
+            <div className="dashboard-card schedule-card">
+              <div className="schedule-card-header">
+                <h2>Ditt schema</h2>
+              </div>
+              <div className="schedule-card-body">
+                <div className="schedule-empty">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" strokeWidth="2"/>
+                    <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                  <p>Prenumerera för att se ditt schema och delta i live-föreläsningar</p>
+                  <button
+                    className="btn-primary"
+                    onClick={async () => {
+                      setCheckoutLoading(true)
+                      try {
+                        await createCheckoutSession()
+                      } catch (err) {
+                        console.error(err)
+                        setCheckoutMessage('Något gick fel. Försök igen.')
+                        setTimeout(() => setCheckoutMessage(null), 5000)
+                      } finally {
+                        setCheckoutLoading(false)
+                      }
+                    }}
+                    disabled={checkoutLoading}
+                    style={{ marginTop: '1rem' }}
+                  >
+                    {checkoutLoading ? (
+                      <>
+                        <div className="loading-spinner" style={{ width: '18px', height: '18px', borderWidth: '2px' }}></div>
+                        Laddar...
+                      </>
+                    ) : (
+                      'Prenumerera nu'
+                    )}
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Schedule – for subscribers and admins */}
+          {(isSubscribed || isAdmin) && (
           <div className="dashboard-card schedule-card">
             <div className="schedule-card-header">
               <h2>
@@ -426,6 +527,7 @@ function Dashboard() {
               )}
             </div>
           </div>
+          )}
 
           {/* Admin: Two Column Layout */}
           {isAdmin && (
