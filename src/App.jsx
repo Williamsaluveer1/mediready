@@ -10,13 +10,13 @@ import PhysiciansPage from './pages/PhysiciansPage'
 import ContactPage from './pages/ContactPage'
 import SwishPage from './pages/SwishPage'
 import KunskapstestPage from './pages/KunskapstestPage'
-import BuyCoursePage from './pages/BuyCoursePage'
 import Dashboard from './pages/Dashboard'
 import AuthCallback from './pages/AuthCallback'
 import LoginPage from './pages/LoginPage'
 import ForgotPasswordPage from './pages/ForgotPasswordPage'
 import ResetPasswordPage from './pages/ResetPasswordPage'
 import CheckEmailPage from './pages/CheckEmailPage'
+import RegisterPage from './pages/RegisterPage'
 import PrivacyPage from './pages/PrivacyPage'
 import TermsPage from './pages/TermsPage'
 import './App.css'
@@ -42,13 +42,28 @@ function AppContent() {
   const isAuthCallbackPage = location.pathname === '/auth/callback'
   const isResetPasswordPage = location.pathname === '/auth/reset-password'
   const isLoginPage = location.pathname === '/login'
+  const isRegisterPage = location.pathname === '/register'
   const isForgotPasswordPage = location.pathname === '/forgot-password'
   const isCheckEmailPage = location.pathname === '/check-email'
   
   // Show dashboard navbar on dashboard, hide all navs on auth pages
   const showDashboardNavbar = user && isDashboardPage
-  const showMainNavbar = !isDashboardPage && !isAuthCallbackPage && !isResetPasswordPage && !isLoginPage && !isForgotPasswordPage && !isCheckEmailPage
-  const showFooter = !isDashboardPage && !isAuthCallbackPage && !isResetPasswordPage && !isLoginPage && !isForgotPasswordPage && !isCheckEmailPage
+  const showMainNavbar =
+    !isDashboardPage &&
+    !isAuthCallbackPage &&
+    !isResetPasswordPage &&
+    !isLoginPage &&
+    !isRegisterPage &&
+    !isForgotPasswordPage &&
+    !isCheckEmailPage
+  const showFooter =
+    !isDashboardPage &&
+    !isAuthCallbackPage &&
+    !isResetPasswordPage &&
+    !isLoginPage &&
+    !isRegisterPage &&
+    !isForgotPasswordPage &&
+    !isCheckEmailPage
 
   return (
     <>
@@ -58,13 +73,14 @@ function AppContent() {
         {showMainNavbar && <Navbar />}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Navigate to="/kop-kurs" replace />} />
+          <Route path="/services" element={<Navigate to="/register" replace />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/physicians" element={<PhysiciansPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/swish" element={<SwishPage />} />
           <Route path="/kunskapstest" element={<KunskapstestPage />} />
-          <Route path="/kop-kurs" element={<BuyCoursePage />} />
+          <Route path="/kop-kurs" element={<Navigate to="/register" replace />} />
+          <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/forgot-password" element={<ForgotPasswordPage />} />
           <Route path="/dashboard" element={<Dashboard />} />

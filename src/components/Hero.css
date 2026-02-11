@@ -7,7 +7,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: calc(80px + var(--space-3xl)) var(--space-xl) var(--space-3xl);
+  padding: calc(80px + var(--space-3xl)) var(--space-xl) var(--space-2xl);
   overflow: hidden;
 }
 
@@ -21,10 +21,7 @@
 .hero-gradient {
   position: absolute;
   inset: 0;
-  background: 
-    radial-gradient(ellipse 80% 60% at 70% 20%, rgba(30, 58, 95, 0.06) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(212, 169, 68, 0.08) 0%, transparent 50%),
-    linear-gradient(180deg, var(--sage-50) 0%, var(--warm-50) 100%);
+  background: #fff;
 }
 
 .hero-pattern {
@@ -38,20 +35,24 @@
   -webkit-mask-image: radial-gradient(ellipse 100% 80% at 50% 0%, black 30%, transparent 70%);
 }
 
-/* Hero Container */
+/* Hero Container: text on top, image below */
 .hero-container {
-  max-width: 1280px;
+  max-width: 960px;
   margin: 0 auto;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-4xl);
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: var(--space-3xl);
+  text-align: center;
 }
 
 /* Hero Content */
 .hero-content {
   animation: fadeInUp 0.8s var(--ease-out) both;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @keyframes fadeInUp {
@@ -115,98 +116,33 @@
   font-size: 1.125rem;
   line-height: 1.7;
   color: var(--text-secondary);
-  max-width: 540px;
-  margin-bottom: var(--space-xl);
+  max-width: 640px;
+  margin-bottom: 0;
   animation: fadeInUp 0.8s var(--ease-out) 0.2s both;
 }
 
-/* Actions */
+.hero-desc-line2 {
+  display: inline;
+}
+
+/* CTAs under description */
 .hero-actions {
+  margin-top: var(--space-xl);
   display: flex;
-  flex-wrap: wrap;
   gap: var(--space-md);
-  margin-bottom: var(--space-2xl);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   animation: fadeInUp 0.8s var(--ease-out) 0.25s both;
 }
 
-.hero .btn-primary,
-.hero .btn-secondary {
-  border-radius: var(--radius-md);
-}
-
-.hero-video-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-}
-
-.hero-video-btn svg {
-  width: 20px;
-  height: 20px;
-}
-
-.hero-video-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(15, 23, 42, 0.65);
-  z-index: 2000;
-  display: flex;
-  align-items: center;
+.hero-actions .btn-primary,
+.hero-actions .btn-secondary {
+  min-height: 48px;
   justify-content: center;
-  padding: var(--space-xl);
 }
 
-.hero-video-modal {
-  position: relative;
-  width: min(960px, 100%);
-  background: #000;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-xl);
-}
-
-.hero-video-close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 44px;
-  height: 44px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(0, 0, 0, 0.35);
-  color: white;
-  cursor: pointer;
-}
-
-.hero-video-close:hover {
-  background: rgba(0, 0, 0, 0.55);
-}
-
-.hero-video-close:focus-visible {
-  outline: 2px solid white;
-  outline-offset: 2px;
-}
-
-.hero-video-close svg {
-  width: 20px;
-  height: 20px;
-}
-
-.hero-video {
-  width: 100%;
-  height: auto;
-  display: block;
-  aspect-ratio: 16 / 9;
-  background: #000;
-}
-
-.hero-video::-webkit-media-controls-panel {
-  background-color: transparent;
-}
-
-/* Trust Indicators */
+/* Trust Indicators (kept for potential reuse) */
 .hero-trust {
   display: flex;
   flex-wrap: nowrap;
@@ -267,10 +203,13 @@
   flex-shrink: 0;
 }
 
-/* Hero Visual */
+/* Hero Visual – under text, larger */
 .hero-visual {
   position: relative;
-  animation: fadeInUp 0.8s var(--ease-out) 0.35s both;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: fadeInUp 0.8s var(--ease-out) 0.3s both;
 }
 
 .visual-frame {
@@ -300,9 +239,25 @@
 .hero-image {
   width: 100%;
   height: auto;
-  aspect-ratio: 4/3;
+  aspect-ratio: 16/9;
   object-fit: cover;
   border-radius: var(--radius-xl);
+  display: block;
+}
+
+/* Hero video (inline under text) – bakgrund synlig när videon inte körs */
+.hero-video-wrap {
+  background: var(--slate-800);
+  min-height: 200px;
+}
+
+.hero-video-inline {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  display: block;
+  border-radius: var(--radius-xl);
+  background: var(--slate-800);
 }
 
 /* Responsive */
@@ -310,88 +265,31 @@
   .hero-container {
     gap: var(--space-2xl);
   }
-  
+
   .hero-title {
     font-size: clamp(2.25rem, 4.5vw, 3rem);
   }
-  
-  .trust-divider:last-of-type {
-    display: none;
-  }
-}
-
-@media (max-width: 900px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    text-align: left;
-    gap: var(--space-xl);
-  }
-  
-  .hero-content {
-    order: 0;
-  }
-  
-  .hero-visual {
-    order: 1;
-    max-width: 100%;
-    margin-top: calc(-1 * var(--space-sm));
-  }
-  
-  .hero-trust {
-    display: none;
-  }
-  
 }
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: calc(70px + var(--space-2xl));
+    padding-top: calc(70px + var(--space-lg));
   }
-  
+
+  .hero-badge {
+    display: none;
+  }
+
   .hero-title {
     font-size: 2rem;
   }
-  
+
   .hero-description {
     font-size: 1rem;
   }
-  
-  .hero-trust {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--space-sm);
-  }
-  
-  .trust-divider {
-    display: none;
-  }
-  
-  .trust-icon {
-    width: 32px;
-    height: 32px;
-  }
-  
-  .trust-icon svg {
-    width: 16px;
-    height: 16px;
-  }
-  
-  .trust-text strong {
-    font-size: 0.8rem;
-  }
-  
-  .trust-text span {
-    font-size: 0.7rem;
-  }
-}
 
-@media (max-width: 768px) {
-  .hero .btn-primary,
-  .hero .btn-secondary {
-    min-height: 48px;
-    border-radius: var(--radius-md);
-    padding-top: var(--space-sm);
-    padding-bottom: var(--space-sm);
+  .hero-desc-line2 {
+    display: block;
   }
 }
 
@@ -399,20 +297,5 @@
   .hero {
     padding-left: var(--space-md);
     padding-right: var(--space-md);
-  }
-  
-  .hero-actions {
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  .hero .btn-primary,
-  .hero .btn-secondary {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .hero-video-overlay {
-    padding: var(--space-md);
   }
 }

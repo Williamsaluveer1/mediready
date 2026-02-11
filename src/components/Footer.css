@@ -3,14 +3,16 @@
    ==================================== */
 
 .footer {
-  background: var(--slate-800);
-  color: white;
+  background: #fff;
+  color: var(--slate-800);
   padding: var(--space-4xl) var(--space-xl) var(--space-xl);
 }
 
 .footer-container {
   max-width: 1280px;
   margin: 0 auto;
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-3xl);
 }
 
 .footer-main {
@@ -18,7 +20,7 @@
   grid-template-columns: 1.5fr 2fr;
   gap: var(--space-3xl);
   padding-bottom: var(--space-3xl);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--border);
 }
 
 /* Brand Section */
@@ -33,7 +35,7 @@
   font-size: 1.35rem;
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: white;
+  color: var(--slate-900);
   margin: 0;
 }
 
@@ -55,7 +57,7 @@
 .footer-tagline {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: var(--slate-400);
+  color: var(--text-secondary);
   max-width: 280px;
 }
 
@@ -66,22 +68,22 @@
 }
 
 .footer-social a {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-md);
-  color: var(--slate-400);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  color: var(--slate-600);
   transition: all 0.2s ease;
 }
 
 .footer-social a:hover {
-  background: var(--sage-600);
-  border-color: var(--sage-600);
-  color: white;
+  background: var(--slate-50);
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 .footer-social a:focus-visible {
@@ -107,7 +109,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--slate-300);
+  color: var(--slate-900);
   margin-bottom: var(--space-md);
 }
 
@@ -120,12 +122,12 @@
 
 .footer-column a {
   font-size: 0.95rem;
-  color: var(--slate-400);
+  color: var(--text-secondary);
   transition: color 0.2s ease;
 }
 
 .footer-column a:hover {
-  color: white;
+  color: var(--slate-800);
 }
 
 .footer-column a:focus-visible {
@@ -137,7 +139,7 @@
 .footer-contact-text {
   font-size: 0.9rem;
   line-height: 1.5;
-  color: var(--slate-400);
+  color: var(--text-secondary);
   margin: 0 0 var(--space-md) 0;
 }
 
@@ -146,13 +148,13 @@
   align-items: center;
   gap: var(--space-sm);
   font-size: 0.95rem;
-  color: var(--slate-400);
+  color: var(--text-secondary);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .footer-contact-email:hover {
-  color: white;
+  color: var(--slate-800);
 }
 
 .footer-contact-email:focus-visible {
@@ -177,7 +179,7 @@
 
 .copyright {
   font-size: 0.9rem;
-  color: var(--slate-500);
+  color: var(--text-muted);
 }
 
 .footer-legal {
@@ -187,12 +189,12 @@
 
 .footer-legal a {
   font-size: 0.9rem;
-  color: var(--slate-500);
+  color: var(--text-muted);
   transition: color 0.2s ease;
 }
 
 .footer-legal a:hover {
-  color: var(--slate-300);
+  color: var(--slate-600);
 }
 
 .footer-legal a:focus-visible {

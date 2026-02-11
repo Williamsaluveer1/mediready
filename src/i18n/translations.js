@@ -2,13 +2,13 @@ export const translations = {
   sv: {
     nav: {
       links: [
-        { to: '/kop-kurs', label: 'Kom igång' },
+        { to: null, label: 'Om utbildningen' },
         { to: '/kunskapstest', label: 'Diagnostiskt test' },
         { to: '/physicians', label: 'Om oss' },
-        { to: '/contact', label: 'Kontakta Oss' },
       ],
-      cta: 'Testa din kunskapsnivå',
+      cta: 'Prova din kunskapsnivå',
       login: 'Logga in',
+      register: 'Registrera dig',
       menuToggle: 'Öppna meny',
       menuClose: 'Stäng meny',
       langToggle: 'Byt språk',
@@ -19,8 +19,9 @@ export const translations = {
       badge: 'Anmälan öppen för 2026',
       titleLine1: 'Vi hjälper dig på väg mot',
       titleHighlight: ' svensk läkarlegitimation',
-      description:
-        'Interaktiva föreläsningar via Zoom med erfarna läkare – så du får god förberedelse inför kunskapsprovet och vägen in i svensk sjukvård, samtidigt som du tränar din medicinska svenska.',
+      description: 'Interaktiva föreläsningar via Zoom med erfarna läkare.',
+      descriptionLine1: 'Interaktiva föreläsningar via Zoom',
+      descriptionLine2: 'med erfarna läkare.',
       primaryCta: 'Prova din kunskapsnivå',
       videoCta: 'Se video',
       videoOpenLabel: 'Se video',
@@ -78,6 +79,49 @@ export const translations = {
           link: '/services#guidelines',
         },
       ],
+    },
+    homeSecurity: {
+      title: 'Så fungerar utbildningen',
+      items: [
+        {
+          title: 'Läkare som undervisar',
+          description: 'Erfarna läkare håller föreläsningarna – ingen mellanhand, direkt från kliniken till dig.',
+        },
+        {
+          title: 'Live via Zoom',
+          description: 'Delta från var du vill. Föreläsningarna går live så du kan ställa frågor och följa med i realtid.',
+        },
+        {
+          title: 'Strukturerad kurs',
+          description: 'Tydligt upplägg som följer kunskapskraven – så du vet vad som väntar och kan planera.',
+        },
+      ],
+    },
+    homeTrust: {
+      title: 'Om utbildningen',
+      description:
+        'Utbildningen byggs kring kunskapsprovet och svenska riktlinjer så att du får en tydlig och säker väg mot legitimation. Vi täcker både prekliniska och kliniska ämnen i linje med det som faktiskt testas, och allt presenteras enligt svensk medicinsk handläggning och aktuella behandlingsrekommendationer. Erfarna läkare föreläser live via Zoom så att du kan ställa frågor, följa med i realtid och samtidigt träna din medicinska svenska. Med månadsprenumeration får du tillgång till alla lektioner och kan planera din förberedelse i din egen takt. Vårt mål är att du ska känna dig trygg inför kunskapsprovet och väl förberedd för nästa steg in i det svenska sjukvårdssystemet.',
+      cta: 'Läs mer om utbildningen',
+      ctaTo: '/physicians',
+    },
+    homeCta: {
+      title: 'Redo att komma igång?',
+      description:
+        'Skapa ditt konto och få tillgång till föreläsningar och material som hjälper dig förbereda dig inför kunskapsprovet.',
+      primaryCta: 'Kom igång',
+      primaryTo: '/register',
+    },
+    homeOffer: {
+      title: 'Vad vi erbjuder',
+      description:
+        'En prenumeration som ger dig tillgång till alla live-föreläsningar och ett tydligt upplägg inför kunskapsprovet.',
+      bullets: [
+        'Live-föreläsningar via Zoom med möjlighet att ställa frågor.',
+        'Innehåll som följer kunskapsprovet och svensk medicinsk handläggning.',
+        'Du kan avsluta när som helst – prenumerationen är månadsvis.',
+      ],
+      cta: 'Registrera dig',
+      ctaTo: '/register',
     },
     about: {
       stats: [
@@ -292,12 +336,29 @@ export const translations = {
           { label: 'Användarvillkor', to: '/terms' },
         ],
         resources: [
-          { label: 'Kom igång', to: '/kop-kurs' },
+          { label: 'Kom igång', to: '/register' },
           { label: 'Diagnostiskt test', to: '/kunskapstest' },
         ],
       },
     },
     pages: {
+      register: {
+        title: 'Registrera dig',
+        subtitle: 'Skapa ett konto för att komma igång.',
+        nameLabel: 'Fullständigt namn',
+        namePlaceholder: 'Ditt namn',
+        emailLabel: 'E-post',
+        emailPlaceholder: 'din.email@exempel.se',
+        passwordLabel: 'Lösenord',
+        passwordPlaceholder: 'Välj ett lösenord',
+        confirmPasswordLabel: 'Bekräfta lösenord',
+        confirmPasswordPlaceholder: 'Skriv lösenordet igen',
+        passwordMismatchError: 'Lösenorden matchar inte.',
+        submit: 'Registrera dig',
+        submitting: 'Skickar...',
+        haveAccount: 'Har du redan ett konto?',
+        signInLink: 'Logga in',
+      },
       swish: {
         label: 'Swish',
         title: 'Betala med',
@@ -342,7 +403,6 @@ export const translations = {
           'Kliniska ämnen (internmedicin, kirurgi, pediatrik, m.m.)',
           'Prekliniska ämnen (fysiologi, immunologi, m.m.)',
           'Språkträning med medicinska termer på svenska',
-          'Månadsvis betalning – du kan avsluta när som helst',
         ],
         formTitle: 'Kom igång – skapa ditt konto',
         formIntro: 'Fyll i dina uppgifter för att gå vidare till betalning.',
@@ -352,6 +412,9 @@ export const translations = {
         emailPlaceholder: 'din.email@exempel.se',
         passwordLabel: 'Lösenord',
         passwordPlaceholder: 'Ditt lösenord',
+        confirmPasswordLabel: 'Bekräfta lösenord',
+        confirmPasswordPlaceholder: 'Skriv lösenordet igen',
+        passwordMismatchError: 'Lösenorden matchar inte.',
         messageLabel: 'Meddelande (valfritt)',
         messagePlaceholder: 'Skriv eventuella frågor här...',
         submitButton: 'Gå vidare till betalning',
@@ -560,13 +623,13 @@ export const translations = {
   en: {
     nav: {
       links: [
-        { to: '/kop-kurs', label: 'Get started' },
+        { to: null, label: 'About the education' },
         { to: '/kunskapstest', label: 'Diagnostic test' },
         { to: '/physicians', label: 'About us' },
-        { to: '/contact', label: 'Contact us' },
       ],
       cta: 'Test your knowledge level',
       login: 'Log in',
+      register: 'Register',
       menuToggle: 'Open menu',
       menuClose: 'Close menu',
       langToggle: 'Change language',
@@ -577,8 +640,9 @@ export const translations = {
       badge: 'Application open for 2026',
       titleLine1: 'We help you on your way to',
       titleHighlight: ' Swedish medical licensure',
-      description:
-        'Interactive lectures via Zoom with experienced doctors—so you get solid preparation for the licensing exam and your path into Swedish healthcare, while building your medical Swedish.',
+      description: 'Interactive lectures via Zoom with experienced doctors.',
+      descriptionLine1: 'Interactive lectures via Zoom',
+      descriptionLine2: 'with experienced doctors.',
       primaryCta: 'Test your knowledge level',
       videoCta: 'Watch video',
       videoOpenLabel: 'Watch video',
@@ -636,6 +700,49 @@ export const translations = {
           link: '/services#guidelines',
         },
       ],
+    },
+    homeSecurity: {
+      title: 'How the training works',
+      items: [
+        {
+          title: 'Doctors teach',
+          description: 'Experienced doctors deliver the lectures – no middleman, straight from the clinic to you.',
+        },
+        {
+          title: 'Live via Zoom',
+          description: 'Join from anywhere. Lectures are live so you can ask questions and follow along in real time.',
+        },
+        {
+          title: 'Structured course',
+          description: 'Clear structure aligned with the knowledge requirements – so you know what to expect and can plan ahead.',
+        },
+      ],
+    },
+    homeTrust: {
+      title: 'About the training',
+      description:
+        'The training is built around the knowledge test and Swedish guidelines so you have a clear path to licensure. We cover both preclinical and clinical topics in line with what is actually tested, and everything is presented according to Swedish medical practice and current treatment recommendations. Experienced doctors teach live via Zoom so you can ask questions, follow along in real time, and build your medical Swedish at the same time. With a monthly subscription you get access to all lessons and can plan your preparation at your own pace. Our aim is for you to feel confident ahead of the knowledge test and well prepared for the next step into the Swedish healthcare system.',
+      cta: 'Read more about the training',
+      ctaTo: '/physicians',
+    },
+    homeCta: {
+      title: 'Ready to get started?',
+      description:
+        'Create your account and access lectures and materials that help you prepare for the knowledge test.',
+      primaryCta: 'Get started',
+      primaryTo: '/register',
+    },
+    homeOffer: {
+      title: 'What we offer',
+      description:
+        'A subscription that gives you access to all live lectures and a clear structure for the knowledge test.',
+      bullets: [
+        'Live Zoom lectures with time for questions.',
+        'Content aligned with the knowledge test and Swedish clinical practice.',
+        'Monthly subscription — cancel anytime.',
+      ],
+      cta: 'Sign up',
+      ctaTo: '/register',
     },
     about: {
       stats: [
@@ -840,12 +947,29 @@ export const translations = {
           { label: 'Terms of service', to: '/terms' },
         ],
         resources: [
-          { label: 'Get started', to: '/kop-kurs' },
+          { label: 'Get started', to: '/register' },
           { label: 'Diagnostic test', to: '/kunskapstest' },
         ],
       },
     },
     pages: {
+      register: {
+        title: 'Create an account',
+        subtitle: 'Sign up to get started.',
+        nameLabel: 'Full name',
+        namePlaceholder: 'Your name',
+        emailLabel: 'Email',
+        emailPlaceholder: 'your.email@example.com',
+        passwordLabel: 'Password',
+        passwordPlaceholder: 'Choose a password',
+        confirmPasswordLabel: 'Confirm password',
+        confirmPasswordPlaceholder: 'Type your password again',
+        passwordMismatchError: 'Passwords do not match.',
+        submit: 'Sign up',
+        submitting: 'Submitting...',
+        haveAccount: 'Already have an account?',
+        signInLink: 'Log in',
+      },
       swish: {
         label: 'Swish',
         title: 'Pay with',
@@ -890,7 +1014,6 @@ export const translations = {
           'Clinical subjects (internal medicine, surgery, pediatrics, etc.)',
           'Pre-clinical subjects (physiology, immunology, etc.)',
           'Language training with Swedish medical terminology',
-          'Monthly payment – cancel anytime',
         ],
         formTitle: 'Get started – create your account',
         formIntro: 'Fill in your details to proceed to payment.',
@@ -900,6 +1023,9 @@ export const translations = {
         emailPlaceholder: 'your.email@example.com',
         passwordLabel: 'Password',
         passwordPlaceholder: 'Your password',
+        confirmPasswordLabel: 'Confirm password',
+        confirmPasswordPlaceholder: 'Type your password again',
+        passwordMismatchError: 'Passwords do not match.',
         messageLabel: 'Message (optional)',
         messagePlaceholder: 'Write any questions here...',
         submitButton: 'Go to payment',

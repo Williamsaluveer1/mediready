@@ -9,7 +9,7 @@ function CheckEmailPage() {
 
   useEffect(() => {
     if (!email) {
-      navigate('/kop-kurs', { replace: true })
+      navigate('/register', { replace: true })
     }
   }, [email, navigate])
 

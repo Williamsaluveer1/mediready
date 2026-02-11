@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import './PageStyles.css'
+import './RegisterPage.css'
 
 function ResetPasswordPage() {
   const { updatePassword, user, loading: authLoading } = useAuth()
@@ -25,15 +26,27 @@ function ResetPasswordPage() {
 
   if (authLoading) {
     return (
-      <main className="page-main">
-        <section className="login-section">
-          <div className="login-container">
-            <div className="dashboard-loading">
-              <div className="loading-spinner"></div>
-              <p>Laddar...</p>
+      <main className="register-page">
+        <div className="register-split">
+          <section className="register-left" aria-label="Återställ lösenord">
+            <Link to="/" className="register-logo" aria-label="Mediready - Hem">
+              <img src="/Screenshot 2026-02-01 at 18.41.51.png" alt="Mediready" />
+            </Link>
+
+            <div className="register-left-inner">
+              <div className="register-card">
+                <div className="dashboard-loading">
+                  <div className="loading-spinner"></div>
+                  <p>Laddar...</p>
+                </div>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+
+          <aside className="register-right" aria-hidden="true">
+            <div className="register-right-image" />
+          </aside>
+        </div>
       </main>
     )
   }
@@ -84,85 +97,97 @@ function ResetPasswordPage() {
   }
 
   return (
-    <main className="page-main">
-      <section className="page-hero page-hero--compact">
-        <div className="page-hero-background"></div>
-        <div className="page-hero-content">
-          <span className="page-label">Återställ lösenord</span>
-          <h1 className="page-title">Ange nytt lösenord</h1>
-          <p className="page-description">Välj ett nytt lösenord för ditt konto.</p>
-        </div>
-      </section>
+    <main className="register-page">
+      <div className="register-split">
+        <section className="register-left" aria-labelledby="reset-heading">
+          <Link to="/" className="register-logo" aria-label="Mediready - Hem">
+            <img src="/Screenshot 2026-02-01 at 18.41.51.png" alt="Mediready" />
+          </Link>
 
-      <section className="login-section">
-        <div className="login-container">
-          <div className="login-card">
-            {success ? (
-              <div className="forgot-password-success">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-                  <path d="M8 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                <h2>Lösenord uppdaterat!</h2>
-                <p>Ditt lösenord har uppdaterats. Du omdirigeras till dashboarden...</p>
-              </div>
-            ) : (
-              <form className="login-form" onSubmit={handleSubmit}>
-                {error && (
-                  <div className="form-error">
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-                      <path d="M12 8v4M12 16h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                    </svg>
-                    {error}
-                  </div>
-                )}
+          <div className="register-left-inner">
+            <div className="register-card">
+              <h1 id="reset-heading" className="register-title">
+                Ange nytt lösenord
+              </h1>
+              <p className="register-subtitle">Välj ett nytt lösenord för ditt konto.</p>
 
-                <div className="form-group">
-                  <label htmlFor="password">Nytt lösenord</label>
-                  <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    placeholder="Minst 6 tecken"
-                    required
-                    disabled={loading}
-                    minLength={6}
-                  />
+              {success ? (
+                <div className="forgot-password-success">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+                    <path d="M8 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <h2>Lösenord uppdaterat!</h2>
+                  <p>Ditt lösenord har uppdaterats. Du omdirigeras till dashboarden...</p>
                 </div>
-
-                <div className="form-group">
-                  <label htmlFor="confirmPassword">Bekräfta lösenord</label>
-                  <input
-                    type="password"
-                    id="confirmPassword"
-                    name="confirmPassword"
-                    value={formData.confirmPassword}
-                    onChange={handleChange}
-                    placeholder="Upprepa lösenordet"
-                    required
-                    disabled={loading}
-                    minLength={6}
-                  />
-                </div>
-
-                <button type="submit" className="btn-primary login-btn" disabled={loading}>
-                  {loading ? (
-                    <>
-                      <div className="loading-spinner" style={{ width: '18px', height: '18px', borderWidth: '2px' }}></div>
-                      Uppdaterar...
-                    </>
-                  ) : (
-                    'Uppdatera lösenord'
+              ) : (
+                <form className="register-form" onSubmit={handleSubmit}>
+                  {error && (
+                    <div className="form-error">
+                      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+                        <path d="M12 8v4M12 16h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                      </svg>
+                      {error}
+                    </div>
                   )}
-                </button>
-              </form>
-            )}
+
+                  <div className="form-group">
+                    <label htmlFor="password">Nytt lösenord</label>
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      value={formData.password}
+                      onChange={handleChange}
+                      placeholder="Minst 6 tecken"
+                      required
+                      disabled={loading}
+                      minLength={6}
+                      autoComplete="new-password"
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="confirmPassword">Bekräfta lösenord</label>
+                    <input
+                      type="password"
+                      id="confirmPassword"
+                      name="confirmPassword"
+                      value={formData.confirmPassword}
+                      onChange={handleChange}
+                      placeholder="Upprepa lösenordet"
+                      required
+                      disabled={loading}
+                      minLength={6}
+                      autoComplete="new-password"
+                    />
+                  </div>
+
+                  <button type="submit" className="btn-primary register-btn" disabled={loading}>
+                    {loading ? (
+                      <>
+                        <div
+                          className="loading-spinner"
+                          style={{ width: '18px', height: '18px', borderWidth: '2px' }}
+                          aria-hidden="true"
+                        ></div>
+                        Uppdaterar...
+                      </>
+                    ) : (
+                      'Uppdatera lösenord'
+                    )}
+                  </button>
+                </form>
+              )}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <aside className="register-right" aria-hidden="true">
+          <div className="register-right-image" />
+        </aside>
+      </div>
     </main>
   )
 }

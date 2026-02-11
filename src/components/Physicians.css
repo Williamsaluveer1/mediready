@@ -112,6 +112,21 @@
   color: var(--text-muted);
 }
 
+.physician-card-bio {
+  margin-top: var(--space-sm);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.physicians-grid--page {
+  margin-top: 0;
+}
+
+.physician-card--page .physician-info {
+  text-align: left;
+}
+
 /* CTA */
 .physicians-cta {
   display: flex;

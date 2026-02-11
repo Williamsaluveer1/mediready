@@ -1,0 +1,189 @@
+/* ====================================
+   REGISTER PAGE (split layout)
+   ==================================== */
+
+.register-page {
+  min-height: 100vh;
+  background: #fff;
+}
+
+.register-split {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Left */
+.register-left {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px var(--space-xl);
+  background: #fff;
+}
+
+.register-left-inner {
+  width: 100%;
+  max-width: 420px;
+  padding-top: 56px; /* room for corner logo */
+}
+
+.register-logo {
+  display: inline-flex;
+  align-items: center;
+  position: absolute;
+  top: var(--space-lg);
+  left: var(--space-xl);
+  text-decoration: none;
+  z-index: 2;
+}
+
+.register-logo img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
+
+.register-card {
+  background: transparent;
+  padding: 0;
+}
+
+.register-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--slate-900);
+  margin: 0 0 8px 0;
+  letter-spacing: -0.02em;
+}
+
+.register-subtitle {
+  margin: 0 0 var(--space-xl) 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.register-form {
+  display: grid;
+  gap: 14px;
+}
+
+.register-btn {
+  width: 100%;
+  justify-content: center;
+  min-height: 52px;
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+}
+
+.register-footer {
+  margin: var(--space-lg) 0 0 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  text-align: left;
+}
+
+.register-link {
+  color: var(--slate-900);
+  text-decoration: underline;
+}
+
+.register-link:hover {
+  color: var(--primary);
+}
+
+/* Clean form styling (scoped to register page) */
+.register-page .form-group {
+  display: grid;
+  gap: 6px;
+}
+
+.register-page .form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--slate-700);
+}
+
+.register-page .form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  color: var(--slate-900);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.register-page .form-group input::placeholder {
+  color: var(--slate-400);
+}
+
+.register-page .form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(17, 77, 134, 0.14);
+}
+
+.register-page .form-group input:disabled {
+  background: var(--slate-50);
+  color: var(--slate-500);
+}
+
+/* Make primary button less "playful" on this page */
+.register-page .btn-primary {
+  border-radius: var(--radius-md);
+  box-shadow: none;
+}
+
+.register-page .btn-primary:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.register-page .btn-primary svg {
+  display: none;
+}
+
+/* Right image */
+.register-right {
+  position: relative;
+  overflow: hidden;
+}
+
+.register-right-image {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.08) 0%, rgba(15, 23, 42, 0.12) 100%),
+    url('/surgeon-wearing-face-mask.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 900px) {
+  .register-split {
+    grid-template-columns: 1fr;
+  }
+
+  .register-right {
+    display: none;
+  }
+
+  .register-left {
+    padding: 48px var(--space-md);
+  }
+
+  .register-logo {
+    left: var(--space-md);
+    top: var(--space-md);
+  }
+
+  .register-left-inner {
+    padding-top: 56px;
+  }
+}
+

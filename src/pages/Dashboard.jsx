@@ -310,7 +310,7 @@ function Dashboard() {
   }
 
   if (!user) {
-    navigate('/kop-kurs')
+    navigate('/login', { replace: true })
     return null
   }
 
@@ -327,8 +327,8 @@ function Dashboard() {
 
           {/* Checkout return message */}
           {checkoutMessage && (
-            <div className="dashboard-card" style={{ background: 'var(--bg-success, #f0fdf4)', borderLeft: '4px solid var(--color-success, #22c55e)', padding: '1rem 1.5rem' }}>
-              <p style={{ margin: 0, color: 'var(--text-primary)' }}>{checkoutMessage}</p>
+            <div className="dashboard-flash" role="status">
+              <p>{checkoutMessage}</p>
             </div>
           )}
 
@@ -394,7 +394,7 @@ function Dashboard() {
                   </svg>
                   <p>Prenumerera för att se ditt schema och delta i live-föreläsningar</p>
                   <button
-                    className="btn-primary"
+                    className="btn-primary dashboard-subscribe-btn"
                     onClick={async () => {
                       setCheckoutLoading(true)
                       try {
@@ -408,7 +408,6 @@ function Dashboard() {
                       }
                     }}
                     disabled={checkoutLoading}
-                    style={{ marginTop: '1rem' }}
                   >
                     {checkoutLoading ? (
                       <>
@@ -628,7 +627,7 @@ function Dashboard() {
                         name="subject"
                         value={emailData.subject}
                         onChange={handleEmailChange}
-                        placeholder="T.ex. Viktig information om kursen"
+                        placeholder="Ämne"
                         required
                         disabled={emailLoading}
                       />
@@ -641,7 +640,7 @@ function Dashboard() {
                         name="message"
                         value={emailData.message}
                         onChange={handleEmailChange}
-                        placeholder="Skriv ditt meddelande här..."
+                        placeholder="Meddelande"
                         rows="6"
                         required
                         disabled={emailLoading}

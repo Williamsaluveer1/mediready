@@ -7,25 +7,40 @@ function KunskapstestPage() {
 
   return (
     <main className="page-main">
-      {/* Hero Banner */}
-      <section className="page-hero">
-        <div className="page-hero-background"></div>
-        <div className="page-hero-content">
-          <span className="page-label">{content.label}</span>
-          <h1 className="page-title">{content.title}</h1>
-          <p className="page-description">
-            {content.description}
-          </p>
-        </div>
-      </section>
+      <section className="kunskapstest-split">
+        <div className="kunskapstest-split-container">
+          {/* Left: Welcome */}
+          <div className="kunskapstest-panel kunskapstest-panel--left">
+            <span className="page-label">{content.label}</span>
+            <h1 className="kunskapstest-title">{content.title}</h1>
+            <p className="kunskapstest-subtitle">{content.description}</p>
 
-      {/* Test Info Section */}
-      <section className="test-info-section">
-        <div className="test-info-container">
-          <div className="test-info-card">
-            <h2>{content.infoTitle}</h2>
-            <p className="test-intro">{content.infoIntro}</p>
-            
+            <a
+              href="https://docs.google.com/forms/d/1ti2yxIu5xcXJ1Ga5DWTSv1jAjhuHCv6bx93Ysn6Z8cw/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary kunskapstest-start-btn"
+            >
+              {content.startButton}
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="external-link-icon">
+                <path
+                  d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
+
+            <p className="kunskapstest-note">{content.note}</p>
+          </div>
+
+          {/* Right: Info */}
+          <div className="kunskapstest-panel kunskapstest-panel--right">
+            <h2 className="kunskapstest-info-title">{content.infoTitle}</h2>
+            <p className="kunskapstest-info-intro">{content.infoIntro}</p>
+
             <div className="test-content-breakdown">
               <h3>{content.contentTitle}</h3>
               <ul>
@@ -45,20 +60,6 @@ function KunskapstestPage() {
                 </li>
               </ul>
             </div>
-
-            <a 
-              href="https://docs.google.com/forms/d/1ti2yxIu5xcXJ1Ga5DWTSv1jAjhuHCv6bx93Ysn6Z8cw/viewform" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="btn-primary test-start-btn"
-            >
-              {content.startButton}
-              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </a>
-            
-            <p className="test-note">{content.note}</p>
           </div>
         </div>
       </section>

@@ -3,7 +3,7 @@
    A calm, professional healthcare aesthetic
    ==================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* CSS Variables */
 :root {
@@ -37,9 +37,9 @@
   --slate-900: #0f172a;
   
   /* Semantic Colors */
-  --primary: var(--sage-600);
-  --primary-light: var(--sage-400);
-  --primary-dark: var(--sage-700);
+  --primary: #114d86; /* slightly darker azure */
+  --primary-light: #2a6aa8;
+  --primary-dark: #0d3f6e;
   --background: var(--warm-50);
   --surface: #ffffff;
   --text-primary: var(--slate-800);
@@ -48,8 +48,8 @@
   --border: var(--slate-200);
   
   /* Typography */
-  --font-display: 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
   
   /* Spacing */
   --space-xs: 0.25rem;

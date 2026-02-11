@@ -1,19 +1,19 @@
 import Hero from '../components/Hero'
-import Services from '../components/Services'
-import About from '../components/About'
-import Physicians from '../components/Physicians'
+import SecuritySection from '../components/SecuritySection'
+import TrustSection from '../components/TrustSection'
 import Testimonials from '../components/Testimonials'
-import Contact from '../components/Contact'
+import HomeCtaSection from '../components/HomeCtaSection'
+import HomeOfferSection from '../components/HomeOfferSection'
 
 function Home() {
   return (
     <main>
       <Hero />
-      <Services />
-      <About compact />
-      <Physicians limit={4} />
+      <SecuritySection />
+      <TrustSection />
+      <HomeOfferSection />
       <Testimonials />
-      <Contact />
+      <HomeCtaSection />
     </main>
   )
 }

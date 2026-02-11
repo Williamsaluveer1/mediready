@@ -3,21 +3,25 @@ import './PageStyles.css'
 
 const team = [
   { 
+    image: '/Christian.JPG',
     name: 'Dr. Christian Unge', 
     role: 'Internmedicinexpert', 
     description: 'Överläkare i internmedicin på Danderyds sjukhus. Doktorerat i Global Hälsa.' 
   },
   { 
+    image: '/Mats.JPEG',
     name: 'Dr. Mats Ek', 
     role: 'Psykiatriexpert', 
     description: 'Överläkare i psykiatri. Ordförande i Region Stockholms Läkemedelskommitté.' 
   },
   { 
+    image: '/Oskar.png',
     name: 'Dr. Oskar Pettersson', 
     role: 'Allmänmedicinexpert', 
     description: 'ST-läkare i allmänmedicin. Över 3 års erfarenhet av kunskapsprovsundervisning.' 
   },
   { 
+    image: '/sofie.JPG',
     name: 'Dr. Sofie Wiklund', 
     role: 'Kirurgiexpert', 
     description: 'ST-läkare i kirurgi. Erfarenhet som utländsk läkare i Danmark.' 
@@ -98,6 +102,9 @@ function AboutPage() {
                 key={member.name}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
+                <div className="leadership-image">
+                  <img src={member.image} alt={member.name} loading="lazy" />
+                </div>
                 <h3>{member.name}</h3>
                 <span className="leader-role">{member.role}</span>
                 <p className="leader-description">{member.description}</p>

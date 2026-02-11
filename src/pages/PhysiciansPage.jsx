@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom'
 import './PageStyles.css'
+import '../components/Physicians.css'
+import HomeCtaSection from '../components/HomeCtaSection'
 import { useI18n } from '../i18n/I18nProvider'
 
 function PhysiciansPage() {
@@ -10,7 +11,7 @@ function PhysiciansPage() {
   return (
     <main className="page-main">
       {/* Hero Banner */}
-      <section className="page-hero page-hero--left-mobile">
+      <section className="page-hero page-hero--left-mobile page-hero--compact">
         <div className="page-hero-background"></div>
         <div className="page-hero-content">
           <span className="page-label">{page.label}</span>
@@ -24,59 +25,29 @@ function PhysiciansPage() {
       {/* Faculty Grid */}
       <section className="physicians-page-grid">
         <div className="physicians-page-container">
-          {physicians.map((physician, index) => (
-            <div 
-              className="physician-detail-card" 
-              key={physician.name}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="physician-detail-image">
-                <img 
-                  src={physician.image} 
-                  alt={physician.name}
-                  loading="lazy"
-                />
-              </div>
-              <div className="physician-detail-content">
-                <div className="physician-detail-header">
-                  <h2>{physician.name}</h2>
-                  <span className="physician-detail-role">{physician.role}</span>
-                  <span className="physician-detail-specialty">{physician.specialty}</span>
+          <div className="physicians-grid physicians-grid--page">
+            {physicians.map((physician, index) => (
+              <div
+                className="physician-card physician-card--page"
+                key={physician.name}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="physician-image">
+                  <img src={physician.image} alt={physician.name} loading="lazy" />
                 </div>
-                <p className="physician-detail-bio">{physician.bio}</p>
-                <div className="physician-detail-credentials">
-                  <div className="credential-item">
-                    <strong>{page.education}</strong>
-                    <span>{physician.education}</span>
-                  </div>
-                  <div className="credential-item">
-                    <strong>{page.certifications}</strong>
-                    <ul>
-                      {physician.certifications.map(cert => (
-                        <li key={cert}>{cert}</li>
-                      ))}
-                    </ul>
-                  </div>
+                <div className="physician-info">
+                  <h3 className="physician-name">{physician.name}</h3>
+                  <span className="physician-role">{physician.role}</span>
+                  <span className="physician-specialty">{physician.specialty}</span>
+                  <p className="physician-card-bio">{physician.shortBio}</p>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="page-cta">
-        <div className="page-cta-container">
-          <h2>{page.ctaTitle}</h2>
-          <p>{page.ctaDescription}</p>
-          <Link to="/contact" className="btn-primary">
-            {page.ctaButton}
-            <svg viewBox="0 0 20 20" fill="none">
-              <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </Link>
-        </div>
-      </section>
+      <HomeCtaSection />
     </main>
   )
 }

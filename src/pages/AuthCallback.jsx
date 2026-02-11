@@ -36,7 +36,7 @@ function AuthCallback() {
             navigate('/dashboard', { replace: true })
           } else {
             // Still no session, redirect to signup
-            navigate('/kop-kurs', { replace: true })
+            navigate('/register', { replace: true })
           }
         }
       } catch (err) {
@@ -63,7 +63,7 @@ function AuthCallback() {
               <h1>Något gick fel</h1>
               <p>{error}</p>
               <button 
-                onClick={() => navigate('/kop-kurs')} 
+                onClick={() => navigate('/register')} 
                 className="btn-primary"
               >
                 Försök igen

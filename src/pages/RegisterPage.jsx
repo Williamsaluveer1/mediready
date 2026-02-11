@@ -1,59 +1,29 @@
-import { useState, useEffect } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { useI18n } from '../i18n/I18nProvider'
-import './PageStyles.css'
 import './RegisterPage.css'
 
-function LoginPage() {
+function RegisterPage() {
   const { t } = useI18n()
-  const { signIn, user, loading: authLoading } = useAuth()
+  const copy = t('pages.register')
+  const { user, signUp, loading: authLoading } = useAuth()
   const navigate = useNavigate()
-  
+
   const [formData, setFormData] = useState({
+    name: '',
     email: '',
-    password: ''
+    password: '',
+    confirmPassword: '',
   })
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
-  // Redirect if already logged in
   useEffect(() => {
     if (user && !authLoading) {
       navigate('/dashboard')
     }
   }, [user, authLoading, navigate])
-
-  if (authLoading) {
-    return (
-      <main className="register-page">
-        <div className="register-split">
-          <section className="register-left" aria-label="Logga in">
-            <Link to="/" className="register-logo" aria-label="Mediready - Hem">
-              <img src="/Screenshot 2026-02-01 at 18.41.51.png" alt="Mediready" />
-            </Link>
-
-            <div className="register-left-inner">
-              <div className="register-card">
-                <div className="dashboard-loading">
-                  <div className="loading-spinner"></div>
-                  <p>Laddar...</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <aside className="register-right" aria-hidden="true">
-            <div className="register-right-image" />
-          </aside>
-        </div>
-      </main>
-    )
-  }
-
-  if (user) {
-    return null
-  }
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -62,35 +32,40 @@ function LoginPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    setLoading(true)
     setError(null)
 
-    const { error: signInError } = await signIn(formData.email, formData.password)
+    if (formData.password !== formData.confirmPassword) {
+      setError(copy.passwordMismatchError)
+      return
+    }
 
-    if (signInError) {
-      setError(signInError.message)
+    setLoading(true)
+    const { error: signUpError } = await signUp(formData.email, formData.password, formData.name)
+
+    if (signUpError) {
+      setError(signUpError.message)
       setLoading(false)
       return
     }
 
-    // Success - redirect to dashboard
-    navigate('/dashboard')
+    navigate('/check-email', { state: { email: formData.email } })
+    setLoading(false)
   }
 
   return (
     <main className="register-page">
       <div className="register-split">
-        <section className="register-left" aria-labelledby="login-heading">
+        <section className="register-left" aria-labelledby="register-heading">
           <Link to="/" className="register-logo" aria-label="Mediready - Hem">
             <img src="/Screenshot 2026-02-01 at 18.41.51.png" alt="Mediready" />
           </Link>
 
           <div className="register-left-inner">
             <div className="register-card">
-              <h1 id="login-heading" className="register-title">
-                Logga in
+              <h1 id="register-heading" className="register-title">
+                {copy.title}
               </h1>
-              <p className="register-subtitle">Välkommen tillbaka</p>
+              <p className="register-subtitle">{copy.subtitle}</p>
 
               {error && (
                 <div className="form-error">
@@ -104,14 +79,29 @@ function LoginPage() {
 
               <form className="register-form" onSubmit={handleSubmit}>
                 <div className="form-group">
-                  <label htmlFor="email">E-post</label>
+                  <label htmlFor="name">{copy.nameLabel}</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder={copy.namePlaceholder}
+                    required
+                    disabled={loading}
+                    autoComplete="name"
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="email">{copy.emailLabel}</label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="din.email@exempel.se"
+                    placeholder={copy.emailPlaceholder}
                     required
                     disabled={loading}
                     autoComplete="email"
@@ -119,44 +109,45 @@ function LoginPage() {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="password">Lösenord</label>
+                  <label htmlFor="password">{copy.passwordLabel}</label>
                   <input
                     type="password"
                     id="password"
                     name="password"
                     value={formData.password}
                     onChange={handleChange}
-                    placeholder="Ditt lösenord"
+                    placeholder={copy.passwordPlaceholder}
                     required
                     disabled={loading}
-                    autoComplete="current-password"
+                    minLength={6}
+                    autoComplete="new-password"
                   />
-                  <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '6px' }}>
-                    <Link to="/forgot-password" className="forgot-password-link">
-                      Glömt lösenord?
-                    </Link>
-                  </div>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="confirmPassword">{copy.confirmPasswordLabel}</label>
+                  <input
+                    type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    value={formData.confirmPassword}
+                    onChange={handleChange}
+                    placeholder={copy.confirmPasswordPlaceholder}
+                    required
+                    disabled={loading}
+                    minLength={6}
+                    autoComplete="new-password"
+                  />
                 </div>
 
                 <button type="submit" className="btn-primary register-btn" disabled={loading}>
-                  {loading ? (
-                    <>
-                      <div
-                        className="loading-spinner"
-                        style={{ width: '18px', height: '18px', borderWidth: '2px' }}
-                        aria-hidden="true"
-                      ></div>
-                      Loggar in...
-                    </>
-                  ) : (
-                    'Logga in'
-                  )}
+                  {loading ? copy.submitting : copy.submit}
                 </button>
 
                 <p className="register-footer">
-                  Inget konto?{' '}
-                  <Link to="/register" className="register-link">
-                    Registrera dig här
+                  {copy.haveAccount}{' '}
+                  <Link to="/login" className="register-link">
+                    {copy.signInLink}
                   </Link>
                 </p>
               </form>
@@ -172,4 +163,5 @@ function LoginPage() {
   )
 }
 
-export default LoginPage
+export default RegisterPage
+

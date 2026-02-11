@@ -1,0 +1,137 @@
+/* ====================================
+   TRUST SECTION – Two columns, image + text
+   ==================================== */
+
+.trust-section {
+  padding: var(--space-4xl) var(--space-xl);
+  background: #fff;
+}
+
+.trust-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+/* Image card (left) */
+.trust-image-wrap {
+  position: relative;
+}
+
+.trust-image-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+}
+
+.trust-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  display: block;
+}
+
+.trust-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.25);
+  pointer-events: none;
+}
+
+.trust-overlay-icon {
+  width: 120px;
+  height: 120px;
+  color: rgba(255, 255, 255, 0.95);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+}
+
+/* Content (right) */
+.trust-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-lg);
+}
+
+.trust-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--slate-900);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.trust-description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.trust-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-sm) var(--space-xl);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.trust-cta:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: #fff;
+}
+
+.trust-cta:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .trust-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+    text-align: left;
+  }
+
+  .trust-image-wrap {
+    max-width: 480px;
+    margin: 0 auto;
+    order: 2;
+  }
+
+  .trust-content {
+    align-items: flex-start;
+    text-align: left;
+    order: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .trust-section {
+    padding: var(--space-3xl) var(--space-md);
+  }
+
+  .trust-overlay-icon {
+    width: 80px;
+    height: 80px;
+  }
+}
