@@ -14,8 +14,8 @@ function Footer() {
           <div className="footer-brand">
             <h2 className="footer-title">
               <Link to="/" className="footer-title-link" aria-label="Mediready - Hem">
-                {t('footer.brandTitle')}
-            </Link>
+                <img src="/Screenshot 2026-02-01 at 18.41.51.png" alt="Mediready" className="footer-logo" />
+              </Link>
             </h2>
             <p className="footer-tagline">
               {t('footer.tagline')}
