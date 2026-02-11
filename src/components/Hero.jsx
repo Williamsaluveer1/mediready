@@ -67,9 +67,10 @@ function Hero() {
               ref={videoRef}
               className="hero-video-inline"
               src="/file_example_MP4_1920_18MG.mp4"
+              poster="/surgeon-wearing-face-mask.jpg"
               controls
               playsInline
-              preload="auto"
+              preload="metadata"
               aria-label={t('hero.videoOpenLabel')}
             />
           </div>

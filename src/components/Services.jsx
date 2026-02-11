@@ -49,6 +49,7 @@ function Services({ showAll = false }) {
             <video
               ref={videoRef}
               className="services-video-el"
+              poster="/surgeon-wearing-face-mask.jpg"
               controls
               playsInline
               preload="metadata"

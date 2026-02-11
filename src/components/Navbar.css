@@ -177,6 +177,10 @@
   cursor: default;
 }
 
+.nav-links--desktop .nav-link-placeholder-arrow {
+  display: none;
+}
+
 .nav-link-placeholder-arrow {
   display: inline-flex;
   align-items: center;
