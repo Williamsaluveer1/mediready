@@ -72,6 +72,13 @@
   transform: translateX(3px);
 }
 
+@media (max-width: 768px) {
+  .home-cta .btn-primary,
+  .home-cta .btn-secondary {
+    border-radius: var(--radius-sm);
+  }
+}
+
 @media (max-width: 600px) {
   .home-cta {
     padding: var(--space-3xl) var(--space-md) var(--space-xl);
@@ -80,9 +87,14 @@
   .home-cta-actions {
     width: 100%;
     flex-direction: column;
+    align-items: center;
   }
 
-  .home-cta .btn-primary,
+  .home-cta .btn-primary {
+    width: auto;
+    justify-content: center;
+  }
+
   .home-cta .btn-secondary {
     width: 100%;
     justify-content: center;

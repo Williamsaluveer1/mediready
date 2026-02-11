@@ -46,7 +46,12 @@ function TrustSection() {
           <h2 id="trust-heading" className="trust-title">
             {copy.title}
           </h2>
-          <p className="trust-description">{copy.description}</p>
+          <p className="trust-description trust-description-full">
+            {copy.description}
+          </p>
+          <p className="trust-description trust-description-mobile">
+            {copy.descriptionMobile}
+          </p>
           <Link to={copy.ctaTo} className="trust-cta">
             {copy.cta}
           </Link>

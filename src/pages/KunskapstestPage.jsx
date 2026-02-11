@@ -21,7 +21,8 @@ function KunskapstestPage() {
               rel="noopener noreferrer"
               className="btn-primary kunskapstest-start-btn"
             >
-              {content.startButton}
+              <span className="kunskapstest-btn-text-desktop">{content.startButton}</span>
+              <span className="kunskapstest-btn-text-mobile">{content.startButtonMobile}</span>
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="external-link-icon">
                 <path
                   d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"

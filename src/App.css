@@ -40,7 +40,7 @@
   --primary: #114d86; /* slightly darker azure */
   --primary-light: #2a6aa8;
   --primary-dark: #0d3f6e;
-  --background: var(--warm-50);
+  --background: #ffffff;
   --surface: #ffffff;
   --text-primary: var(--slate-800);
   --text-secondary: var(--slate-500);
@@ -97,7 +97,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   color: var(--text-primary);
-  background-color: var(--background);
+  background-color: #ffffff;
 }
 
 /* Make all headings use the academic display font */

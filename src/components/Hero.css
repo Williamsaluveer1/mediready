@@ -280,6 +280,11 @@
     display: none;
   }
 
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary {
+    border-radius: var(--radius-sm);
+  }
+
   .hero-title {
     font-size: 2rem;
   }

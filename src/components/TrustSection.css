@@ -79,6 +79,20 @@
   margin: 0;
 }
 
+.trust-description-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .trust-description-full {
+    display: none;
+  }
+
+  .trust-description-mobile {
+    display: block;
+  }
+}
+
 .trust-cta {
   display: inline-flex;
   align-items: center;
@@ -105,6 +119,12 @@
 }
 
 /* Responsive */
+@media (max-width: 768px) {
+  .trust-cta {
+    border-radius: var(--radius-sm);
+  }
+}
+
 @media (max-width: 900px) {
   .trust-container {
     grid-template-columns: 1fr;

@@ -934,6 +934,20 @@
   transform: translate(2px, -2px);
 }
 
+.kunskapstest-btn-text-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .kunskapstest-btn-text-desktop {
+    display: none;
+  }
+
+  .kunskapstest-btn-text-mobile {
+    display: inline;
+  }
+}
+
 .kunskapstest-note {
   font-size: 0.9rem;
   color: var(--text-muted);

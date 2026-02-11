@@ -101,6 +101,8 @@ export const translations = {
       title: 'Om utbildningen',
       description:
         'Utbildningen byggs kring kunskapsprovet och svenska riktlinjer så att du får en tydlig och säker väg mot legitimation. Vi täcker både prekliniska och kliniska ämnen i linje med det som faktiskt testas, och allt presenteras enligt svensk medicinsk handläggning och aktuella behandlingsrekommendationer. Erfarna läkare föreläser live via Zoom så att du kan ställa frågor, följa med i realtid och samtidigt träna din medicinska svenska. Med månadsprenumeration får du tillgång till alla lektioner och kan planera din förberedelse i din egen takt. Vårt mål är att du ska känna dig trygg inför kunskapsprovet och väl förberedd för nästa steg in i det svenska sjukvårdssystemet.',
+      descriptionMobile:
+        'Utbildningen byggs kring kunskapsprovet och svenska riktlinjer så att du får en tydlig och säker väg mot legitimation. Vi täcker både prekliniska och kliniska ämnen i linje med det som faktiskt testas, och allt presenteras enligt svensk medicinsk handläggning och aktuella behandlingsrekommendationer. Erfarna läkare föreläser live via Zoom så att du kan ställa frågor, följa med i realtid och samtidigt träna din medicinska svenska.',
       cta: 'Läs mer om utbildningen',
       ctaTo: '/physicians',
     },
@@ -381,6 +383,7 @@ export const translations = {
         clinicalTitle: 'Kliniska frågor',
         clinicalExamples: 't.ex. internmedicin, kirurgi, pediatrik, gynekologi, psykiatri, neurologi, infektion',
         startButton: 'Klicka här för att komma vidare till provet',
+        startButtonMobile: 'Vidare till provet',
         note: 'Provet tar ca 2-3 timmar att genomföra. Du kan ta paus och fortsätta senare.',
         ctaTitle: 'Har du frågor?',
         ctaDescription: 'Kontakta oss om du har funderingar kring provet eller våra tjänster.',
@@ -722,6 +725,8 @@ export const translations = {
       title: 'About the training',
       description:
         'The training is built around the knowledge test and Swedish guidelines so you have a clear path to licensure. We cover both preclinical and clinical topics in line with what is actually tested, and everything is presented according to Swedish medical practice and current treatment recommendations. Experienced doctors teach live via Zoom so you can ask questions, follow along in real time, and build your medical Swedish at the same time. With a monthly subscription you get access to all lessons and can plan your preparation at your own pace. Our aim is for you to feel confident ahead of the knowledge test and well prepared for the next step into the Swedish healthcare system.',
+      descriptionMobile:
+        'The training is built around the knowledge test and Swedish guidelines so you have a clear path to licensure. We cover both preclinical and clinical topics in line with what is actually tested, and everything is presented according to Swedish medical practice and current treatment recommendations. Experienced doctors teach live via Zoom so you can ask questions, follow along in real time, and build your medical Swedish at the same time.',
       cta: 'Read more about the training',
       ctaTo: '/physicians',
     },
@@ -992,6 +997,7 @@ export const translations = {
         clinicalTitle: 'Clinical questions',
         clinicalExamples: 'e.g. internal medicine, surgery, pediatrics, gynecology, psychiatry, neurology, infectious diseases',
         startButton: 'Click here to proceed to the test',
+        startButtonMobile: 'To the test',
         note: 'The test takes approximately 2-3 hours to complete. You can pause and continue later.',
         ctaTitle: 'Any questions?',
         ctaDescription: 'Contact us if you have any questions about the test or our services.',

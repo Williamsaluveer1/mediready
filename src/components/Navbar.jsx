@@ -150,6 +150,16 @@ function Navbar() {
             ))}
           </ul>
         </nav>
+
+        <div className="mobile-menu-actions" aria-label="Snabbval">
+          <Link
+            to="/kunskapstest"
+            className="mobile-menu-cta mobile-menu-cta--primary"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            {t('nav.cta')}
+          </Link>
+        </div>
       </div>
     </nav>
   )

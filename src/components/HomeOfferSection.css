@@ -163,6 +163,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .home-offer-cta {
+    border-radius: var(--radius-sm) !important;
+  }
+}
+
 @media (max-width: 600px) {
   .home-offer {
     padding: var(--space-3xl) var(--space-md);
