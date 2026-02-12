@@ -17,7 +17,7 @@ export const translations = {
     },
     hero: {
       badge: 'Anmälan öppen för 2026',
-      titleLine1: 'Vi hjälper dig på väg mot',
+      titleLine1: 'Vi hjälper dig på din väg mot',
       titleHighlight: ' svensk läkarlegitimation',
       description: 'Interaktiva föreläsningar via Zoom med erfarna läkare.',
       descriptionLine1: 'Interaktiva föreläsningar via Zoom',
@@ -85,22 +85,22 @@ export const translations = {
       items: [
         {
           title: 'Läkare som undervisar',
-          description: 'Erfarna läkare håller föreläsningarna – ingen mellanhand, direkt från kliniken till dig.',
+          description: 'Erfarna läkare håller i föreläsningarna.',
         },
         {
           title: 'Live via Zoom',
-          description: 'Delta från var du vill. Föreläsningarna går live så du kan ställa frågor och följa med i realtid.',
+          description: 'Föreläsningarna hålls Live så att du kan ställa frågor och avbryta när du vill.',
         },
         {
-          title: 'Strukturerad kurs',
-          description: 'Tydligt upplägg som följer kunskapskraven – så du vet vad som väntar och kan planera.',
+          title: 'Kursupplägg',
+          description: 'Vi utgår från tidigare kunskapsprov och gör djupdykningar inom samtliga medicinska specialiteter.',
         },
       ],
     },
     homeTrust: {
       title: 'Om utbildningen',
       description:
-        'Utbildningen byggs kring kunskapsprovet och svenska riktlinjer så att du får en tydlig och säker väg mot legitimation. Vi täcker både prekliniska och kliniska ämnen i linje med det som faktiskt testas, och allt presenteras enligt svensk medicinsk handläggning och aktuella behandlingsrekommendationer. Erfarna läkare föreläser live via Zoom så att du kan ställa frågor, följa med i realtid och samtidigt träna din medicinska svenska. Med månadsprenumeration får du tillgång till alla lektioner och kan planera din förberedelse i din egen takt. Vårt mål är att du ska känna dig trygg inför kunskapsprovet och väl förberedd för nästa steg in i det svenska sjukvårdssystemet.',
+        'Utbildningen byggs upp kring kunskapsprovet och med svenska riktlinjer så att du får en tydlig och säker väg mot svensk läkarlegitimation. Vi täcker in både prekliniska och kliniska ämnen i linje med det som faktiskt testas på kunskapsprovet. Erfarna läkare föreläser live via Zoom så att du kan ställa frågor, följa med i realtid och samtidigt träna din medicinska svenska. Med månadsprenumeration får du tillgång till alla lektioner och kan planera din förberedelse i din egen takt. Vårt mål är att du ska känna dig trygg inför kunskapsprovet och väl förberedd för nästa steg in i det svenska sjukvårdssystemet.',
       descriptionMobile:
         'Utbildningen byggs kring kunskapsprovet och svenska riktlinjer så att du får en tydlig och säker väg mot legitimation. Vi täcker både prekliniska och kliniska ämnen i linje med det som faktiskt testas, och allt presenteras enligt svensk medicinsk handläggning och aktuella behandlingsrekommendationer. Erfarna läkare föreläser live via Zoom så att du kan ställa frågor, följa med i realtid och samtidigt träna din medicinska svenska.',
       cta: 'Läs mer om utbildningen',
@@ -116,7 +116,7 @@ export const translations = {
     homeOffer: {
       title: 'Vad vi erbjuder',
       description:
-        'En prenumeration som ger dig tillgång till alla live-föreläsningar och ett tydligt upplägg inför kunskapsprovet.',
+        'En prenumeration som ger dig tillgång till alla live-föreläsningar via Zoom.',
       bullets: [
         'Live-föreläsningar via Zoom med möjlighet att ställa frågor.',
         'Innehåll som följer kunskapsprovet och svensk medicinsk handläggning.',
