@@ -109,7 +109,7 @@ export const translations = {
     homeCta: {
       title: 'Redo att komma igång?',
       description:
-        'Skapa ditt konto och få tillgång till föreläsningar och material som hjälper dig förbereda dig inför kunskapsprovet.',
+        'Skapa ditt konto och få tillgång till föreläsningarna som hjälper dig att förbereda inför kunskapsprovet.',
       primaryCta: 'Kom igång',
       primaryTo: '/register',
     },
@@ -175,9 +175,9 @@ export const translations = {
           specialty: 'Internmedicin',
           image: '/Christian.JPG',
           shortBio:
-            'Överläkare i internmedicin på Danderyds sjukhus. Doktorerat i Global Hälsa. Tidigare studierektor för AT-läkarna på Karolinska sjukhuset.',
+            'Överläkare i internmedicin. Har doktorerat i Global Hälsa. Tidigare studierektor för AT-läkarna på Karolinska sjukhuset.',
           bio:
-            'Överläkare i internmedicin på Danderyds sjukhus. Doktorerat i Global Hälsa och varit studierektor för AT-läkarna på Karolinska sjukhuset. På Mediready förbereder han utlandsutbildade läkare inför kunskapsprovet och vidare ut i arbetslivet som läkare i Sverige.',
+            'Överläkare i internmedicin på Danderyds sjukhus. Har doktorerat i Global Hälsa och varit studierektor för AT-läkarna på Karolinska sjukhuset. På Mediready förbereder han utlandsutbildade läkare inför kunskapsprovet och vidare ut i arbetslivet som läkare i Sverige.',
           education: 'Doktorsexamen i Global Hälsa',
           certifications: [
             'Överläkare i internmedicin',
@@ -190,7 +190,7 @@ export const translations = {
           specialty: 'Psykiatri',
           image: '/Mats.JPEG',
           shortBio:
-            'Överläkare i psykiatri på WeMind Psykiatri. Ordförande i Region Stockholms Läkemedelskommitté. Disputerad i psykiatrisk epidemiologi vid Karolinska Institutet.',
+            'Överläkare i psykiatri på WeMind Psykiatri. Ordförande i Region Stockholms Läkemedelskommitté. Doktorerat i psykiatrisk epidemiologi vid Karolinska Institutet.',
           bio:
             'Överläkare i psykiatri på WeMind Psykiatri i Tyresö. Ordförande i Region Stockholms Läkemedelskommitté. Disputerad i psykiatrisk epidemiologi vid Karolinska Institutet.',
           education:
@@ -206,7 +206,7 @@ export const translations = {
           specialty: 'Allmänmedicin',
           image: '/Oskar.png',
           shortBio:
-            'ST-läkare i allmänmedicin i Region Skåne. Över tre års erfarenhet av undervisning inför kunskapsprovet. Hjälper läkare förbereda sig strukturerat och effektivt.',
+            'ST-läkare i allmänmedicin i Region Skåne. Över tre års erfarenhet av undervisning inför kunskapsprovet.',
           bio:
             'ST-läkare i allmänmedicin i Region Skåne med över tre års erfarenhet av undervisning inför kunskapsprovet. Hjälper läkare att förbereda sig strukturerat, effektivt och med fokus på det som verkligen krävs för att lyckas.',
           education: 'ST-läkare i allmänmedicin',
@@ -314,7 +314,7 @@ export const translations = {
     },
     footer: {
       tagline:
-        'Vi hjälper utlandsutbildade läkare att förbereda sig för kunskapsprovet och vägen till svensk läkarlegitimation.',
+        'Vi hjälper utlandsutbildade läkare att förbereda sig för kunskapsprovet.',
       servicesTitle: 'Tjänster',
       brandTitle: 'Mediready',
       resourcesTitle: 'Tjänster',
@@ -376,7 +376,7 @@ export const translations = {
         title: 'Välkommen till Medireadys diagnostiska test',
         description: 'För läkare med utbildning utanför Sverige.',
         infoTitle: 'Om provet',
-        infoIntro: 'Detta prov består av 150 flervalsfrågor och är utformat för att ge en övergripande bild av ditt nuvarande kunskapsläge inför det svenska kunskapsprovet för legitimation. Var god läs igenom informationen nedan noga innan du påbörjar provet.',
+        infoIntro: 'Detta prov består av 150 flervalsfrågor och är utformat för att ge oss en övergripande bild av ditt nuvarande kunskapsläge inför det svenska kunskapsprovet för legitimation. Baserat på resultatet kommer vi att avgöra om vi tycker att du har rätt kunskapsnivå för att kunna tillgodogöra dig vår kurs.',
         contentTitle: 'Provets innehåll är uppdelat i ungefär:',
         preclinicalTitle: 'Prekliniska frågor',
         preclinicalExamples: 't.ex. cellbiologi, fysiologi, genetik, immunologi',
@@ -395,9 +395,9 @@ export const translations = {
         description: 'Betala månadsvis och få tillgång till alla live-föreläsningar via Zoom. Vi är läkare som undervisar utlandsutbildade läkare så att du ska klara kunskapsprovet.',
         badge: 'Prenum.',
         courseTitle: 'Prenumeration – alla live-föreläsningar',
-        courseDescription: 'Mediready är läkare som undervisar andra utlandsutbildade läkare inför det svenska kunskapsprovet. Du betalar månadsvis och får tillgång till alla live-föreläsningar som sker via Zoom.',
+        courseDescription: 'Mediready är läkare som undervisar utlandsutbildade läkare inför det svenska kunskapsprovet. Du betalar månadsvis och får tillgång till alla live-föreläsningar som sker via Zoom.',
         priceLabel: 'Pris',
-        price: '999 kr',
+        price: '2000 kr',
         pricePeriod: '/ månad',
         includesTitle: 'Detta ingår:',
         includes: [
