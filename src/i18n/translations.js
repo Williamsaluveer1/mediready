@@ -1,5 +1,8 @@
 export const translations = {
   sv: {
+    auth: {
+      invalidLoginCredentials: 'Ogiltiga inloggningsuppgifter',
+    },
     nav: {
       links: [
         { to: '/kunskapstest', label: 'Diagnostiskt test' },
@@ -354,7 +357,12 @@ export const translations = {
         passwordPlaceholder: 'Välj ett lösenord',
         confirmPasswordLabel: 'Bekräfta lösenord',
         confirmPasswordPlaceholder: 'Skriv lösenordet igen',
-        passwordMismatchError: 'Lösenorden matchar inte.',
+        agreePrefix: 'Jag godkänner ',
+        termsLink: 'användarvillkoren',
+        agreeMiddle: ' och ',
+        privacyLink: 'integritetspolicyn',
+        agreeSuffix: '.',
+        acceptTermsError: 'Du måste godkänna villkoren för att registrera dig.',
         submit: 'Registrera dig',
         submitting: 'Skickar...',
         haveAccount: 'Har du redan ett konto?',
@@ -374,6 +382,7 @@ export const translations = {
         label: 'Diagnostiskt test',
         title: 'Välkommen till Medireadys diagnostiska test',
         description: 'För läkare med utbildning utanför Sverige.',
+        swedishRequirement: 'Det krävs grundläggande kunskaper i svenska.',
         infoTitle: 'Om provet',
         infoIntro: 'Detta prov består av 150 flervalsfrågor och är utformat för att ge oss en övergripande bild av ditt nuvarande kunskapsläge inför det svenska kunskapsprovet för legitimation. Baserat på resultatet kommer vi att avgöra om vi tycker att du har rätt kunskapsnivå för att kunna tillgodogöra dig vår kurs.',
         contentTitle: 'Provets innehåll är uppdelat i ungefär:',
@@ -477,10 +486,15 @@ export const translations = {
             ],
           },
           {
+            heading: 'Eget konto',
+            paragraphs: [
+              'Varje konto får endast användas av en person. Två eller fler personer får inte dela samma inloggning eller använda samma konto.',
+            ],
+          },
+          {
             heading: 'Prenumeration och betalning',
             paragraphs: [
-              'Prenumerationen på våra tjänster löper månadsvis och debiteras via betalningsleverantören Stripe. Du kan när som helst avsluta din prenumeration; den löper då till slutet av den betalda perioden.',
-              'Villkor för återbetalning och avbokning framgår av den information som ges vid köp. Stripe hanterar själva betalningsflödet; deras villkor finns på https://stripe.com/legal.',
+              'Prenumerationen på våra tjänster löper månadsvis och debiteras via betalningsleverantören Stripe. Du kan när som helst avsluta din prenumeration; den löper då till slutet av den betalda perioden. Stripe hanterar själva betalningsflödet; deras villkor finns på https://stripe.com/legal.',
             ],
           },
           {
@@ -623,6 +637,9 @@ export const translations = {
   },
 
   en: {
+    auth: {
+      invalidLoginCredentials: 'Invalid login credentials',
+    },
     nav: {
       links: [
         { to: '/kunskapstest', label: 'Diagnostic test' },
@@ -967,7 +984,12 @@ export const translations = {
         passwordPlaceholder: 'Choose a password',
         confirmPasswordLabel: 'Confirm password',
         confirmPasswordPlaceholder: 'Type your password again',
-        passwordMismatchError: 'Passwords do not match.',
+        agreePrefix: 'I agree to the ',
+        termsLink: 'terms of service',
+        agreeMiddle: ' and ',
+        privacyLink: 'privacy policy',
+        agreeSuffix: '.',
+        acceptTermsError: 'You must accept the terms to register.',
         submit: 'Sign up',
         submitting: 'Submitting...',
         haveAccount: 'Already have an account?',
@@ -987,6 +1009,7 @@ export const translations = {
         label: 'Diagnostic test',
         title: 'Welcome to Mediready\'s diagnostic test',
         description: 'For doctors educated outside Sweden.',
+        swedishRequirement: 'Basic knowledge of Swedish is required.',
         infoTitle: 'About the test',
         infoIntro: 'This test consists of 150 multiple-choice questions and is designed to give you an overview of your current knowledge level ahead of the Swedish medical licensing exam. Please read the information below carefully before starting the test.',
         contentTitle: 'The test content is divided into approximately:',
@@ -1086,14 +1109,19 @@ export const translations = {
           {
             heading: 'Acceptance of terms',
             paragraphs: [
-              'By using Mediready\'s services, you agree to thesee terms of service. If you do not accept the terms, you may not use the services.',
+              'By using Mediready\'s services, you agree to these terms of service. If you do not accept the terms, you may not use the services.',
+            ],
+          },
+          {
+            heading: 'Personal account',
+            paragraphs: [
+              'Each account may only be used by one person. Two or more people may not share the same login or use the same account.',
             ],
           },
           {
             heading: 'Subscription and payment',
             paragraphs: [
-              'Subscription to our services runs on a monthly basis and is charged via our payment provider Stripe. You may cancel your subscription at any time; it will then run until the end of the paid period.',
-              'Refund and cancellation terms are set out in the information provided at purchase. Stripe handles the payment flow; their terms are available at https://stripe.com/legal.',
+              'Subscription to our services runs on a monthly basis and is charged via our payment provider Stripe. You may cancel your subscription at any time; it will then run until the end of the paid period. Stripe handles the payment flow; their terms are available at https://stripe.com/legal.',
             ],
           },
           {

@@ -68,7 +68,10 @@ function LoginPage() {
     const { error: signInError } = await signIn(formData.email, formData.password)
 
     if (signInError) {
-      setError(signInError.message)
+      const message = signInError.message === 'Invalid login credentials'
+        ? t('auth.invalidLoginCredentials')
+        : signInError.message
+      setError(message)
       setLoading(false)
       return
     }

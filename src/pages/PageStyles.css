@@ -912,6 +912,13 @@
   font-size: 1.05rem;
   line-height: 1.7;
   color: var(--text-secondary);
+  margin: 0 0 var(--space-sm) 0;
+  max-width: 46ch;
+}
+
+.kunskapstest-swedish-requirement {
+  font-size: 0.95rem;
+  color: var(--text-muted);
   margin: 0 0 var(--space-xl) 0;
   max-width: 46ch;
 }

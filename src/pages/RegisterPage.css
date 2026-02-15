@@ -132,6 +132,42 @@
   color: var(--slate-500);
 }
 
+/* Terms checkbox */
+.register-page .form-group--checkbox {
+  gap: 0;
+}
+
+.register-page .form-group--checkbox label {
+  font-weight: 400;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.register-page .form-group--checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.register-terms-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.register-terms-link {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.register-terms-link:hover {
+  text-decoration: none;
+}
+
 /* Make primary button less "playful" on this page */
 .register-page .btn-primary {
   border-radius: var(--radius-md);

@@ -14,6 +14,7 @@ function KunskapstestPage() {
             <span className="page-label">{content.label}</span>
             <h1 className="kunskapstest-title">{content.title}</h1>
             <p className="kunskapstest-subtitle">{content.description}</p>
+            <p className="kunskapstest-swedish-requirement">{content.swedishRequirement}</p>
 
             <a
               href="https://docs.google.com/forms/d/1ti2yxIu5xcXJ1Ga5DWTSv1jAjhuHCv6bx93Ysn6Z8cw/viewform"

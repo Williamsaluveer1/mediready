@@ -16,6 +16,7 @@ function RegisterPage() {
     password: '',
     confirmPassword: '',
   })
+  const [acceptedTerms, setAcceptedTerms] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
@@ -33,6 +34,11 @@ function RegisterPage() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setError(null)
+
+    if (!acceptedTerms) {
+      setError(copy.acceptTermsError)
+      return
+    }
 
     if (formData.password !== formData.confirmPassword) {
       setError(copy.passwordMismatchError)
@@ -140,7 +146,33 @@ function RegisterPage() {
                   />
                 </div>
 
-                <button type="submit" className="btn-primary register-btn" disabled={loading}>
+                <div className="form-group form-group--checkbox">
+                  <label className="register-terms-label">
+                    <input
+                      type="checkbox"
+                      checked={acceptedTerms}
+                      onChange={(e) => {
+                        setAcceptedTerms(e.target.checked)
+                        setError(null)
+                      }}
+                      disabled={loading}
+                      aria-describedby="register-terms-desc"
+                    />
+                    <span id="register-terms-desc" className="register-terms-text">
+                      {copy.agreePrefix}
+                      <Link to="/terms" target="_blank" rel="noopener noreferrer" className="register-terms-link">
+                        {copy.termsLink}
+                      </Link>
+                      {copy.agreeMiddle}
+                      <Link to="/privacy" target="_blank" rel="noopener noreferrer" className="register-terms-link">
+                        {copy.privacyLink}
+                      </Link>
+                      {copy.agreeSuffix}
+                    </span>
+                  </label>
+                </div>
+
+                <button type="submit" className="btn-primary register-btn" disabled={loading || !acceptedTerms}>
                   {loading ? copy.submitting : copy.submit}
                 </button>
 
