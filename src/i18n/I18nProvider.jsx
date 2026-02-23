@@ -3,6 +3,19 @@ import { translations } from './translations'
 
 const I18nContext = createContext(null)
 
+export const SUPPORTED_LANGS = [
+  { code: 'sv', name: 'Svenska', flag: '🇸🇪' },
+  { code: 'en', name: 'English', flag: '🇬🇧' },
+  { code: 'ar', name: 'العربية', flag: '🇸🇦' },
+  { code: 'es', name: 'Español', flag: '🇪🇸' },
+  { code: 'fr', name: 'Français', flag: '🇫🇷' },
+  { code: 'fa', name: 'فارسی', flag: '🇮🇷' },
+  { code: 'zh', name: '中文', flag: '🇨🇳' },
+  { code: 'pt', name: 'Português', flag: '🇵🇹' },
+]
+
+const RTL_LANGS = new Set(['ar', 'fa'])
+
 function getByPath(obj, path) {
   return path.split('.').reduce((acc, part) => (acc && acc[part] !== undefined ? acc[part] : undefined), obj)
 }
@@ -17,18 +30,22 @@ function interpolate(str, vars = {}) {
 export function I18nProvider({ children }) {
   const [lang, setLang] = useState(() => {
     const saved = window.localStorage.getItem('lang')
-    return saved === 'en' || saved === 'sv' ? saved : 'sv'
+    const valid = SUPPORTED_LANGS.some((l) => l.code === saved)
+    return valid ? saved : 'sv'
   })
 
   useEffect(() => {
     window.localStorage.setItem('lang', lang)
     document.documentElement.lang = lang
+    document.documentElement.dir = RTL_LANGS.has(lang) ? 'rtl' : 'ltr'
   }, [lang])
 
   const value = useMemo(() => {
     const dict = translations[lang] || translations.sv
+    const fallback = lang !== 'en' ? (translations.en || dict) : dict
     const t = (key, vars) => {
-      const v = getByPath(dict, key)
+      let v = getByPath(dict, key)
+      if (v === undefined && fallback !== dict) v = getByPath(fallback, key)
       if (v === undefined) return key
       if (typeof v === 'string') return interpolate(v, vars)
       return v

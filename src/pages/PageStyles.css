@@ -795,6 +795,15 @@
     padding: calc(80px + var(--space-2xl)) var(--space-md) var(--space-2xl);
   }
 
+  .page-title {
+    font-size: 1.75rem;
+    line-height: 1.25;
+  }
+
+  .page-description {
+    font-size: 1rem;
+  }
+
   .page-hero--left-mobile {
     text-align: left;
   }
@@ -806,6 +815,15 @@
   
   .page-cta {
     padding: var(--space-3xl) var(--space-md);
+  }
+
+  .page-cta h2 {
+    font-size: 1.4rem;
+    line-height: 1.25;
+  }
+
+  .page-cta p {
+    font-size: 1rem;
   }
   
   .services-page-grid,
@@ -3120,6 +3138,12 @@
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
 }
 
+.schedule-card-header-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
 .schedule-card-header h2 {
   display: flex;
   align-items: center;
@@ -3128,6 +3152,14 @@
   font-weight: 600;
   color: var(--slate-900);
   margin: 0;
+}
+
+.schedule-card-notice {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--text-secondary, #64748b);
+  margin: 0;
+  max-width: 520px;
 }
 
 .schedule-card-header h2 svg {

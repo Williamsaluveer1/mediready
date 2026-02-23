@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './SecuritySection.css'
 import { useI18n } from '../i18n/I18nProvider'
 
@@ -34,6 +35,16 @@ function SecuritySection() {
               <p className="security-item-desc">{item.description}</p>
             </div>
           ))}
+        </div>
+
+        <p className="security-cta-intro">{copy.ctaIntro}</p>
+        <div className="security-actions" aria-label="Snabbval">
+          <Link to="/kunskapstest" className="btn-primary hero-cta-primary">
+            {t('hero.primaryCta')}
+            <svg className="cta-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>

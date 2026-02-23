@@ -1,3 +1,5 @@
+import { ar, es, fr, fa, zh, pt } from './translations-extra'
+
 export const translations = {
   sv: {
     auth: {
@@ -19,11 +21,11 @@ export const translations = {
     },
     hero: {
       badge: 'Anmälan öppen för 2026',
-      titleLine1: 'Vi hjälper dig på din väg mot',
-      titleHighlight: ' svensk läkarlegitimation',
-      description: 'Interaktiva föreläsningar via Zoom med erfarna läkare.',
-      descriptionLine1: 'Interaktiva föreläsningar via Zoom',
-      descriptionLine2: 'med erfarna läkare.',
+      titleLine1: 'Förbered dig inför kunskapsprovet',
+      titleHighlight: 'kunskapsprovet',
+      description: 'Interaktiva föreläsningar via Zoom med erfarna läkare. Din väg mot svensk läkarlegitimation.',
+      descriptionLine1: 'Interaktiva föreläsningar via Zoom med erfarna läkare.',
+      descriptionLine2: 'Din väg mot svensk läkarlegitimation.',
       primaryCta: 'Prova din kunskapsnivå',
       videoCta: 'Se video',
       videoOpenLabel: 'Se video',
@@ -84,6 +86,7 @@ export const translations = {
     },
     homeSecurity: {
       title: 'Så fungerar utbildningen',
+      ctaIntro: 'Vi har gjort ett diagnostiskt test där du kan pröva din kunskapsnivå.',
       items: [
         {
           title: 'Läkare som undervisar',
@@ -173,13 +176,13 @@ export const translations = {
       members: [
         {
           name: 'Christian Unge',
-          role: 'Medireadys internmedicinexpert',
+          role: 'Internmedicin',
           specialty: 'Internmedicin',
           image: '/Christian.JPG',
           shortBio:
             'Överläkare i internmedicin. Har doktorerat i Global Hälsa. Tidigare studierektor för AT-läkarna på Karolinska sjukhuset.',
           bio:
-            'Överläkare i internmedicin på Danderyds sjukhus. Har doktorerat i Global Hälsa och varit studierektor för AT-läkarna på Karolinska sjukhuset. På Mediready förbereder han utlandsutbildade läkare inför kunskapsprovet och vidare ut i arbetslivet som läkare i Sverige.',
+            'Överläkare i internmedicin på Danderyds sjukhus. Har doktorerat i Global Hälsa och varit studierektor för AT-läkarna på Karolinska sjukhuset. På Mediready förbereder han läkare utanför EU/EES inför kunskapsprovet och vidare ut i arbetslivet som läkare i Sverige.',
           education: 'Doktorsexamen i Global Hälsa',
           certifications: [
             'Överläkare i internmedicin',
@@ -188,8 +191,8 @@ export const translations = {
         },
         {
           name: 'Mats Ek',
-          role: 'Medireadys psykiatriexpert',
-          specialty: 'Psykiatri',
+          role: 'Allmänmedicin/Preklin',
+          specialty: 'Allmänmedicin',
           image: '/Mats.JPEG',
           shortBio:
             'Överläkare i psykiatri på WeMind Psykiatri. Ordförande i Region Stockholms Läkemedelskommitté. Doktorerat i psykiatrisk epidemiologi vid Karolinska Institutet.',
@@ -204,7 +207,7 @@ export const translations = {
         },
         {
           name: 'Oskar Pettersson',
-          role: 'Medireadys allmänmedicinexpert',
+          role: 'Allmänmedicin/Preklin',
           specialty: 'Allmänmedicin',
           image: '/Oskar.png',
           shortBio:
@@ -216,7 +219,7 @@ export const translations = {
         },
         {
           name: 'Sofie Wiklund',
-          role: 'Medireadys kirurgiexpert',
+          role: 'Medireadys kirurg',
           specialty: 'Kirurgi',
           image: '/sofie.JPG',
           shortBio:
@@ -291,7 +294,7 @@ export const translations = {
       label: 'Kom igång',
       heading: 'Har du en fråga till oss?',
       description:
-        'Kontakta oss för att lära dig mer om våra interaktiva föreläsningar och prenumerationstjänster. Vi hjälper dig på vägen mot svensk läkarlegitimation.',
+        'Kontakta oss för att lära dig mer om våra interaktiva föreläsningar och prenumerationstjänster. Vi hjälper dig på vägen läkarlegitimation.',
       infoEmail: 'E-post',
       infoInstagram: 'Instagram',
       infoFacebook: 'Facebook',
@@ -316,7 +319,7 @@ export const translations = {
     },
     footer: {
       tagline:
-        'Vi hjälper utlandsutbildade läkare att förbereda sig för kunskapsprovet.',
+        'Vi hjälper läkare utanför EU/EES att förbereda sig för kunskapsprovet.',
       servicesTitle: 'Tjänster',
       brandTitle: 'Mediready',
       resourcesTitle: 'Tjänster',
@@ -400,12 +403,12 @@ export const translations = {
       buyCourse: {
         label: 'Prenumeration',
         title: 'Live-föreläsningar inför kunskapsprovet',
-        description: 'Betala månadsvis och få tillgång till alla live-föreläsningar via Zoom. Vi är läkare som undervisar utlandsutbildade läkare så att du ska klara kunskapsprovet.',
+        description: 'Betala månadsvis och få tillgång till alla live-föreläsningar via Zoom. Vi är läkare som undervisar läkare utanför EU/EES så att du ska klara kunskapsprovet.',
         badge: 'Prenum.',
         courseTitle: 'Prenumeration – alla live-föreläsningar',
-        courseDescription: 'Mediready är läkare som undervisar utlandsutbildade läkare inför det svenska kunskapsprovet. Du betalar månadsvis och får tillgång till alla live-föreläsningar som sker via Zoom.',
+        courseDescription: 'Mediready är läkare som undervisar läkare utanför EU/EES inför det svenska kunskapsprovet. Du betalar månadsvis och får tillgång till alla live-föreläsningar som sker via Zoom.',
         priceLabel: 'Pris',
-        price: '2000 kr',
+        price: '2500 kr',
         pricePeriod: '/ månad',
         includesTitle: 'Detta ingår:',
         includes: [
@@ -415,6 +418,7 @@ export const translations = {
           'Prekliniska ämnen (fysiologi, immunologi, m.m.)',
           'Språkträning med medicinska termer på svenska',
         ],
+        registerPrompt: 'För att prenumerera behöver du skapa ett konto och registrera dig här',
         formTitle: 'Kom igång – skapa ditt konto',
         formIntro: 'Fyll i dina uppgifter för att gå vidare till betalning.',
         nameLabel: 'Fullständigt namn',
@@ -659,8 +663,8 @@ export const translations = {
       titleLine1: 'We help you on your way to',
       titleHighlight: ' Swedish medical licensure',
       description: 'Interactive lectures via Zoom with experienced doctors.',
-      descriptionLine1: 'Interactive lectures via Zoom',
-      descriptionLine2: 'with experienced doctors.',
+      descriptionLine1: 'Interactive lectures via Zoom with experienced doctors.',
+      descriptionLine2: 'Your path to Swedish medical licensure.',
       primaryCta: 'Test your knowledge level',
       videoCta: 'Watch video',
       videoOpenLabel: 'Watch video',
@@ -721,6 +725,7 @@ export const translations = {
     },
     homeSecurity: {
       title: 'How the training works',
+      ctaIntro: 'We have created a diagnostic test where you can try your knowledge level.',
       items: [
         {
           title: 'Doctors teach',
@@ -1032,7 +1037,7 @@ export const translations = {
         courseTitle: 'Subscription – all live lectures',
         courseDescription: 'Mediready is doctors teaching other internationally trained doctors for the Swedish medical licensing knowledge test. You pay monthly and get access to all live lectures held via Zoom.',
         priceLabel: 'Price',
-        price: '999 kr',
+        price: '2500 kr',
         pricePeriod: '/ month',
         includesTitle: 'What\'s included:',
         includes: [
@@ -1042,6 +1047,7 @@ export const translations = {
           'Pre-clinical subjects (physiology, immunology, etc.)',
           'Language training with Swedish medical terminology',
         ],
+        registerPrompt: 'To subscribe you need to create an account and register here',
         formTitle: 'Get started – create your account',
         formIntro: 'Fill in your details to proceed to payment.',
         nameLabel: 'Full name',
@@ -1262,5 +1268,11 @@ export const translations = {
       },
     },
   },
+  ar,
+  es,
+  fr,
+  fa,
+  zh,
+  pt,
 }
 

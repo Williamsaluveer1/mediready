@@ -102,6 +102,22 @@
   margin-top: 2px;
 }
 
+.home-offer-card-register-prompt {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: var(--space-lg) 0 0 0;
+}
+
+.home-offer-card-cta {
+  display: inline-flex;
+  justify-content: center;
+  margin-top: var(--space-md);
+  width: 100%;
+  min-height: 48px;
+  border-radius: var(--radius-md) !important;
+}
+
 /* Right copy */
 .home-offer-copy {
   padding-top: 6px;

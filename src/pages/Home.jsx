@@ -9,8 +9,8 @@ function Home() {
   return (
     <main>
       <Hero />
-      <SecuritySection />
       <TrustSection />
+      <SecuritySection />
       <HomeOfferSection />
       <Testimonials />
       <HomeCtaSection />

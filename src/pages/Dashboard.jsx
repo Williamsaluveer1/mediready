@@ -427,9 +427,16 @@ function Dashboard() {
           {(isSubscribed || isAdmin) && (
           <div className="dashboard-card schedule-card">
             <div className="schedule-card-header">
-              <h2>
-                {isAdmin ? 'Schemaöversikt' : 'Ditt schema'}
-              </h2>
+              <div className="schedule-card-header-title-wrap">
+                <h2>
+                  {isAdmin ? 'Schemaöversikt' : 'Ditt schema'}
+                </h2>
+                {!isAdmin && (
+                  <p className="schedule-card-notice">
+                    Obs Prenumerationen är personlig och knuten till en individ. Det är förbjudet att dela länken med andra, eller att sitta flera vid samma dator under föreläsningen.
+                  </p>
+                )}
+              </div>
             </div>
             
             <div className="schedule-card-body">

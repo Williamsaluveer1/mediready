@@ -23,9 +23,6 @@ function HomeOfferSection() {
               </li>
             ))}
           </ul>
-          <Link to={copy.ctaTo} className="btn-primary home-offer-cta">
-            {copy.cta}
-          </Link>
         </div>
 
         {/* Right: subscription card */}
@@ -57,6 +54,10 @@ function HomeOfferSection() {
                 </li>
               ))}
             </ul>
+            <p className="home-offer-card-register-prompt">{buy.registerPrompt}</p>
+            <Link to="/register" className="btn-primary home-offer-card-cta">
+              {t('nav.register')}
+            </Link>
           </div>
         </div>
       </div>

@@ -1,13 +1,18 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import './Navbar.css'
-import { useI18n } from '../i18n/I18nProvider'
+import { useI18n, SUPPORTED_LANGS } from '../i18n/I18nProvider'
+
+const currentLang = (code) => SUPPORTED_LANGS.find((l) => l.code === code) || SUPPORTED_LANGS[0]
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false)
+  const langDropdownRef = useRef(null)
+  const langDropdownMobileRef = useRef(null)
   const location = useLocation()
-  const { t } = useI18n()
+  const { t, lang, setLang } = useI18n()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,7 +26,10 @@ function Navbar() {
     setIsMobileMenuOpen(false)
   }, [location])
 
-  // Stäng menyn när man klickar utanför
+  useEffect(() => {
+    setLangDropdownOpen(false)
+  }, [lang])
+
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden'
@@ -33,7 +41,20 @@ function Navbar() {
     }
   }, [isMobileMenuOpen])
 
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      const inDesktop = langDropdownRef.current?.contains(e.target)
+      const inMobile = langDropdownMobileRef.current?.contains(e.target)
+      if (!inDesktop && !inMobile) setLangDropdownOpen(false)
+    }
+    if (langDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [langDropdownOpen])
+
   const navLinks = t('nav.links')
+  const current = currentLang(lang)
 
   return (
     <nav className={`navbar ${isScrolled ? 'navbar--scrolled' : ''}`} role="navigation" aria-label="Main navigation">
@@ -68,8 +89,52 @@ function Navbar() {
           ))}
         </ul>
         
-        {/* Desktop: auth links (not CTA) */}
+        {/* Desktop: language dropdown + auth links */}
         <div className="nav-auth-links" aria-label="Konto">
+          <div className="nav-lang-dropdown" ref={langDropdownRef}>
+            <button
+              type="button"
+              className="nav-lang-trigger"
+              onClick={() => setLangDropdownOpen((o) => !o)}
+              aria-expanded={langDropdownOpen}
+              aria-haspopup="listbox"
+              aria-label={t('nav.langToggle')}
+              title={t('nav.langToggle')}
+            >
+              <span className="nav-lang-trigger-flag" aria-hidden="true">{current.flag}</span>
+              <span className="nav-lang-trigger-name">{current.name}</span>
+              <svg className="nav-lang-trigger-chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            <div
+              className={`nav-lang-panel ${langDropdownOpen && !isMobileMenuOpen ? 'nav-lang-panel--open' : ''}`}
+              role="listbox"
+              aria-label={t('nav.langToggle')}
+            >
+              {SUPPORTED_LANGS.map((l) => (
+                <button
+                  key={l.code}
+                  type="button"
+                  role="option"
+                  aria-selected={l.code === lang}
+                  className={`nav-lang-option ${l.code === lang ? 'nav-lang-option--active' : ''}`}
+                  onClick={() => {
+                    setLang(l.code)
+                    setLangDropdownOpen(false)
+                  }}
+                >
+                  <span className="nav-lang-option-flag" aria-hidden="true">{l.flag}</span>
+                  <span className="nav-lang-option-name">{l.name}</span>
+                  {l.code === lang && (
+                    <svg className="nav-lang-option-check" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M5 12l5 5L20 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
           <Link to="/login" className="nav-auth-link">
             {t('nav.login')}
           </Link>
@@ -79,14 +144,6 @@ function Navbar() {
           </Link>
         </div>
 
-        {/* Desktop: CTA on far right */}
-        <Link to="/kunskapstest" className="nav-cta nav-cta--primary">
-          {t('nav.cta')}
-          <svg className="cta-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </Link>
-        
         {/* Mobile: Log in CTA + menu button side by side (visas alltid på mobil) */}
         <div className="nav-mobile-right">
           <Link to="/login" className="nav-mobile-login">
@@ -152,6 +209,50 @@ function Navbar() {
         </nav>
 
         <div className="mobile-menu-actions" aria-label="Snabbval">
+          <div className="nav-lang-dropdown nav-lang-dropdown--mobile" ref={langDropdownMobileRef}>
+            <button
+              type="button"
+              className="nav-lang-trigger"
+              onClick={() => setLangDropdownOpen((o) => !o)}
+              aria-expanded={langDropdownOpen}
+              aria-haspopup="listbox"
+              aria-label={t('nav.langToggle')}
+              title={t('nav.langToggle')}
+            >
+              <span className="nav-lang-trigger-flag" aria-hidden="true">{current.flag}</span>
+              <span className="nav-lang-trigger-name">{current.name}</span>
+              <svg className="nav-lang-trigger-chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            <div
+              className={`nav-lang-panel ${langDropdownOpen && isMobileMenuOpen ? 'nav-lang-panel--open' : ''}`}
+              role="listbox"
+              aria-label={t('nav.langToggle')}
+            >
+              {SUPPORTED_LANGS.map((l) => (
+                <button
+                  key={l.code}
+                  type="button"
+                  role="option"
+                  aria-selected={l.code === lang}
+                  className={`nav-lang-option ${l.code === lang ? 'nav-lang-option--active' : ''}`}
+                  onClick={() => {
+                    setLang(l.code)
+                    setLangDropdownOpen(false)
+                  }}
+                >
+                  <span className="nav-lang-option-flag" aria-hidden="true">{l.flag}</span>
+                  <span className="nav-lang-option-name">{l.name}</span>
+                  {l.code === lang && (
+                    <svg className="nav-lang-option-check" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M5 12l5 5L20 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
           <Link
             to="/kunskapstest"
             className="mobile-menu-cta mobile-menu-cta--primary"

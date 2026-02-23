@@ -55,6 +55,33 @@
   color: var(--text-secondary);
 }
 
+.security-cta-intro {
+  margin-top: var(--space-2xl);
+  margin-bottom: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.security-actions {
+  margin-top: var(--space-md);
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.security-actions .btn-primary,
+.security-actions .btn-secondary {
+  min-height: 48px;
+  justify-content: center;
+}
+
 @media (max-width: 900px) {
   .security-grid {
     grid-template-columns: 1fr;
