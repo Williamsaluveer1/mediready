@@ -27,10 +27,6 @@ function Hero() {
             <span className="hero-desc-line1">{t('hero.descriptionLine1')}</span>{' '}
             <span className="hero-desc-line2">{t('hero.descriptionLine2')}</span>
           </p>
-
-          <div className="hero-mobile-image" aria-hidden="true">
-            <img src="/surgeon-wearing-face-mask.jpg" alt="" />
-          </div>
         </div>
       </div>
     </section>

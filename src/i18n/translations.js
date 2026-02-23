@@ -108,7 +108,7 @@ export const translations = {
         'Utbildningen byggs upp kring kunskapsprovet och med svenska riktlinjer så att du får en tydlig och säker väg mot svensk läkarlegitimation. Vi täcker in både prekliniska och kliniska ämnen i linje med det som faktiskt testas på kunskapsprovet. Erfarna läkare föreläser live via Zoom så att du kan ställa frågor, följa med i realtid och samtidigt träna din medicinska svenska. Med månadsprenumeration får du tillgång till alla lektioner och kan planera din förberedelse i din egen takt. Vårt mål är att du ska känna dig trygg inför kunskapsprovet och väl förberedd för nästa steg in i det svenska sjukvårdssystemet.',
       descriptionMobile:
         'Utbildningen byggs kring kunskapsprovet och svenska riktlinjer så att du får en tydlig och säker väg mot legitimation. Vi täcker både prekliniska och kliniska ämnen i linje med det som faktiskt testas, och allt presenteras enligt svensk medicinsk handläggning och aktuella behandlingsrekommendationer. Erfarna läkare föreläser live via Zoom så att du kan ställa frågor, följa med i realtid och samtidigt träna din medicinska svenska.',
-      cta: 'Läs mer om utbildningen',
+      cta: 'Läs om oss',
       ctaTo: '/physicians',
     },
     homeCta: {
@@ -747,7 +747,7 @@ export const translations = {
         'The training is built around the knowledge test and Swedish guidelines so you have a clear path to licensure. We cover both preclinical and clinical topics in line with what is actually tested, and everything is presented according to Swedish medical practice and current treatment recommendations. Experienced doctors teach live via Zoom so you can ask questions, follow along in real time, and build your medical Swedish at the same time. With a monthly subscription you get access to all lessons and can plan your preparation at your own pace. Our aim is for you to feel confident ahead of the knowledge test and well prepared for the next step into the Swedish healthcare system.',
       descriptionMobile:
         'The training is built around the knowledge test and Swedish guidelines so you have a clear path to licensure. We cover both preclinical and clinical topics in line with what is actually tested, and everything is presented according to Swedish medical practice and current treatment recommendations. Experienced doctors teach live via Zoom so you can ask questions, follow along in real time, and build your medical Swedish at the same time.',
-      cta: 'Read more about the training',
+      cta: 'Read about us',
       ctaTo: '/physicians',
     },
     homeCta: {

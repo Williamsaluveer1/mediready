@@ -38,7 +38,6 @@ function PhysiciansPage() {
                 <div className="physician-info">
                   <h3 className="physician-name">{physician.name}</h3>
                   <span className="physician-role">{physician.role}</span>
-                  <span className="physician-specialty">{physician.specialty}</span>
                   <p className="physician-card-bio">{physician.shortBio}</p>
                 </div>
               </div>

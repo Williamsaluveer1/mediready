@@ -83,16 +83,6 @@
   display: none;
 }
 
-@media (max-width: 768px) {
-  .trust-description-full {
-    display: none;
-  }
-
-  .trust-description-mobile {
-    display: block;
-  }
-}
-
 .trust-cta {
   display: inline-flex;
   align-items: center;
@@ -135,13 +125,13 @@
   .trust-image-wrap {
     max-width: 480px;
     margin: 0 auto;
-    order: 2;
+    order: 1;
   }
 
   .trust-content {
     align-items: flex-start;
     text-align: left;
-    order: 1;
+    order: 2;
   }
 }
 

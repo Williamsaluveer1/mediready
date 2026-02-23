@@ -94,13 +94,13 @@
   50% { opacity: 0.6; transform: scale(1.1); }
 }
 
-/* Title */
+/* Title – same size as section below (TrustSection) */
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
   font-weight: 500;
-  line-height: 1.15;
-  letter-spacing: -0.025em;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   color: var(--slate-900);
   margin-bottom: var(--space-md);
   animation: fadeInUp 0.8s var(--ease-out) 0.15s both;
@@ -111,9 +111,9 @@
   font-style: normal;
 }
 
-/* Description */
+/* Description – same size as section below (TrustSection) */
 .hero-description {
-  font-size: 1.125rem;
+  font-size: 1.05rem;
   line-height: 1.7;
   color: var(--text-secondary);
   max-width: 640px;
@@ -260,31 +260,10 @@
   background: var(--slate-800);
 }
 
-/* Surgeon image – visible only on mobile, below hero text */
-.hero-mobile-image {
-  display: none;
-  width: 100%;
-  margin-top: var(--space-xl);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-}
-
-.hero-mobile-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}
-
 /* Responsive */
 @media (max-width: 1024px) {
   .hero-container {
     gap: var(--space-2xl);
-  }
-
-  .hero-title {
-    font-size: clamp(2.25rem, 4.5vw, 3rem);
   }
 }
 
@@ -308,18 +287,12 @@
     box-sizing: border-box;
   }
 
-  .hero-badge {
-    display: none;
-  }
-
   .hero-actions .btn-primary,
   .hero-actions .btn-secondary {
     border-radius: var(--radius-sm);
   }
 
   .hero-title {
-    font-size: 1.75rem;
-    line-height: 1.25;
     padding-left: 0;
     padding-right: 0;
     word-wrap: break-word;
@@ -327,7 +300,6 @@
   }
 
   .hero-description {
-    font-size: 1rem;
     padding-left: 0;
     padding-right: 0;
     width: 100%;
@@ -335,10 +307,6 @@
   }
 
   .hero-desc-line2 {
-    display: block;
-  }
-
-  .hero-mobile-image {
     display: block;
   }
 }
@@ -352,9 +320,5 @@
   .hero-content {
     padding-left: 0;
     padding-right: 0;
-  }
-
-  .hero-title {
-    font-size: 1.5rem;
   }
 }

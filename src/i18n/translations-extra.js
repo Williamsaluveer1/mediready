@@ -101,7 +101,7 @@ export const ar = {
       'التدريب مبني حول اختبار المعرفة والإرشادات السويدية حتى يكون لديك مسار واضح نحو الترخيص. نغطي المواضيع قبل السريرية والسريرية بما يتماشى مع ما يُختبر فعلياً، ويُقدّم كل شيء وفق الممارسة الطبية السويدية وتوصيات العلاج الحالية. أطباء ذوو خبرة يدرّسون مباشرة عبر زووم حتى تتمكن من طرح الأسئلة والمتابعة في الوقت الفعلي وبناء لغتك الطبية السويدية في نفس الوقت. مع الاشتراك الشهري تحصل على الوصول لجميع الدروس ويمكنك التخطيط لتحضيرك وفق وتيرتك.',
     descriptionMobile:
       'التدريب مبني حول اختبار المعرفة والإرشادات السويدية حتى يكون لديك مسار واضح نحو الترخيص. نغطي المواضيع قبل السريرية والسريرية بما يتماشى مع ما يُختبر فعلياً، ويُقدّم كل شيء وفق الممارسة الطبية السويدية وتوصيات العلاج الحالية. أطباء ذوو خبرة يدرّسون مباشرة عبر زووم حتى تتمكن من طرح الأسئلة والمتابعة في الوقت الفعلي وبناء لغتك الطبية السويدية.',
-    cta: 'اقرأ المزيد عن التدريب',
+    cta: 'اقرأ عنا',
     ctaTo: '/physicians',
   },
   homeCta: {
@@ -738,7 +738,7 @@ export const es = {
       'La formación se centra en el examen de conocimientos y las guías suecas para que tengas un camino claro hacia la licencia. Cubrimos temas preclínicos y clínicos según lo que se examina realmente, y todo se presenta según la práctica médica sueca y las recomendaciones de tratamiento actuales. Médicos con experiencia enseñan en directo por Zoom para que puedas preguntar, seguir en tiempo real y mejorar tu sueco médico al mismo tiempo. Con una suscripción mensual tienes acceso a todas las clases y puedes planificar tu preparación a tu ritmo. Nuestro objetivo es que te sientas seguro ante el examen y bien preparado para el siguiente paso en el sistema sanitario sueco.',
     descriptionMobile:
       'La formación se centra en el examen de conocimientos y las guías suecas para que tengas un camino claro hacia la licencia. Cubrimos temas preclínicos y clínicos según lo que se examina realmente, y todo se presenta según la práctica médica sueca y las recomendaciones de tratamiento actuales. Médicos con experiencia enseñan en directo por Zoom para que puedas preguntar, seguir en tiempo real y mejorar tu sueco médico.',
-    cta: 'Leer más sobre la formación',
+    cta: 'Leer sobre nosotros',
     ctaTo: '/physicians',
   },
   homeCta: {
@@ -1377,7 +1377,7 @@ export const fr = {
       'La formation est construite autour du test de connaissances et des recommandations suédoises pour un chemin clair vers l\'autorisation. Nous couvrons les sujets précliniques et cliniques conformément à ce qui est réellement testé, le tout présenté selon la pratique médicale suédoise et les recommandations de traitement actuelles. Des médecins expérimentés enseignent en direct par Zoom pour que vous puissiez poser des questions, suivre en temps réel et renforcer votre suédois médical. Avec un abonnement mensuel vous avez accès à tous les cours et pouvez organiser votre préparation à votre rythme. Notre objectif est que vous vous sentiez en confiance avant le test et bien préparé pour la suite dans le système de santé suédois.',
     descriptionMobile:
       'La formation est construite autour du test de connaissances et des recommandations suédoises pour un chemin clair vers l\'autorisation. Nous couvrons les sujets précliniques et cliniques conformément à ce qui est réellement testé, le tout présenté selon la pratique médicale suédoise et les recommandations de traitement actuelles. Des médecins expérimentés enseignent en direct par Zoom pour que vous puissiez poser des questions, suivre en temps réel et renforcer votre suédois médical.',
-    cta: 'En savoir plus sur la formation',
+    cta: 'Lire sur nous',
     ctaTo: '/physicians',
   },
   homeCta: {
@@ -1975,7 +1975,7 @@ export const fa = {
       'آموزش حول آزمون دانش و راهنمای سوئدی ساخته شده تا مسیر روشنی به مجوز داشته باشید. موضوعات پیش\u200cبالینی و بالینی را مطابق آنچه واقعاً آزمون می\u200cشود پوشش می\u200cدهیم و همه مطابق عمل پزشکی سوئد و توصیه\u200cهای درمان فعلی ارائه می\u200cشود. پزشکان با تجربه از طریق زوم به صورت زنده تدریس می\u200cکنند تا بتوانید سوال بپرسید، در زمان واقعی دنبال کنید و همزمان سوئدی پزشکی خود را تقویت کنید. با اشتراک ماهانه به همه درس\u200cها دسترسی دارید و می\u200cتوانید با سرعت خود برنامه\u200cریزی کنید. هدف ما این است که قبل از آزمون مطمئن و برای قدم بعدی در نظام سلامت سوئد آماده باشید.',
     descriptionMobile:
       'آموزش حول آزمون دانش و راهنمای سوئدی ساخته شده تا مسیر روشنی به مجوز داشته باشید. موضوعات پیش\u200cبالینی و بالینی را پوشش می\u200cدهیم و همه مطابق عمل پزشکی سوئد ارائه می\u200cشود. پزشکان با تجربه از طریق زوم زنده تدریس می\u200cکنند.',
-    cta: 'بیشتر درباره آموزش بخوانید',
+    cta: 'درباره ما بخوانید',
     ctaTo: '/physicians',
   },
   homeCta: {
@@ -2365,7 +2365,7 @@ export const zh = {
     title: '关于培训',
     description: '培训围绕知识测试和瑞典指南设计，助您清晰走向执照。我们涵盖与实考一致的前期与临床内容，均按瑞典医学实践及现行治疗建议呈现。经验丰富的医生通过Zoom直播授课，您可提问、实时跟进并提升医学瑞典语。月付订阅可访问全部课程，按自己的节奏准备。我们的目标是让您在知识测试前充满信心，并为进入瑞典医疗体系的下一步做好准备。',
     descriptionMobile: '培训围绕知识测试和瑞典指南设计，助您清晰走向执照。我们涵盖前期与临床内容，均按瑞典医学实践呈现。经验丰富的医生通过Zoom直播授课。',
-    cta: '了解更多关于培训',
+    cta: '了解我们',
     ctaTo: '/physicians',
   },
   homeCta: {
@@ -2580,7 +2580,7 @@ export const pt = {
       'A formação é construída em torno do teste de conhecimentos e das orientações suecas para um caminho claro para a licença. Cobrimos tópicos pré-clínicos e clínicos de acordo com o que é realmente testado, tudo apresentado segundo a prática médica sueca e recomendações de tratamento atuais. Médicos experientes lecionam em direto via Zoom para poder colocar questões, acompanhar em tempo real e desenvolver o seu sueco médico. Com uma subscrição mensal tem acesso a todas as aulas e pode planear a sua preparação ao seu ritmo. O nosso objetivo é que se sinta confiante antes do teste e bem preparado para o próximo passo no sistema de saúde sueco.',
     descriptionMobile:
       'A formação é construída em torno do teste de conhecimentos e das orientações suecas para um caminho claro para a licença. Cobrimos tópicos pré-clínicos e clínicos, tudo apresentado segundo a prática médica sueca. Médicos experientes lecionam em direto via Zoom.',
-    cta: 'Ler mais sobre a formação',
+    cta: 'Ler sobre nós',
     ctaTo: '/physicians',
   },
   homeCta: {
