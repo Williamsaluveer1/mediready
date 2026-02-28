@@ -21,7 +21,7 @@ export const translations = {
     },
     hero: {
       badge: 'Anmälan öppen för 2026',
-      titleLine1: 'Förbered dig inför kunskapsprovet',
+      titleLine1: 'Förbered dig inför ',
       titleHighlight: 'kunskapsprovet',
       description: 'Interaktiva föreläsningar via Zoom med erfarna läkare. Din väg mot svensk läkarlegitimation.',
       descriptionLine1: 'Interaktiva föreläsningar via Zoom med erfarna läkare.',
