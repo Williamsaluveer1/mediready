@@ -182,7 +182,7 @@ export const translations = {
           shortBio:
             'Överläkare i internmedicin. Har doktorerat i Global Hälsa. Tidigare studierektor för AT-läkarna på Karolinska sjukhuset.',
           bio:
-            'Överläkare i internmedicin på Danderyds sjukhus. Har doktorerat i Global Hälsa och varit studierektor för AT-läkarna på Karolinska sjukhuset. På Mediready förbereder han läkare utanför EU/EES inför kunskapsprovet och vidare ut i arbetslivet som läkare i Sverige.',
+            'Överläkare i internmedicin på Danderyds sjukhus. Har doktorerat i Global Hälsa och varit studierektor för AT-läkarna på Karolinska sjukhuset. På Mediready förbereder han läkare utbildade utanför EU/EES inför kunskapsprovet och vidare ut i arbetslivet som läkare i Sverige.',
           education: 'Doktorsexamen i Global Hälsa',
           certifications: [
             'Överläkare i internmedicin',
@@ -219,7 +219,7 @@ export const translations = {
         },
         {
           name: 'Sofie Wiklund',
-          role: 'Medireadys kirurg',
+          role: 'Kirurgi/gynekologi/ortopedi',
           specialty: 'Kirurgi',
           image: '/sofie.JPG',
           shortBio:
@@ -319,7 +319,7 @@ export const translations = {
     },
     footer: {
       tagline:
-        'Vi hjälper läkare utanför EU/EES att förbereda sig för kunskapsprovet.',
+        'Vi hjälper läkare utbildade utanför EU/EES att förbereda sig för kunskapsprovet.',
       servicesTitle: 'Tjänster',
       brandTitle: 'Mediready',
       resourcesTitle: 'Tjänster',
@@ -338,7 +338,6 @@ export const translations = {
         ],
         institute: [
           { label: 'Om oss', to: '/physicians' },
-          { label: 'Kontakt', to: '/contact' },
           { label: 'Integritetspolicy', to: '/privacy' },
           { label: 'Användarvillkor', to: '/terms' },
         ],
@@ -403,10 +402,10 @@ export const translations = {
       buyCourse: {
         label: 'Prenumeration',
         title: 'Live-föreläsningar inför kunskapsprovet',
-        description: 'Betala månadsvis och få tillgång till alla live-föreläsningar via Jitsi Meet. Vi är läkare som undervisar läkare utanför EU/EES så att du ska klara kunskapsprovet.',
+        description: 'Betala månadsvis och få tillgång till alla live-föreläsningar via Jitsi Meet. Vi är läkare som undervisar läkare utbildade utanför EU/EES så att du ska klara kunskapsprovet.',
         badge: 'Prenum.',
         courseTitle: 'Prenumeration – alla live-föreläsningar',
-        courseDescription: 'Mediready är läkare som undervisar läkare utanför EU/EES inför det svenska kunskapsprovet. Du betalar månadsvis och får tillgång till alla live-föreläsningar som sker via Jitsi Meet.',
+        courseDescription: 'Mediready är läkare som undervisar läkare utbildade utanför EU/EES inför det svenska kunskapsprovet. Du betalar månadsvis och får tillgång till alla live-föreläsningar som sker via Jitsi Meet.',
         priceLabel: 'Pris',
         price: '2500 kr',
         pricePeriod: '/ månad',
@@ -967,7 +966,6 @@ export const translations = {
         ],
         institute: [
           { label: 'About us', to: '/physicians' },
-          { label: 'Contact', to: '/contact' },
           { label: 'Privacy policy', to: '/privacy' },
           { label: 'Terms of service', to: '/terms' },
         ],

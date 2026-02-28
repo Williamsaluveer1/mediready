@@ -3285,11 +3285,14 @@
   color: var(--text-secondary);
 }
 
-.schedule-empty svg {
+.schedule-empty svg,
+.schedule-empty .schedule-empty-icon,
+.schedule-empty img {
   width: 56px;
   height: 56px;
   color: var(--slate-300);
   margin-bottom: var(--space-md);
+  opacity: 0.5;
 }
 
 .schedule-empty p {
@@ -3765,7 +3768,9 @@
     padding: 0.2rem 0.4rem;
   }
 
-  .schedule-empty svg {
+  .schedule-empty svg,
+  .schedule-empty .schedule-empty-icon,
+  .schedule-empty img {
     width: 40px;
     height: 40px;
   }

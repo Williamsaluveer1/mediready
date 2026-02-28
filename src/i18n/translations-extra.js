@@ -318,7 +318,6 @@ export const ar = {
       ],
       institute: [
         { label: 'من نحن', to: '/physicians' },
-        { label: 'اتصل', to: '/contact' },
         { label: 'سياسة الخصوصية', to: '/privacy' },
         { label: 'شروط الخدمة', to: '/terms' },
       ],
@@ -957,7 +956,6 @@ export const es = {
       ],
       institute: [
         { label: 'Sobre nosotros', to: '/physicians' },
-        { label: 'Contacto', to: '/contact' },
         { label: 'Política de privacidad', to: '/privacy' },
         { label: 'Términos de servicio', to: '/terms' },
       ],
@@ -1596,7 +1594,6 @@ export const fr = {
       ],
       institute: [
         { label: 'À propos', to: '/physicians' },
-        { label: 'Contact', to: '/contact' },
         { label: 'Politique de confidentialité', to: '/privacy' },
         { label: 'Conditions d\'utilisation', to: '/terms' },
       ],
@@ -2143,7 +2140,6 @@ export const fa = {
       ],
       institute: [
         { label: 'درباره ما', to: '/physicians' },
-        { label: 'تماس', to: '/contact' },
         { label: 'سیاست حفظ حریم خصوصی', to: '/privacy' },
         { label: 'شرایط خدمات', to: '/terms' },
       ],
@@ -2495,7 +2491,6 @@ export const zh = {
       ],
       institute: [
         { label: '关于我们', to: '/physicians' },
-        { label: '联系', to: '/contact' },
         { label: '隐私政策', to: '/privacy' },
         { label: '服务条款', to: '/terms' },
       ],
@@ -2712,7 +2707,6 @@ export const pt = {
       ],
       institute: [
         { label: 'Sobre nós', to: '/physicians' },
-        { label: 'Contacto', to: '/contact' },
         { label: 'Política de privacidade', to: '/privacy' },
         { label: 'Termos de serviço', to: '/terms' },
       ],

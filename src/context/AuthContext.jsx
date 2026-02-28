@@ -94,6 +94,9 @@ export function AuthProvider({ children }) {
     }
   }, [user])
 
+  // Canonical URL for email links so verification/reset always goes to mediready.se, not vercel.app
+  const siteUrl = import.meta.env.VITE_SITE_URL || window.location.origin
+
   const signUp = async (email, password, name) => {
     const { data, error } = await supabase.auth.signUp({
       email,
@@ -102,7 +105,7 @@ export function AuthProvider({ children }) {
         data: {
           full_name: name,
         },
-        emailRedirectTo: `${window.location.origin}/auth/callback`,
+        emailRedirectTo: `${siteUrl}/auth/callback`,
       },
     })
     return { data, error }
@@ -123,7 +126,7 @@ export function AuthProvider({ children }) {
 
   const resetPassword = async (email) => {
     const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${window.location.origin}/auth/reset-password`,
+      redirectTo: `${siteUrl}/auth/reset-password`,
     })
     return { data, error }
   }
