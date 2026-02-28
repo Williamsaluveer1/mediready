@@ -115,9 +115,11 @@ serve(async (req) => {
         `
 
         // Send email using Resend API
-        // You need to set RESEND_API_KEY in your Supabase project secrets
+        // Set RESEND_API_KEY and optionally RESEND_FROM_EMAIL in Supabase project secrets.
+        // RESEND_FROM_EMAIL must use a verified domain in Resend (e.g. "Mediready <hej@mediready.se>").
         const resendApiKey = Deno.env.get('RESEND_API_KEY')
-        
+        const fromEmail = Deno.env.get('RESEND_FROM_EMAIL') || 'Mediready <hej@mediready.se>'
+
         if (resendApiKey) {
           const resendResponse = await fetch('https://api.resend.com/emails', {
             method: 'POST',
@@ -126,7 +128,7 @@ serve(async (req) => {
               'Authorization': `Bearer ${resendApiKey}`,
             },
             body: JSON.stringify({
-              from: 'Mediready <noreply@mediready.se>',
+              from: fromEmail,
               to: email,
               subject: subject,
               html: emailHtml,

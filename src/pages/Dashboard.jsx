@@ -5,6 +5,7 @@ import { getLessons, addLesson, updateLesson, deleteLesson } from '../lib/lesson
 import { getProfiles } from '../lib/profiles'
 import { supabase } from '../lib/supabase'
 import { createCheckoutSession, createPortalSession } from '../lib/stripe'
+import { JITSI_PARTICIPANT_URL, JITSI_HOST_URL } from '../config/jitsi'
 import './PageStyles.css'
 
 const emptyFormData = {
@@ -48,6 +49,8 @@ function Dashboard() {
   const [emailLoading, setEmailLoading] = useState(false)
   const [emailError, setEmailError] = useState(null)
   const [emailSuccess, setEmailSuccess] = useState(false)
+  const [messagesHistory, setMessagesHistory] = useState([])
+  const [messagesHistoryLoading, setMessagesHistoryLoading] = useState(false)
 
   // Handle Stripe checkout return (success/cancel URL params)
   useEffect(() => {
@@ -85,7 +88,7 @@ function Dashboard() {
 
     fetchLessons()
 
-    // Realtime: uppdatera lektioner när en rad ändras (t.ex. zoom_meeting_id sätts av edge-funktionen)
+    // Realtime: uppdatera lektioner när en rad ändras
     const channel = supabase
       .channel('lessons-changes')
       .on(
@@ -115,6 +118,40 @@ function Dashboard() {
     
     if (user && isAdmin) {
       fetchUsers()
+    }
+  }, [user, isAdmin])
+
+  // Fetch messages history (admin only)
+  const fetchMessagesHistory = async () => {
+    setMessagesHistoryLoading(true)
+    const { data, error } = await supabase
+      .from('messages')
+      .select('id, subject, message, status, created_at, updated_at')
+      .order('created_at', { ascending: false })
+      .limit(50)
+    if (!error && data) {
+      setMessagesHistory(data)
+    }
+    setMessagesHistoryLoading(false)
+  }
+
+  useEffect(() => {
+    if (user && isAdmin) {
+      fetchMessagesHistory()
+    }
+  }, [user, isAdmin])
+
+  // Realtime: uppdatera historik när ett utskick får ny status (t.ex. queued → sent)
+  useEffect(() => {
+    if (!user || !isAdmin) return
+    const channel = supabase
+      .channel('messages-changes')
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'messages' }, () => {
+        fetchMessagesHistory()
+      })
+      .subscribe()
+    return () => {
+      supabase.removeChannel(channel)
     }
   }, [user, isAdmin])
 
@@ -243,15 +280,20 @@ function Dashboard() {
       return
     }
 
-    const { error } = await supabase
-      .from('messages')
-      .insert({
-        created_by: user.id,
-        subject: emailData.subject.trim(),
-        message: emailData.message.trim(),
-        audience: 'all',
-        status: 'queued'
-      })
+    const activeCount = users.filter((p) => (p.subscription_status || 'inactive') === 'active').length
+    if (activeCount === 0) {
+      setEmailError('Inga deltagare med aktiv prenumeration att skicka till.')
+      setEmailLoading(false)
+      return
+    }
+
+    const { error } = await supabase.from('messages').insert({
+      created_by: user.id,
+      subject: emailData.subject.trim(),
+      message: emailData.message.trim(),
+      audience: 'all',
+      status: 'queued'
+    })
 
     if (error) {
       setEmailError(error.message || 'Kunde inte spara utskicket')
@@ -262,10 +304,8 @@ function Dashboard() {
     setEmailSuccess(true)
     setEmailData({ subject: '', message: '' })
     setEmailLoading(false)
-    setTimeout(() => {
-      setEmailSuccess(false)
-      setShowEmailForm(false)
-    }, 3000)
+    fetchMessagesHistory()
+    setTimeout(() => setEmailSuccess(false), 5000)
   }
 
   const formatDate = (dateStr) => {
@@ -281,11 +321,11 @@ function Dashboard() {
     return timeStr?.slice(0, 5) || ''
   }
 
-  // Visa endast lektioner där zoom_meeting_id är ifyllt (edge-funktionen har kört klart)
-  const lessonsReady = lessons.filter((lesson) => lesson.zoom_meeting_id)
+  // Alla schemalagda lektioner visas (samma Jitsi Meet-länk för alla)
+  const lessonsForSchedule = lessons
 
   // Group lessons by date
-  const groupedLessons = lessonsReady.reduce((groups, lesson) => {
+  const groupedLessons = lessonsForSchedule.reduce((groups, lesson) => {
     const date = lesson.date
     if (!groups[date]) {
       groups[date] = []
@@ -445,7 +485,7 @@ function Dashboard() {
                   <div className="loading-spinner"></div>
                   <p>Laddar schema...</p>
                 </div>
-              ) : lessonsReady.length === 0 ? (
+              ) : lessonsForSchedule.length === 0 ? (
                 <div className="schedule-empty">
                   <svg viewBox="0 0 24 24" fill="none">
                     <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" strokeWidth="2"/>
@@ -455,7 +495,7 @@ function Dashboard() {
                     <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                   </svg>
                   <p>Inga schemalagda lektioner ännu</p>
-                  {isAdmin && <span>Lägg till din första lektion ovan. Lektioner visas när Zoom-länk är skapad.</span>}
+                  {isAdmin && <span>Lägg till lektioner ovan. Lektioner visas direkt i schemat. Samma Jitsi Meet-länk används för alla möten.</span>}
                 </div>
               ) : (
                 <div className="schedule-list">
@@ -491,34 +531,20 @@ function Dashboard() {
                                     {lesson.instructor}
                                   </span>
                                 )}
-                                {(isAdmin ? lesson.host_zoom_link : lesson.participant_zoom_link) ? (
-                                  <>
-                                    {lesson.zoom_meeting_id && (
-                                      <div className="zoom-credentials">
-                                        <span className="zoom-info">
-                                          <strong>Mötes-ID:</strong> {lesson.zoom_meeting_id}
-                                        </span>
-                                        {lesson.zoom_password && (
-                                          <span className="zoom-info">
-                                            <strong>Lösenord:</strong> {lesson.zoom_password}
-                                          </span>
-                                        )}
-                                      </div>
-                                    )}
-                                    <a 
-                                      href={(isAdmin ? lesson.host_zoom_link : lesson.participant_zoom_link)} 
-                                      target="_blank" 
-                                      rel="noopener noreferrer"
-                                      className="join-meeting-btn"
-                                    >
-                                      {isAdmin ? 'Gå med i mötet som host' : 'Gå med i mötet'}
-                                      <svg className="external-link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                        <polyline points="15 3 21 3 21 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                        <line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                      </svg>
-                                    </a>
-                                  </>
+                                {(isAdmin ? JITSI_HOST_URL : JITSI_PARTICIPANT_URL) ? (
+                                  <a 
+                                    href={isAdmin ? JITSI_HOST_URL : JITSI_PARTICIPANT_URL} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="join-meeting-btn"
+                                  >
+                                    {isAdmin ? 'Gå med i mötet som host' : 'Gå med i mötet'}
+                                    <svg className="external-link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                      <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                      <polyline points="15 3 21 3 21 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                      <line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
+                                  </a>
                                 ) : lesson.location ? (
                                   <span className="meta-item location-item">
                                     <svg viewBox="0 0 24 24" fill="none">
@@ -560,11 +586,11 @@ function Dashboard() {
                   </button>
                 </div>
                 <div className="dashboard-card-body">
-                {/* Admin Lessons List – visar endast lektioner med zoom_meeting_id */}
-                {lessonsReady.length > 0 && (
+                {/* Admin Lessons List – samma lektioner som i schemat */}
+                {lessons.length > 0 && (
                   <div className="admin-lessons-list">
-                    <h3>Kommande lektioner ({lessonsReady.length})</h3>
-                    {lessonsReady.map(lesson => (
+                    <h3>Kommande lektioner ({lessons.length})</h3>
+                    {lessons.map(lesson => (
                       <div key={lesson.id} className="admin-lesson-item">
                         <div className="admin-lesson-info">
                           <strong>{lesson.title}</strong>
@@ -603,7 +629,7 @@ function Dashboard() {
               {/* Admin: Skicka utskick – sparas i public.messages */}
               <div className="dashboard-card email-card">
                 <div className="dashboard-card-header">
-                  <h2>Skicka e-post (Detta meddelande skickas då ut till alla deltagare som har aktiv prenumeration på deras e-postadress)</h2>
+                  <h2>Skicka mail till alla deltagare med aktiv prenumeration</h2>
                 </div>
                 <div className="dashboard-card-body">
                 <form className="email-form" onSubmit={handleSendEmail}>
@@ -613,7 +639,7 @@ function Dashboard() {
                           <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
                           <path d="M8 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
-                        Utskicket sparades.
+                        Utskicket är köat och skickas till mottagarna.
                       </div>
                     )}
                     {emailError && (
@@ -665,6 +691,47 @@ function Dashboard() {
                       )}
                     </button>
                   </form>
+
+                  {/* Historik över utskick */}
+                  <div className="email-history">
+                    <h3>Historik – utskick</h3>
+                    {messagesHistoryLoading ? (
+                      <div className="schedule-loading">
+                        <div className="loading-spinner"></div>
+                        <p>Laddar historik...</p>
+                      </div>
+                    ) : messagesHistory.length === 0 ? (
+                      <p className="email-history-empty">Inga utskick ännu.</p>
+                    ) : (
+                      <ul className="email-history-list">
+                        {messagesHistory.map((msg) => (
+                          <li key={msg.id} className="email-history-item">
+                            <div className="email-history-main">
+                              <span className="email-history-subject">{msg.subject}</span>
+                              <span className={`email-history-status email-history-status--${msg.status || 'queued'}`}>
+                                {msg.status === 'queued' && 'Köad'}
+                                {msg.status === 'sent' && 'Skickad'}
+                                {msg.status === 'failed' && 'Misslyckad'}
+                                {!['queued', 'sent', 'failed'].includes(msg.status) && (msg.status || '–')}
+                              </span>
+                            </div>
+                            <div className="email-history-meta">
+                              {new Date(msg.created_at).toLocaleString('sv-SE', {
+                                dateStyle: 'short',
+                                timeStyle: 'short'
+                              })}
+                              {msg.updated_at && msg.updated_at !== msg.created_at && (
+                                <> · Uppdaterad {new Date(msg.updated_at).toLocaleString('sv-SE', { dateStyle: 'short', timeStyle: 'short' })}</>
+                              )}
+                            </div>
+                            {msg.message && (
+                              <div className="email-history-message">{msg.message}</div>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                 </div>
               </div>
 

@@ -97,7 +97,7 @@
   color: var(--slate-700);
   background: #fff;
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border-radius: 4px;
   cursor: pointer;
   transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
