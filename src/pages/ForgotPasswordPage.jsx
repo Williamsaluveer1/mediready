@@ -39,13 +39,6 @@ function ForgotPasswordPage() {
 
           <div className="register-left-inner">
             <div className="register-card">
-              <h1 id="forgot-heading" className="register-title">
-                Glömt lösenord?
-              </h1>
-              <p className="register-subtitle">
-                Ange din e-postadress så skickar vi dig en länk för att återställa ditt lösenord.
-              </p>
-
               {success ? (
                 <div className="forgot-password-success">
                   <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -62,7 +55,14 @@ function ForgotPasswordPage() {
                   </Link>
                 </div>
               ) : (
-                <form className="register-form" onSubmit={handleSubmit}>
+                <>
+                  <h1 id="forgot-heading" className="register-title">
+                    Glömt lösenord?
+                  </h1>
+                  <p className="register-subtitle">
+                    Ange din e-postadress så skickar vi dig en länk för att återställa ditt lösenord.
+                  </p>
+                  <form className="register-form" onSubmit={handleSubmit}>
                   {error && (
                     <div className="form-error">
                       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -110,6 +110,7 @@ function ForgotPasswordPage() {
                     </Link>
                   </p>
                 </form>
+                </>
               )}
             </div>
           </div>
