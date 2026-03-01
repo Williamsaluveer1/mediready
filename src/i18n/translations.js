@@ -23,15 +23,15 @@ export const translations = {
       badge: 'Anmälan öppen för 2026',
       titleLine1: 'Förbered dig inför ',
       titleHighlight: 'kunskapsprovet',
-      description: 'Interaktiva föreläsningar via Jitsi Meet med erfarna läkare. Din väg mot svensk läkarlegitimation.',
-      descriptionLine1: 'Interaktiva föreläsningar via Jitsi Meet med erfarna läkare.',
+      description: 'Interaktiva videoföreläsningar med erfarna läkare. Din väg mot svensk läkarlegitimation.',
+      descriptionLine1: 'Interaktiva videoföreläsningar med erfarna läkare.',
       descriptionLine2: 'Din väg mot svensk läkarlegitimation.',
       primaryCta: 'Prova din kunskapsnivå',
       videoCta: 'Se video',
       videoOpenLabel: 'Se video',
       videoCloseLabel: 'Stäng video',
       trust: [
-        { strong: 'Live via Jitsi Meet', span: 'Interaktiva föreläsningar' },
+        { strong: 'Live videoföreläsningar', span: 'Interaktiva sessioner' },
         { strong: '4 läkare', span: 'ST & överläkare' },
         { strong: 'Svenska riktlinjer', span: 'Aktuell handläggning' },
       ],
@@ -49,7 +49,7 @@ export const translations = {
         {
           title: 'Interaktiva föreläsningar',
           description:
-            'Jitsi Meet/videobaserade föreläsningar där du som deltagare aktivt deltar och kan ställa frågor i realtid.',
+            'Videoföreläsningar där du som deltagare aktivt deltar och kan ställa frågor i realtid.',
           link: '/services#lectures',
         },
         {
@@ -93,7 +93,7 @@ export const translations = {
           description: 'Erfarna läkare håller i föreläsningarna.',
         },
         {
-          title: 'Live via Jitsi Meet',
+          title: 'Live videoföreläsningar',
           description: 'Föreläsningarna hålls Live så att du kan ställa frågor och avbryta när du vill.',
         },
         {
@@ -105,9 +105,9 @@ export const translations = {
     homeTrust: {
       title: 'Om utbildningen',
       description:
-        'Utbildningen byggs upp kring kunskapsprovet och med svenska riktlinjer så att du får en tydlig och säker väg mot svensk läkarlegitimation. Vi täcker in både prekliniska och kliniska ämnen i linje med det som faktiskt testas på kunskapsprovet. Erfarna läkare föreläser live via Jitsi Meet så att du kan ställa frågor, följa med i realtid och samtidigt träna din medicinska svenska. Med månadsprenumeration får du tillgång till alla lektioner och kan planera din förberedelse i din egen takt. Vårt mål är att du ska känna dig trygg inför kunskapsprovet och väl förberedd för nästa steg in i det svenska sjukvårdssystemet.',
+        'Utbildningen byggs upp kring kunskapsprovet och med svenska riktlinjer så att du får en tydlig och säker väg mot svensk läkarlegitimation. Vi täcker in både prekliniska och kliniska ämnen i linje med det som faktiskt testas på kunskapsprovet. Erfarna läkare föreläser live via video så att du kan ställa frågor, följa med i realtid och samtidigt träna din medicinska svenska. Med månadsprenumeration får du tillgång till alla lektioner och kan planera din förberedelse i din egen takt. Vårt mål är att du ska känna dig trygg inför kunskapsprovet och väl förberedd för nästa steg in i det svenska sjukvårdssystemet.',
       descriptionMobile:
-        'Utbildningen byggs kring kunskapsprovet och svenska riktlinjer så att du får en tydlig och säker väg mot legitimation. Vi täcker både prekliniska och kliniska ämnen i linje med det som faktiskt testas, och allt presenteras enligt svensk medicinsk handläggning och aktuella behandlingsrekommendationer. Erfarna läkare föreläser live via Jitsi Meet så att du kan ställa frågor, följa med i realtid och samtidigt träna din medicinska svenska.',
+        'Utbildningen byggs kring kunskapsprovet och svenska riktlinjer så att du får en tydlig och säker väg mot legitimation. Vi täcker både prekliniska och kliniska ämnen i linje med det som faktiskt testas, och allt presenteras enligt svensk medicinsk handläggning och aktuella behandlingsrekommendationer. Erfarna läkare föreläser live via video så att du kan ställa frågor, följa med i realtid och samtidigt träna din medicinska svenska.',
       cta: 'Läs om oss',
       ctaTo: '/physicians',
     },
@@ -121,9 +121,9 @@ export const translations = {
     homeOffer: {
       title: 'Vad vi erbjuder',
       description:
-        'En prenumeration som ger dig tillgång till alla live-föreläsningar via Jitsi Meet.',
+        'En prenumeration som ger dig tillgång till alla live videoföreläsningar.',
       bullets: [
-        'Live-föreläsningar via Jitsi Meet med möjlighet att ställa frågor.',
+        'Live videoföreläsningar med möjlighet att ställa frågor.',
         'Innehåll som följer kunskapsprovet och svensk medicinsk handläggning.',
         'Du kan avsluta när som helst – prenumerationen är månadsvis.',
       ],
@@ -143,7 +143,7 @@ export const translations = {
       description1:
         'Vi är fyra läkare, på olika nivåer (ST och överläkare) som vill hjälpa er öka motivation, språk och förståelse/kunskap i svensk medicinsk handläggning.',
       description2:
-        'Med prenumeration får du tillgång till alla våra lektioner via Jitsi Meet. Prenumerationen är månadsvis – du kan avsluta när som helst.',
+        'Med prenumeration får du tillgång till alla våra lektioner via videoföreläsningar. Prenumerationen är månadsvis – du kan avsluta när som helst.',
       primaryCta: 'Läs mer om oss',
       secondaryCta: 'Möt oss',
       imageAltMain: 'Medicinsk föreläsningssal med läkare',
@@ -154,7 +154,7 @@ export const translations = {
         {
           title: 'Kunskapsprovet i fokus',
           description:
-            'Föreläsningar via Jitsi Meet inom samtliga medicinska områden. Med månadsprenumeration får du tillgång till alla lektioner.',
+            'Videoföreläsningar inom samtliga medicinska områden. Med månadsprenumeration får du tillgång till alla lektioner.',
         },
         {
           title: 'Svenska riktlinjer',
@@ -239,7 +239,7 @@ export const translations = {
         highlight: 'läkarna',
         titleRest: ' bakom Mediready',
         description:
-          'Mediready drivs av fyra läkare som föreläser via Jitsi Meet för blivande läkare. Prenumerationen är månadsvis och ger tillgång till alla lektioner. Läs mer om oss nedan.',
+          'Mediready drivs av fyra läkare som föreläser via videoföreläsningar för blivande läkare. Prenumerationen är månadsvis och ger tillgång till alla lektioner. Läs mer om oss nedan.',
         education: 'Utbildning',
         certifications: 'Certifieringar',
         ctaTitle: 'Redo att komma igång?',
@@ -402,16 +402,16 @@ export const translations = {
       buyCourse: {
         label: 'Prenumeration',
         title: 'Live-föreläsningar inför kunskapsprovet',
-        description: 'Betala månadsvis och få tillgång till alla live-föreläsningar via Jitsi Meet. Vi är läkare som undervisar läkare utbildade utanför EU/EES så att du ska klara kunskapsprovet.',
+        description: 'Betala månadsvis och få tillgång till alla live videoföreläsningar. Vi är läkare som undervisar läkare utbildade utanför EU/EES så att du ska klara kunskapsprovet.',
         badge: 'Prenum.',
         courseTitle: 'Prenumeration – alla live-föreläsningar',
-        courseDescription: 'Mediready är läkare som undervisar läkare utbildade utanför EU/EES inför det svenska kunskapsprovet. Du betalar månadsvis och får tillgång till alla live-föreläsningar som sker via Jitsi Meet.',
+        courseDescription: 'Mediready är läkare som undervisar läkare utbildade utanför EU/EES inför det svenska kunskapsprovet. Du betalar månadsvis och får tillgång till alla live videoföreläsningar.',
         priceLabel: 'Pris',
         price: '2500 kr',
         pricePeriod: '/ månad',
         includesTitle: 'Detta ingår:',
         includes: [
-          'Tillgång till alla live-föreläsningar via Jitsi Meet',
+          'Tillgång till alla live videoföreläsningar',
           'Läkare som undervisar – inriktat på kunskapsprovet',
           'Kliniska ämnen (internmedicin, kirurgi, pediatrik, m.m.)',
           'Prekliniska ämnen (fysiologi, immunologi, m.m.)',
@@ -463,7 +463,7 @@ export const translations = {
             ],
           },
           {
-            heading: 'Möten via Jitsi Meet',
+            heading: 'Videoföreläsningar och möten',
             paragraphs: [
               'Våra live-föreläsningar och möten sker via videotjänsten Jitsi Meet. När du deltar i en session hanterar Jitsi personuppgifter i samband med mötet, till exempel ditt namn, e-postadress samt video- och ljuddata under mötet.',
               'Jitsi agerar som underleverantör för oss. Läs mer om Jitsis hantering av personuppgifter här: https://jitsi.org/meet-jit-si-privacy/',
@@ -501,7 +501,7 @@ export const translations = {
             ],
           },
           {
-            heading: 'Deltagande i sessioner via Jitsi Meet',
+            heading: 'Deltagande i videoföreläsningar',
             paragraphs: [
               'Live-föreläsningar och möten genomförs via tjänsten Jitsi Meet. Genom att delta godkänner du att Jitsi Meet används för mötena och att du följer Jitsis användarvillkor såväl som våra instruktioner under sessionerna.',
             ],
@@ -529,7 +529,7 @@ export const translations = {
             id: 'lectures',
             title: 'Interaktiva föreläsningar',
             description:
-              'Jitsi Meet/videobaserade föreläsningar där du som deltagare aktivt deltar och kan ställa frågor i realtid.',
+              'Videoföreläsningar där du som deltagare aktivt deltar och kan ställa frågor i realtid.',
             details: [
               'Live sessioner med oss läkare',
               'Möjlighet att ställa frågor direkt',
@@ -622,7 +622,7 @@ export const translations = {
           },
           {
             q: 'Hur fungerar era föreläsningar?',
-            a: 'Vi erbjuder interaktiva Jitsi Meet/videobaserade föreläsningar där du som deltagare aktivt deltar och kan ställa frågor i realtid till våra experter.',
+            a: 'Vi erbjuder interaktiva videoföreläsningar där du som deltagare aktivt deltar och kan ställa frågor i realtid till våra experter.',
           },
           {
             q: 'Vad kostar prenumerationen?',
@@ -661,15 +661,15 @@ export const translations = {
       badge: 'Application open for 2026',
       titleLine1: 'We help you on your way to',
       titleHighlight: ' Swedish medical licensure',
-      description: 'Interactive lectures via Jitsi Meet with experienced doctors.',
-      descriptionLine1: 'Interactive lectures via Jitsi Meet with experienced doctors.',
+      description: 'Interactive video lectures with experienced doctors.',
+      descriptionLine1: 'Interactive video lectures with experienced doctors.',
       descriptionLine2: 'Your path to Swedish medical licensure.',
       primaryCta: 'Test your knowledge level',
       videoCta: 'Watch video',
       videoOpenLabel: 'Watch video',
       videoCloseLabel: 'Close video',
       trust: [
-        { strong: 'Live via Jitsi Meet', span: 'Interactive lectures' },
+        { strong: 'Live video lectures', span: 'Interactive sessions' },
         { strong: '4 instructors', span: 'Residents & consultants' },
         { strong: 'Swedish guidelines', span: 'Clinical practice' },
       ],
@@ -687,7 +687,7 @@ export const translations = {
         {
           title: 'Interactive lectures',
           description:
-            'Jitsi Meet/video-based sessions where you actively participate and can ask questions in real time.',
+            'Video lectures where you actively participate and can ask questions in real time.',
           link: '/services#lectures',
         },
         {
@@ -731,7 +731,7 @@ export const translations = {
           description: 'Experienced doctors deliver the lectures – no middleman, straight from the clinic to you.',
         },
         {
-          title: 'Live via Jitsi Meet',
+          title: 'Live videoföreläsningar',
           description: 'Join from anywhere. Lectures are live so you can ask questions and follow along in real time.',
         },
         {
@@ -743,9 +743,9 @@ export const translations = {
     homeTrust: {
       title: 'About the training',
       description:
-        'The training is built around the knowledge test and Swedish guidelines so you have a clear path to licensure. We cover both preclinical and clinical topics in line with what is actually tested, and everything is presented according to Swedish medical practice and current treatment recommendations. Experienced doctors teach live via Jitsi Meet so you can ask questions, follow along in real time, and build your medical Swedish at the same time. With a monthly subscription you get access to all lessons and can plan your preparation at your own pace. Our aim is for you to feel confident ahead of the knowledge test and well prepared for the next step into the Swedish healthcare system.',
+        'The training is built around the knowledge test and Swedish guidelines so you have a clear path to licensure. We cover both preclinical and clinical topics in line with what is actually tested, and everything is presented according to Swedish medical practice and current treatment recommendations. Experienced doctors teach live via video so you can ask questions, follow along in real time, and build your medical Swedish at the same time. With a monthly subscription you get access to all lessons and can plan your preparation at your own pace. Our aim is for you to feel confident ahead of the knowledge test and well prepared for the next step into the Swedish healthcare system.',
       descriptionMobile:
-        'The training is built around the knowledge test and Swedish guidelines so you have a clear path to licensure. We cover both preclinical and clinical topics in line with what is actually tested, and everything is presented according to Swedish medical practice and current treatment recommendations. Experienced doctors teach live via Jitsi Meet so you can ask questions, follow along in real time, and build your medical Swedish at the same time.',
+        'The training is built around the knowledge test and Swedish guidelines so you have a clear path to licensure. We cover both preclinical and clinical topics in line with what is actually tested, and everything is presented according to Swedish medical practice and current treatment recommendations. Experienced doctors teach live via video so you can ask questions, follow along in real time, and build your medical Swedish at the same time.',
       cta: 'Read about us',
       ctaTo: '/physicians',
     },
@@ -761,7 +761,7 @@ export const translations = {
       description:
         'A subscription that gives you access to all live lectures and a clear structure for the knowledge test.',
       bullets: [
-        'Live Jitsi Meet lectures with time for questions.',
+        'Live video lectures with time for questions.',
         'Content aligned with the knowledge test and Swedish clinical practice.',
         'Monthly subscription — cancel anytime.',
       ],
@@ -1030,16 +1030,16 @@ export const translations = {
       buyCourse: {
         label: 'Subscription',
         title: 'Live lectures for the knowledge test',
-        description: 'Pay monthly and get access to all live lectures via Jitsi Meet. We are doctors teaching internationally trained doctors so you can pass the Swedish knowledge test.',
+        description: 'Pay monthly and get access to all live video lectures. We are doctors teaching internationally trained doctors so you can pass the Swedish knowledge test.',
         badge: 'Sub.',
         courseTitle: 'Subscription – all live lectures',
-        courseDescription: 'Mediready is doctors teaching other internationally trained doctors for the Swedish medical licensing knowledge test. You pay monthly and get access to all live lectures held via Jitsi Meet.',
+        courseDescription: 'Mediready is doctors teaching other internationally trained doctors for the Swedish medical licensing knowledge test. You pay monthly and get access to all live video lectures.',
         priceLabel: 'Price',
         price: '2500 kr',
         pricePeriod: '/ month',
         includesTitle: 'What\'s included:',
         includes: [
-          'Access to all live lectures via Jitsi Meet',
+          'Access to all live video lectures',
           'Doctors teaching – focused on the knowledge test',
           'Clinical subjects (internal medicine, surgery, pediatrics, etc.)',
           'Pre-clinical subjects (physiology, immunology, etc.)',
@@ -1091,7 +1091,7 @@ export const translations = {
             ],
           },
           {
-            heading: 'Meetings via Jitsi Meet',
+            heading: 'Video lectures and meetings',
             paragraphs: [
               'Our live lectures and meetings are held via the Jitsi Meet video service. When you join a session, Jitsi processes personal data in connection with the meeting, such as your name, email address, and video/audio during the session.',
               'Jitsi acts as a sub-processor for us. Read more about Jitsi\'s handling of personal data here: https://jitsi.org/meet-jit-si-privacy/',
@@ -1129,7 +1129,7 @@ export const translations = {
             ],
           },
           {
-            heading: 'Participation in sessions via Jitsi Meet',
+            heading: 'Participation in video lectures',
             paragraphs: [
               'Live lectures and meetings are conducted via the Jitsi Meet service. By participating, you agree that Jitsi Meet is used for the meetings and that you will follow Jitsi\'s terms of use as well as our instructions during the sessions.',
             ],
@@ -1157,7 +1157,7 @@ export const translations = {
             id: 'lectures',
             title: 'Interactive lectures',
             description:
-              'Jitsi Meet/video-based sessions where you actively participate and can ask questions in real time.',
+              'Video lectures where you actively participate and can ask questions in real time.',
             details: [
               'Live sessions with our team',
               'Ask questions directly',
@@ -1250,7 +1250,7 @@ export const translations = {
           },
           {
             q: 'How do your lectures work?',
-            a: 'We offer interactive Jitsi Meet/video-based lectures where you actively participate and can ask questions in real time.',
+            a: 'We offer interactive video lectures where you actively participate and can ask questions in real time.',
           },
           {
             q: 'What does the subscription cost?',

@@ -447,7 +447,7 @@ export const ar = {
           ],
         },
         {
-          heading: 'الاجتماعات عبر Jitsi Meet',
+          heading: 'المحاضرات والفيديو والاجتماعات',
           paragraphs: [
             'محاضراتنا واجتماعاتنا المباشرة تُعقد عبر خدمة الفيديو Jitsi Meet. عند الانضمام لجلسة، تعالج Jitsi بيانات شخصية مرتبطة بالاجتماع، مثل اسمك وبريدك الإلكتروني والفيديو/الصوت أثناء الجلسة.',
             'Jitsi تعمل كمعالج فرعي لنا. اقرأ المزيد عن تعامل Jitsi مع البيانات الشخصية هنا: https://jitsi.org/meet-jit-si-privacy/',
@@ -485,7 +485,7 @@ export const ar = {
           ],
         },
         {
-          heading: 'المشاركة في الجلسات عبر Jitsi Meet',
+          heading: 'المشاركة في المحاضرات المرئية',
           paragraphs: [
             'المحاضرات والاجتماعات المباشرة تُجرى عبر خدمة Jitsi Meet. بالمشاركة فإنك توافق على استخدام Jitsi Meet للاجتماعات وعلى اتباع شروط استخدام Jitsi وتعليماتنا أثناء الجلسات.',
           ],
@@ -652,15 +652,15 @@ export const es = {
     badge: 'Inscripción abierta para 2026',
     titleLine1: 'Te ayudamos en tu camino hacia',
     titleHighlight: ' la licencia médica sueca',
-    description: 'Clases interactivas por Jitsi Meet con médicos con experiencia.',
-    descriptionLine1: 'Clases interactivas por Jitsi Meet con médicos con experiencia.',
+    description: 'Clases en vídeo interactivas con médicos con experiencia.',
+    descriptionLine1: 'Clases en vídeo interactivas con médicos con experiencia.',
     descriptionLine2: 'Tu camino hacia la licencia médica sueca.',
     primaryCta: 'Prueba tu nivel de conocimientos',
     videoCta: 'Ver vídeo',
     videoOpenLabel: 'Ver vídeo',
     videoCloseLabel: 'Cerrar vídeo',
     trust: [
-      { strong: 'En directo por Jitsi Meet', span: 'Clases interactivas' },
+      { strong: 'Clases en vídeo en directo', span: 'Sesiones interactivas' },
       { strong: '4 instructores', span: 'MIR y consultores' },
       { strong: 'Guías suecas', span: 'Práctica clínica' },
     ],
@@ -678,7 +678,7 @@ export const es = {
       {
         title: 'Clases interactivas',
         description:
-          'Sesiones por Jitsi Meet/vídeo en las que participas activamente y puedes hacer preguntas en tiempo real.',
+          'Sesiones en vídeo en las que participas activamente y puedes hacer preguntas en tiempo real.',
         link: '/services#lectures',
       },
       {
@@ -722,7 +722,7 @@ export const es = {
         description: 'Médicos con experiencia imparten las clases—sin intermediarios, directo de la clínica a ti.',
       },
       {
-        title: 'En directo por Jitsi Meet',
+        title: 'Clases en vídeo en directo',
         description: 'Conéctate desde cualquier sitio. Las clases son en directo para que puedas preguntar y seguir en tiempo real.',
       },
       {
@@ -734,9 +734,9 @@ export const es = {
   homeTrust: {
     title: 'Sobre la formación',
     description:
-      'La formación se centra en el examen de conocimientos y las guías suecas para que tengas un camino claro hacia la licencia. Cubrimos temas preclínicos y clínicos según lo que se examina realmente, y todo se presenta según la práctica médica sueca y las recomendaciones de tratamiento actuales. Médicos con experiencia enseñan en directo por Jitsi Meet para que puedas preguntar, seguir en tiempo real y mejorar tu sueco médico al mismo tiempo. Con una suscripción mensual tienes acceso a todas las clases y puedes planificar tu preparación a tu ritmo. Nuestro objetivo es que te sientas seguro ante el examen y bien preparado para el siguiente paso en el sistema sanitario sueco.',
+      'La formación se centra en el examen de conocimientos y las guías suecas para que tengas un camino claro hacia la licencia. Cubrimos temas preclínicos y clínicos según lo que se examina realmente, y todo se presenta según la práctica médica sueca y las recomendaciones de tratamiento actuales. Médicos con experiencia enseñan en directo por vídeo para que puedas preguntar, seguir en tiempo real y mejorar tu sueco médico al mismo tiempo. Con una suscripción mensual tienes acceso a todas las clases y puedes planificar tu preparación a tu ritmo. Nuestro objetivo es que te sientas seguro ante el examen y bien preparado para el siguiente paso en el sistema sanitario sueco.',
     descriptionMobile:
-      'La formación se centra en el examen de conocimientos y las guías suecas para que tengas un camino claro hacia la licencia. Cubrimos temas preclínicos y clínicos según lo que se examina realmente, y todo se presenta según la práctica médica sueca y las recomendaciones de tratamiento actuales. Médicos con experiencia enseñan en directo por Jitsi Meet para que puedas preguntar, seguir en tiempo real y mejorar tu sueco médico.',
+      'La formación se centra en el examen de conocimientos y las guías suecas para que tengas un camino claro hacia la licencia. Cubrimos temas preclínicos y clínicos según lo que se examina realmente, y todo se presenta según la práctica médica sueca y las recomendaciones de tratamiento actuales. Médicos con experiencia enseñan en directo por vídeo para que puedas preguntar, seguir en tiempo real y mejorar tu sueco médico.',
     cta: 'Leer sobre nosotros',
     ctaTo: '/physicians',
   },
@@ -752,7 +752,7 @@ export const es = {
     description:
       'Una suscripción que te da acceso a todas las clases en directo y una estructura clara para el examen de conocimientos.',
     bullets: [
-      'Clases en directo por Jitsi Meet con tiempo para preguntas.',
+      'Clases en vídeo en directo con tiempo para preguntas.',
       'Contenido alineado con el examen de conocimientos y la práctica clínica sueca.',
       'Suscripción mensual—cancela cuando quieras.',
     ],
@@ -1023,17 +1023,17 @@ export const es = {
       label: 'Suscripción',
       title: 'Clases en directo para el examen de conocimientos',
       description:
-        'Paga mensualmente y accede a todas las clases en directo por Jitsi Meet. Somos médicos que enseñan a médicos formados fuera de Suecia para que apruebes el examen de conocimientos sueco.',
+        'Paga mensualmente y accede a todas las clases en vídeo en directo. Somos médicos que enseñan a médicos formados fuera de Suecia para que apruebes el examen de conocimientos sueco.',
       badge: 'Susc.',
       courseTitle: 'Suscripción – todas las clases en directo',
       courseDescription:
-        'Mediready son médicos que enseñan a otros médicos formados fuera de Suecia para el examen de licencia médica sueca. Pagas mensualmente y tienes acceso a todas las clases en directo por Jitsi Meet.',
+        'Mediready son médicos que enseñan a otros médicos formados fuera de Suecia para el examen de licencia médica sueca. Pagas mensualmente y tienes acceso a todas las clases en vídeo en directo.',
       priceLabel: 'Precio',
       price: '2500 kr',
       pricePeriod: '/ mes',
       includesTitle: 'Qué incluye:',
       includes: [
-        'Acceso a todas las clases en directo por Jitsi Meet',
+        'Acceso a todas las clases en vídeo en directo',
         'Médicos que enseñan—centrados en el examen de conocimientos',
         'Materias clínicas (medicina interna, cirugía, pediatría, etc.)',
         'Materias preclínicas (fisiología, inmunología, etc.)',
@@ -1085,7 +1085,7 @@ export const es = {
           ],
         },
         {
-          heading: 'Reuniones por Jitsi Meet',
+          heading: 'Clases en vídeo y reuniones',
           paragraphs: [
             'Nuestras clases y reuniones en directo se realizan por el servicio de vídeo Jitsi Meet. Al unirte a una sesión, Jitsi procesa datos personales del encuentro, como tu nombre, correo y vídeo/audio durante la sesión.',
             'Jitsi actúa como subencargado nuestro. Más información sobre el tratamiento de datos por Jitsi: https://jitsi.org/meet-jit-si-privacy/',
@@ -1123,7 +1123,7 @@ export const es = {
           ],
         },
         {
-          heading: 'Participación en sesiones por Jitsi Meet',
+          heading: 'Participación en clases en vídeo',
           paragraphs: [
             'Las clases y reuniones en directo se realizan por el servicio Jitsi Meet. Al participar, aceptas que Jitsi Meet se utiliza para las reuniones y que seguirás los términos de uso de Jitsi y nuestras instrucciones durante las sesiones.',
           ],
@@ -1150,7 +1150,7 @@ export const es = {
         {
           id: 'lectures',
           title: 'Clases interactivas',
-          description: 'Sesiones por Jitsi Meet/vídeo en las que participas activamente y puedes hacer preguntas en tiempo real.',
+          description: 'Sesiones en vídeo en las que participas activamente y puedes hacer preguntas en tiempo real.',
           details: [
             'Sesiones en directo con nuestro equipo',
             'Pregunta directamente',
@@ -1251,7 +1251,7 @@ export const es = {
         },
         {
           q: '¿Cómo funcionan vuestras clases?',
-          a: 'Ofrecemos clases interactivas por Jitsi Meet/vídeo en las que participas activamente y puedes hacer preguntas en tiempo real.',
+          a: 'Ofrecemos clases en vídeo interactivas en las que participas activamente y puedes hacer preguntas en tiempo real.',
         },
         {
           q: '¿Cuánto cuesta la suscripción?',
@@ -1290,15 +1290,15 @@ export const fr = {
     badge: 'Candidatures ouvertes pour 2026',
     titleLine1: 'Nous vous accompagnons vers',
     titleHighlight: ' l\'autorisation d\'exercer en Suède',
-    description: 'Cours interactifs par Jitsi Meet avec des médecins expérimentés.',
-    descriptionLine1: 'Cours interactifs par Jitsi Meet avec des médecins expérimentés.',
+    description: 'Cours en vidéo interactifs avec des médecins expérimentés.',
+    descriptionLine1: 'Cours en vidéo interactifs avec des médecins expérimentés.',
     descriptionLine2: 'Votre chemin vers l\'autorisation d\'exercer en Suède.',
     primaryCta: 'Testez votre niveau',
     videoCta: 'Voir la vidéo',
     videoOpenLabel: 'Voir la vidéo',
     videoCloseLabel: 'Fermer la vidéo',
     trust: [
-      { strong: 'En direct par Jitsi Meet', span: 'Cours interactifs' },
+      { strong: 'Cours en vidéo en direct', span: 'Séances interactives' },
       { strong: '4 formateurs', span: 'Internes et consultants' },
       { strong: 'Recommandations suédoises', span: 'Pratique clinique' },
     ],
@@ -1316,7 +1316,7 @@ export const fr = {
       {
         title: 'Cours interactifs',
         description:
-          'Séances par Jitsi Meet/vidéo où vous participez activement et pouvez poser des questions en direct.',
+          'Séances en vidéo où vous participez activement et pouvez poser des questions en direct.',
         link: '/services#lectures',
       },
       {
@@ -1360,7 +1360,7 @@ export const fr = {
         description: 'Des médecins expérimentés assurent les cours—sans intermédiaire, de la clinique à vous.',
       },
       {
-        title: 'En direct par Jitsi Meet',
+        title: 'Cours en vidéo en direct',
         description: 'Connectez-vous où que vous soyez. Les cours sont en direct pour que vous puissiez poser des questions et suivre en temps réel.',
       },
       {
@@ -1372,9 +1372,9 @@ export const fr = {
   homeTrust: {
     title: 'À propos de la formation',
     description:
-      'La formation est construite autour du test de connaissances et des recommandations suédoises pour un chemin clair vers l\'autorisation. Nous couvrons les sujets précliniques et cliniques conformément à ce qui est réellement testé, le tout présenté selon la pratique médicale suédoise et les recommandations de traitement actuelles. Des médecins expérimentés enseignent en direct par Jitsi Meet pour que vous puissiez poser des questions, suivre en temps réel et renforcer votre suédois médical. Avec un abonnement mensuel vous avez accès à tous les cours et pouvez organiser votre préparation à votre rythme. Notre objectif est que vous vous sentiez en confiance avant le test et bien préparé pour la suite dans le système de santé suédois.',
+      'La formation est construite autour du test de connaissances et des recommandations suédoises pour un chemin clair vers l\'autorisation. Nous couvrons les sujets précliniques et cliniques conformément à ce qui est réellement testé, le tout présenté selon la pratique médicale suédoise et les recommandations de traitement actuelles. Des médecins expérimentés enseignent en direct par vidéo pour que vous puissiez poser des questions, suivre en temps réel et renforcer votre suédois médical. Avec un abonnement mensuel vous avez accès à tous les cours et pouvez organiser votre préparation à votre rythme. Notre objectif est que vous vous sentiez en confiance avant le test et bien préparé pour la suite dans le système de santé suédois.',
     descriptionMobile:
-      'La formation est construite autour du test de connaissances et des recommandations suédoises pour un chemin clair vers l\'autorisation. Nous couvrons les sujets précliniques et cliniques conformément à ce qui est réellement testé, le tout présenté selon la pratique médicale suédoise et les recommandations de traitement actuelles. Des médecins expérimentés enseignent en direct par Jitsi Meet pour que vous puissiez poser des questions, suivre en temps réel et renforcer votre suédois médical.',
+      'La formation est construite autour du test de connaissances et des recommandations suédoises pour un chemin clair vers l\'autorisation. Nous couvrons les sujets précliniques et cliniques conformément à ce qui est réellement testé, le tout présenté selon la pratique médicale suédoise et les recommandations de traitement actuelles. Des médecins expérimentés enseignent en direct par vidéo pour que vous puissiez poser des questions, suivre en temps réel et renforcer votre suédois médical.',
     cta: 'Lire sur nous',
     ctaTo: '/physicians',
   },
@@ -1390,7 +1390,7 @@ export const fr = {
     description:
       'Un abonnement qui donne accès à tous les cours en direct et une structure claire pour le test de connaissances.',
     bullets: [
-      'Cours en direct par Jitsi Meet avec temps pour les questions.',
+      'Cours en vidéo en direct avec temps pour les questions.',
       'Contenu aligné sur le test de connaissances et la pratique clinique suédoise.',
       'Abonnement mensuel—résiliable à tout moment.',
     ],
@@ -1661,17 +1661,17 @@ export const fr = {
       label: 'Abonnement',
       title: 'Cours en direct pour le test de connaissances',
       description:
-        'Payez mensuellement et accédez à tous les cours en direct par Jitsi Meet. Nous sommes des médecins qui forment des médecins formés à l\'étranger pour que vous réussissiez le test de connaissances suédois.',
+        'Payez mensuellement et accédez à tous les cours en vidéo en direct. Nous sommes des médecins qui forment des médecins formés à l\'étranger pour que vous réussissiez le test de connaissances suédois.',
       badge: 'Abon.',
       courseTitle: 'Abonnement – tous les cours en direct',
       courseDescription:
-        'Mediready, ce sont des médecins qui forment d\'autres médecins formés à l\'étranger pour le test d\'autorisation suédois. Vous payez mensuellement et avez accès à tous les cours en direct par Jitsi Meet.',
+        'Mediready, ce sont des médecins qui forment d\'autres médecins formés à l\'étranger pour le test d\'autorisation suédois. Vous payez mensuellement et avez accès à tous les cours en vidéo en direct.',
       priceLabel: 'Prix',
       price: '2500 kr',
       pricePeriod: '/ mois',
       includesTitle: 'Ce qui est inclus :',
       includes: [
-        'Accès à tous les cours en direct par Jitsi Meet',
+        'Accès à tous les cours en vidéo en direct',
         'Des médecins qui enseignent – axés sur le test de connaissances',
         'Matières cliniques (médecine interne, chirurgie, pédiatrie, etc.)',
         'Matières précliniques (physiologie, immunologie, etc.)',
@@ -1723,7 +1723,7 @@ export const fr = {
           ],
         },
         {
-          heading: 'Réunions via Jitsi Meet',
+          heading: 'Cours en vidéo et réunions',
           paragraphs: [
             'Nos cours et réunions en direct ont lieu via le service vidéo Jitsi Meet. Lorsque vous rejoignez une séance, Jitsi traite des données personnelles liées à la réunion (nom, e-mail, vidéo/audio pendant la séance).',
             'Jitsi agit en tant que sous-traitant. En savoir plus sur le traitement des données par Jitsi : https://jitsi.org/meet-jit-si-privacy/',
@@ -1761,7 +1761,7 @@ export const fr = {
           ],
         },
         {
-          heading: 'Participation aux séances via Jitsi Meet',
+          heading: 'Participation aux cours en vidéo',
           paragraphs: [
             'Les cours et réunions en direct sont réalisés via le service Jitsi Meet. En participant, vous acceptez que Jitsi Meet soit utilisé pour les réunions et que vous respectiez les conditions d\'utilisation de Jitsi et nos instructions pendant les séances.',
           ],
@@ -1788,7 +1788,7 @@ export const fr = {
         {
           id: 'lectures',
           title: 'Cours interactifs',
-          description: 'Séances par Jitsi Meet/vidéo où vous participez activement et pouvez poser des questions en direct.',
+          description: 'Séances en vidéo où vous participez activement et pouvez poser des questions en direct.',
           details: [
             'Séances en direct avec notre équipe',
             'Posez vos questions directement',
@@ -1889,7 +1889,7 @@ export const fr = {
         },
         {
           q: 'Comment fonctionnent vos cours ?',
-          a: 'Nous proposons des cours interactifs par Jitsi Meet/vidéo où vous participez activement et pouvez poser des questions en direct.',
+          a: 'Nous proposons des cours en vidéo interactifs où vous participez activement et pouvez poser des questions en direct.',
         },
         {
           q: 'Combien coûte l\'abonnement ?',
@@ -2248,7 +2248,7 @@ export const fa = {
         { heading: 'مقدمه', paragraphs: ['Mediready («ما») متعهد به حفظ حریم خصوصی شماست. این سیاست نحوه جمع\u200cآوری، استفاده و حفاظت از داده\u200cهای شخصی شما را هنگام استفاده از خدمات ما توصیف می\u200cکند.'] },
         { heading: 'داده\u200cهای شخصی که جمع\u200cآوری می\u200cکنیم', paragraphs: ['اطلاعاتی که هنگام ثبت\u200cنام و استفاده از سرویس ارائه می\u200cدهید مانند نام و ایمیل جمع\u200cآوری می\u200cکنیم. همچنین اطلاعات مربوط به اشتراک و مشارکت در جلسات ما را ذخیره می\u200cکنیم.'] },
         { heading: 'پرداخت از طریق Stripe', paragraphs: ['پرداخت اشتراک ماهانه ما توسط Stripe انجام می\u200cشود. هنگام پرداخت جزئیات لازم (مثلاً ایمیل، مرجع پرداخت) را با Stripe به اشتراک می\u200cگذاریم. جزئیات کارت مستقیماً توسط Stripe پردازش می\u200cشود و توسط ما ذخیره نمی\u200cشود.', 'اطلاعات بیشتر: https://stripe.com/privacy'] },
-        { heading: 'جلسات از طریق Jitsi Meet', paragraphs: ['همایش\u200cها و جلسات زنده ما از طریق Jitsi Meet برگزار می\u200cشود. هنگام پیوستن به جلسه، Jitsi داده\u200cهای شخصی مربوط به جلسه (نام، ایمیل، ویدیو/صدا) را پردازش می\u200cکند.', 'اطلاعات بیشتر: https://jitsi.org/meet-jit-si-privacy/'] },
+        { heading: 'جلسات ویدیویی و همایش\u200cها', paragraphs: ['همایش\u200cها و جلسات زنده ما از طریق Jitsi Meet برگزار می\u200cشود. هنگام پیوستن به جلسه، Jitsi داده\u200cهای شخصی مربوط به جلسه (نام، ایمیل، ویدیو/صدا) را پردازش می\u200cکند.', 'اطلاعات بیشتر: https://jitsi.org/meet-jit-si-privacy/'] },
         { heading: 'تماس', paragraphs: ['برای سوال درباره این سیاست یا نحوه برخورد ما با داده\u200cهای شخصی به hej@mediready.se تماس بگیرید.'] },
       ],
     },
@@ -2260,7 +2260,7 @@ export const fa = {
         { heading: 'پذیرش شرایط', paragraphs: ['با استفاده از خدمات Mediready این شرایط را می\u200cپذیرید. در غیر این صورت حق استفاده از خدمات را ندارید.'] },
         { heading: 'حساب شخصی', paragraphs: ['هر حساب فقط توسط یک نفر قابل استفاده است. دو یا چند نفر نمی\u200cتوانند همان ورود یا همان حساب را استفاده کنند.'] },
         { heading: 'اشتراک و پرداخت', paragraphs: ['اشتراک در خدمات ما ماهانه است و از طریق Stripe صورتحساب می\u200cشود. هر زمان می\u200cتوانید لغو کنید؛ تا پایان دوره پرداخت شده ادامه می\u200cیابد. شرایط Stripe: https://stripe.com/legal'] },
-        { heading: 'شرکت در جلسات از طریق Jitsi Meet', paragraphs: ['همایش\u200cها و جلسات زنده از طریق Jitsi Meet انجام می\u200cشود. با شرکت، می\u200cپذیرید که Jitsi Meet برای جلسات استفاده شود و شرایط Jitsi و دستورات ما را رعایت کنید.'] },
+        { heading: 'شرکت در جلسات ویدیویی', paragraphs: ['همایش\u200cها و جلسات زنده از طریق Jitsi Meet انجام می\u200cشود. با شرکت، می\u200cپذیرید که Jitsi Meet برای جلسات استفاده شود و شرایط Jitsi و دستورات ما را رعایت کنید.'] },
         { heading: 'تماس', paragraphs: ['برای سوال درباره شرایط خدمات به hej@mediready.se تماس بگیرید.'] },
       ],
     },
@@ -2318,15 +2318,15 @@ export const zh = {
     badge: '2026年开放申请',
     titleLine1: '我们助您通往',
     titleHighlight: '瑞典医师执照',
-    description: '通过Jitsi Meet与经验丰富的医生进行互动讲座。',
-    descriptionLine1: '通过Jitsi Meet与经验丰富的医生进行互动讲座。',
+    description: '与经验丰富的医生进行互动视频讲座。',
+    descriptionLine1: '与经验丰富的医生进行互动视频讲座。',
     descriptionLine2: '您通往瑞典医师执照之路。',
     primaryCta: '测试您的知识水平',
     videoCta: '观看视频',
     videoOpenLabel: '观看视频',
     videoCloseLabel: '关闭视频',
     trust: [
-      { strong: 'Jitsi Meet直播', span: '互动讲座' },
+      { strong: '直播视频讲座', span: '互动课程' },
       { strong: '4位讲师', span: '住院医师与顾问' },
       { strong: '瑞典指南', span: '临床实践' },
     ],
@@ -2340,7 +2340,7 @@ export const zh = {
     readMore: '阅读更多',
     viewAll: '查看所有服务',
     items: [
-      { title: '互动讲座', description: 'Jitsi Meet/视频课程，您可积极参与并实时提问。', link: '/services#lectures' },
+      { title: '互动讲座', description: '视频课程，您可积极参与并实时提问。', link: '/services#lectures' },
       { title: '诊断性知识测试', description: '150道选择题，助您了解知识测试前的当前水平。', link: '/services#test' },
       { title: '临床科目', description: '内科学、外科学、儿科学、妇产科、精神病学、神经病学、传染病等。', link: '/services#clinical' },
       { title: '临床前科目', description: '细胞生物学、生理学、遗传学、免疫学及其他医学基础。', link: '/services#preclinical' },
@@ -2353,14 +2353,14 @@ export const zh = {
     ctaIntro: '我们提供诊断测试，您可在此测试自己的知识水平。',
     items: [
       { title: '医生授课', description: '经验丰富的医生授课——无中间环节，从临床直达您。' },
-      { title: 'Jitsi Meet直播', description: '随时随地加入。讲座为直播，您可提问并实时跟进。' },
+      { title: '直播视频讲座', description: '随时随地加入。讲座为直播，您可提问并实时跟进。' },
       { title: '结构化课程', description: '清晰结构贴合测试要求——您知道要面对什么并可提前规划。' },
     ],
   },
   homeTrust: {
     title: '关于培训',
-    description: '培训围绕知识测试和瑞典指南设计，助您清晰走向执照。我们涵盖与实考一致的前期与临床内容，均按瑞典医学实践及现行治疗建议呈现。经验丰富的医生通过Jitsi Meet直播授课，您可提问、实时跟进并提升医学瑞典语。月付订阅可访问全部课程，按自己的节奏准备。我们的目标是让您在知识测试前充满信心，并为进入瑞典医疗体系的下一步做好准备。',
-    descriptionMobile: '培训围绕知识测试和瑞典指南设计，助您清晰走向执照。我们涵盖前期与临床内容，均按瑞典医学实践呈现。经验丰富的医生通过Jitsi Meet直播授课。',
+    description: '培训围绕知识测试和瑞典指南设计，助您清晰走向执照。我们涵盖与实考一致的前期与临床内容，均按瑞典医学实践及现行治疗建议呈现。经验丰富的医生通过视频直播授课，您可提问、实时跟进并提升医学瑞典语。月付订阅可访问全部课程，按自己的节奏准备。我们的目标是让您在知识测试前充满信心，并为进入瑞典医疗体系的下一步做好准备。',
+    descriptionMobile: '培训围绕知识测试和瑞典指南设计，助您清晰走向执照。我们涵盖前期与临床内容，均按瑞典医学实践呈现。经验丰富的医生通过视频直播授课。',
     cta: '了解我们',
     ctaTo: '/physicians',
   },
@@ -2374,7 +2374,7 @@ export const zh = {
     title: '我们的服务',
     description: '订阅即可访问所有直播讲座及清晰的知识测试结构。',
     bullets: [
-      'Jitsi Meet直播讲座，预留提问时间。',
+      '直播视频讲座，预留提问时间。',
       '内容与知识测试及瑞典临床实践一致。',
       '月付订阅——随时取消。',
     ],
@@ -2504,11 +2504,11 @@ export const zh = {
     register: { title: '创建账户', subtitle: '注册以开始。', nameLabel: '姓名', namePlaceholder: '您的姓名', emailLabel: '电子邮件', emailPlaceholder: 'your.email@example.com', passwordLabel: '密码', passwordPlaceholder: '设置密码', confirmPasswordLabel: '确认密码', confirmPasswordPlaceholder: '再次输入密码', agreePrefix: '我同意', termsLink: '服务条款', agreeMiddle: '和', privacyLink: '隐私政策', agreeSuffix: '。', acceptTermsError: '注册须接受条款。', submit: '注册', submitting: '提交中...', haveAccount: '已有账户？', signInLink: '登录' },
     swish: { label: 'Swish', title: '使用', highlight: 'Swish', description: '在此查看我们的Swish链接与号码。', cardTitle: 'Swish支付', numberLabel: 'Swish号码', openSwish: '打开Swish', note: '提示：在手机上打开本页可直接跳转Swish应用。' },
     kunskapstest: { label: '诊断测试', title: '欢迎使用Mediready诊断测试', description: '面向在瑞典以外受训的医生。', swedishRequirement: '需具备基础瑞典语。', infoTitle: '关于测试', infoIntro: '本测试含150道选择题，旨在让您了解当前水平以备战瑞典医师执照考试。请先仔细阅读以下说明再开始。', contentTitle: '测试内容大致分为：',preclinicalTitle: '临床前题',preclinicalExamples: '如细胞生物学、生理学、遗传学、免疫学', clinicalTitle: '临床题', clinicalExamples: '如内科学、外科学、儿科学、妇产科、精神科、神经科、传染病', startButton: '点击此处进入测试', startButtonMobile: '进入测试', note: '测试约需2–3小时。可暂停后继续。', ctaTitle: '有问题？', ctaDescription: '若对测试或服务有疑问请联系我们。', ctaButton: '联系我们' },
-    buyCourse: { label: '订阅', title: '知识测试直播讲座', description: '月付即可访问全部Jitsi Meet直播讲座。我们是医生，为国际培训医生授课，助您通过瑞典知识测试。', badge: '订阅', courseTitle: '订阅 – 全部直播讲座', courseDescription: 'Mediready由医生为其他国际培训医生讲授瑞典医师执照知识测试。月付即可访问全部Jitsi Meet直播讲座。', priceLabel: '价格', price: '2500 kr', pricePeriod: '/ 月', includesTitle: '包含：', includes: ['访问全部Jitsi Meet直播讲座', '医生授课 – 聚焦知识测试', '临床科目（内科学、外科学、儿科学等）', '临床前科目（生理学、免疫学等）', '瑞典医学术语语言培训'], registerPrompt: '订阅需先注册账户并在此完成注册', formTitle: '开始 – 创建账户', formIntro: '填写信息以进入支付。', nameLabel: '姓名', namePlaceholder: '您的姓名', emailLabel: '电子邮件', emailPlaceholder: 'your.email@example.com', passwordLabel: '密码', passwordPlaceholder: '您的密码', confirmPasswordLabel: '确认密码', confirmPasswordPlaceholder: '再次输入密码', passwordMismatchError: '两次密码不一致。', messageLabel: '留言（选填）', messagePlaceholder: '在此写下问题...', submitButton: '去支付', formNote: '订阅生效后即可访问课程。', successMessage: '感谢注册！我们会尽快联系您。', ctaTitle: '有问题？', ctaDescription: '如有疑问欢迎联系。', ctaButton: '联系我们' },
+    buyCourse: { label: '订阅', title: '知识测试直播讲座', description: '月付即可访问全部直播视频讲座。我们是医生，为国际培训医生授课，助您通过瑞典知识测试。', badge: '订阅', courseTitle: '订阅 – 全部直播讲座', courseDescription: 'Mediready由医生为其他国际培训医生讲授瑞典医师执照知识测试。月付即可访问全部直播视频讲座。', priceLabel: '价格', price: '2500 kr', pricePeriod: '/ 月', includesTitle: '包含：', includes: ['访问全部直播视频讲座', '医生授课 – 聚焦知识测试', '临床科目（内科学、外科学、儿科学等）', '临床前科目（生理学、免疫学等）', '瑞典医学术语语言培训'], registerPrompt: '订阅需先注册账户并在此完成注册', formTitle: '开始 – 创建账户', formIntro: '填写信息以进入支付。', nameLabel: '姓名', namePlaceholder: '您的姓名', emailLabel: '电子邮件', emailPlaceholder: 'your.email@example.com', passwordLabel: '密码', passwordPlaceholder: '您的密码', confirmPasswordLabel: '确认密码', confirmPasswordPlaceholder: '再次输入密码', passwordMismatchError: '两次密码不一致。', messageLabel: '留言（选填）', messagePlaceholder: '在此写下问题...', submitButton: '去支付', formNote: '订阅生效后即可访问课程。', successMessage: '感谢注册！我们会尽快联系您。', ctaTitle: '有问题？', ctaDescription: '如有疑问欢迎联系。', ctaButton: '联系我们' },
     privacy: { label: '法律', title: '隐私政策', lastUpdated: '最后更新：2026年2月', sections: [{ heading: '引言', paragraphs: ['Mediready（“我们”）致力于保护您的隐私。本政策说明我们如何收集、使用及保护您使用我们服务时的个人数据。'] }, { heading: '我们收集的个人数据', paragraphs: ['我们收集您注册及使用服务时提供的信息，如姓名和电子邮件。我们也会存储与您订阅及参与课程相关的信息。'] }, { heading: '通过Stripe支付', paragraphs: ['我们月付订阅由支付服务商Stripe处理。支付时我们会向Stripe提供必要信息（如电子邮件、支付参考）以完成交易。卡信息由Stripe直接处理，我们不予存储。', '更多关于Stripe如何处理您的数据请见：https://stripe.com/privacy'] }, { heading: '通过Jitsi Meet进行会议', paragraphs: ['我们的直播讲座与会议通过Jitsi Meet进行。您加入会议时，Jitsi会处理与会议相关的个人数据（如姓名、电子邮件及会议期间的音视频）。', '更多关于Jitsi处理个人数据：https://jitsi.org/meet-jit-si-privacy/'] }, { heading: '联系', paragraphs: ['若对本隐私政策或我们处理个人数据有疑问，请致信 hej@mediready.se。'] }] },
     terms: { label: '法律', title: '服务条款', lastUpdated: '最后更新：2026年2月', sections: [{ heading: '接受条款', paragraphs: ['使用Mediready服务即表示您同意本服务条款。若不同意则不得使用服务。'] }, { heading: '个人账户', paragraphs: ['每个账户仅限一人使用。不得多人共享同一登录或账户。'] }, { heading: '订阅与支付', paragraphs: ['我们服务按月订阅，通过Stripe扣款。您可随时取消；订阅将延续至当前付费期结束。Stripe负责支付流程；其条款见 https://stripe.com/legal。'] }, { heading: '通过Jitsi Meet参与课程', paragraphs: ['直播讲座与会议通过Jitsi Meet进行。参与即表示您同意使用Jitsi Meet并遵守Jitsi Meet使用条款及我们在课程中的指示。'] }, { heading: '联系', paragraphs: ['有关服务条款的问题请致信 hej@mediready.se。'] }] },
-    services: { label: '服务', title: '为', highlight: '知识测试', description: '涵盖各医学领域的互动讲座，基于瑞典知识测试——与瑞典临床实践和指南一致。', contactMore: '联系我们了解更多', ctaTitle: '准备开始？', ctaDesc: '联系 hej@mediready.se 或在 Instagram @mediready.se 关注我们', ctaBtn: '联系我们', programs: [{ id: 'lectures', title: '互动讲座', description: 'Jitsi Meet/视频课程，您可积极参与并实时提问。', details: ['与团队直播互动', '直接提问', '与参与者互动讨论', '可回看录制', '定期排课'] }, { id: 'test', title: '诊断性知识测试', description: '150道选择题助您了解当前水平。', details: ['150道选择题', '约1/3临床前', '约2/3临床', '即时反馈', '找出薄弱环节'] }, { id: 'clinical', title: '临床科目', description: '知识测试所涉临床科目的结构化概览。', details: ['内科学', '外科学', '儿科学', '妇产科', '精神科', '神经科', '传染病'] }, { id: 'preclinical', title: '临床前科目', description: '知识测试所需的基础医学内容。', details: ['细胞生物学', '生理学', '遗传学', '免疫学', '药理学', '病理学', '微生物学'] }, { id: 'language', title: '语言培训', description: '练习瑞典医学语言，学习瑞典临床流程。', details: ['瑞典医学术语', '患者沟通', '病历书写', '同事沟通', '瑞典临床指南'] }, { id: 'guidelines', title: '瑞典指南', description: '与瑞典临床实践及现行治疗指南一致。', details: ['现行国家指南', '官方建议', '地区诊疗方案', '质量登记', '瑞典临床实践'] }, { id: 'subscription', title: '订阅', description: '通过订阅使用我们全部服务。', details: ['全部互动讲座', '不限次诊断测试', '全部临床与临床前内容', '含语言培训', '详情请联系我们'] }] },
-    contact: { label: '联系', title: '与', highlight: '我们', description: '对我们的服务有疑问或想了解我们能如何帮助？我们会尽快回复。', faqTitle: '常见问题', faqs: [{ q: '什么是知识测试？', a: '瑞典知识测试是欧盟/欧洲经济区以外培训的医生获得瑞典医师执照的必考项目，涵盖前期与临床知识。' }, { q: '讲座如何安排？', a: '我们提供Jitsi Meet/视频互动讲座，您可积极参与并实时提问。' }, { q: '订阅费用多少？', a: '价格与订阅选项请发邮件至 hej@mediready.se。' }, { q: '可以先测水平吗？', a: '可以！我们150道题的诊断测试可帮您了解当前水平与重点方向。' }], followTitle: '关注我们', followDesc: '获取动态与实用建议。' },
+    services: { label: '服务', title: '为', highlight: '知识测试', description: '涵盖各医学领域的互动讲座，基于瑞典知识测试——与瑞典临床实践和指南一致。', contactMore: '联系我们了解更多', ctaTitle: '准备开始？', ctaDesc: '联系 hej@mediready.se 或在 Instagram @mediready.se 关注我们', ctaBtn: '联系我们', programs: [{ id: 'lectures', title: '互动讲座', description: '视频课程，您可积极参与并实时提问。', details: ['与团队直播互动', '直接提问', '与参与者互动讨论', '可回看录制', '定期排课'] }, { id: 'test', title: '诊断性知识测试', description: '150道选择题助您了解当前水平。', details: ['150道选择题', '约1/3临床前', '约2/3临床', '即时反馈', '找出薄弱环节'] }, { id: 'clinical', title: '临床科目', description: '知识测试所涉临床科目的结构化概览。', details: ['内科学', '外科学', '儿科学', '妇产科', '精神科', '神经科', '传染病'] }, { id: 'preclinical', title: '临床前科目', description: '知识测试所需的基础医学内容。', details: ['细胞生物学', '生理学', '遗传学', '免疫学', '药理学', '病理学', '微生物学'] }, { id: 'language', title: '语言培训', description: '练习瑞典医学语言，学习瑞典临床流程。', details: ['瑞典医学术语', '患者沟通', '病历书写', '同事沟通', '瑞典临床指南'] }, { id: 'guidelines', title: '瑞典指南', description: '与瑞典临床实践及现行治疗指南一致。', details: ['现行国家指南', '官方建议', '地区诊疗方案', '质量登记', '瑞典临床实践'] }, { id: 'subscription', title: '订阅', description: '通过订阅使用我们全部服务。', details: ['全部互动讲座', '不限次诊断测试', '全部临床与临床前内容', '含语言培训', '详情请联系我们'] }] },
+    contact: { label: '联系', title: '与', highlight: '我们', description: '对我们的服务有疑问或想了解我们能如何帮助？我们会尽快回复。', faqTitle: '常见问题', faqs: [{ q: '什么是知识测试？', a: '瑞典知识测试是欧盟/欧洲经济区以外培训的医生获得瑞典医师执照的必考项目，涵盖前期与临床知识。' }, { q: '讲座如何安排？', a: '我们提供互动视频讲座，您可积极参与并实时提问。' }, { q: '订阅费用多少？', a: '价格与订阅选项请发邮件至 hej@mediready.se。' }, { q: '可以先测水平吗？', a: '可以！我们150道题的诊断测试可帮您了解当前水平与重点方向。' }], followTitle: '关注我们', followDesc: '获取动态与实用建议。' },
   },
 }
 
@@ -2529,15 +2529,15 @@ export const pt = {
     badge: 'Candidaturas abertas para 2026',
     titleLine1: 'Ajudamo-lo no caminho para',
     titleHighlight: ' a licença médica sueca',
-    description: 'Aulas interativas via Jitsi Meet com médicos experientes.',
-    descriptionLine1: 'Aulas interativas via Jitsi Meet com médicos experientes.',
+    description: 'Aulas em vídeo interativas com médicos experientes.',
+    descriptionLine1: 'Aulas em vídeo interativas com médicos experientes.',
     descriptionLine2: 'O seu caminho para a licença médica sueca.',
     primaryCta: 'Teste o seu nível de conhecimentos',
     videoCta: 'Ver vídeo',
     videoOpenLabel: 'Ver vídeo',
     videoCloseLabel: 'Fechar vídeo',
     trust: [
-      { strong: 'Em direto via Jitsi Meet', span: 'Aulas interativas' },
+      { strong: 'Aulas em vídeo em direto', span: 'Sessões interativas' },
       { strong: '4 formadores', span: 'Internos e consultores' },
       { strong: 'Orientações suecas', span: 'Prática clínica' },
     ],
@@ -2552,7 +2552,7 @@ export const pt = {
     readMore: 'Ler mais',
     viewAll: 'Ver todos os serviços',
     items: [
-      { title: 'Aulas interativas', description: 'Sessões por Jitsi Meet/vídeo em que participa ativamente e pode colocar questões em tempo real.', link: '/services#lectures' },
+      { title: 'Aulas interativas', description: 'Sessões em vídeo em que participa ativamente e pode colocar questões em tempo real.', link: '/services#lectures' },
       { title: 'Teste de conhecimentos diagnóstico', description: '150 perguntas de escolha múltipla para uma visão geral do seu nível antes do teste de conhecimentos.', link: '/services#test' },
       { title: 'Disciplinas clínicas', description: 'Medicina interna, cirurgia, pediatria, ginecologia, psiquiatria, neurologia, doenças infeciosas e mais.', link: '/services#clinical' },
       { title: 'Disciplinas pré-clínicas', description: 'Biologia celular, fisiologia, genética, imunologia e outros fundamentos médicos.', link: '/services#preclinical' },
@@ -2565,16 +2565,16 @@ export const pt = {
     ctaIntro: 'Temos um teste diagnóstico onde pode experimentar o seu nível de conhecimentos.',
     items: [
       { title: 'Médicos a lecionar', description: 'Médicos experientes dão as aulas—sem intermediários, direto da clínica para si.' },
-      { title: 'Em direto via Jitsi Meet', description: 'Junte-se de qualquer lugar. As aulas são em direto para poder colocar questões e acompanhar em tempo real.' },
+      { title: 'Aulas em vídeo em direto', description: 'Junte-se de qualquer lugar. As aulas são em direto para poder colocar questões e acompanhar em tempo real.' },
       { title: 'Curso estruturado', description: 'Estrutura clara alinhada com os requisitos do teste—sabe o que esperar e pode planear.' },
     ],
   },
   homeTrust: {
     title: 'Sobre a formação',
     description:
-      'A formação é construída em torno do teste de conhecimentos e das orientações suecas para um caminho claro para a licença. Cobrimos tópicos pré-clínicos e clínicos de acordo com o que é realmente testado, tudo apresentado segundo a prática médica sueca e recomendações de tratamento atuais. Médicos experientes lecionam em direto via Jitsi Meet para poder colocar questões, acompanhar em tempo real e desenvolver o seu sueco médico. Com uma subscrição mensal tem acesso a todas as aulas e pode planear a sua preparação ao seu ritmo. O nosso objetivo é que se sinta confiante antes do teste e bem preparado para o próximo passo no sistema de saúde sueco.',
+      'A formação é construída em torno do teste de conhecimentos e das orientações suecas para um caminho claro para a licença. Cobrimos tópicos pré-clínicos e clínicos de acordo com o que é realmente testado, tudo apresentado segundo a prática médica sueca e recomendações de tratamento atuais. Médicos experientes lecionam em direto via vídeo para poder colocar questões, acompanhar em tempo real e desenvolver o seu sueco médico. Com uma subscrição mensal tem acesso a todas as aulas e pode planear a sua preparação ao seu ritmo. O nosso objetivo é que se sinta confiante antes do teste e bem preparado para o próximo passo no sistema de saúde sueco.',
     descriptionMobile:
-      'A formação é construída em torno do teste de conhecimentos e das orientações suecas para um caminho claro para a licença. Cobrimos tópicos pré-clínicos e clínicos, tudo apresentado segundo a prática médica sueca. Médicos experientes lecionam em direto via Jitsi Meet.',
+      'A formação é construída em torno do teste de conhecimentos e das orientações suecas para um caminho claro para a licença. Cobrimos tópicos pré-clínicos e clínicos, tudo apresentado segundo a prática médica sueca. Médicos experientes lecionam em direto via vídeo.',
     cta: 'Ler sobre nós',
     ctaTo: '/physicians',
   },
@@ -2588,7 +2588,7 @@ export const pt = {
     title: 'O que oferecemos',
     description: 'Uma subscrição que dá acesso a todas as aulas em direto e uma estrutura clara para o teste de conhecimentos.',
     bullets: [
-      'Aulas em direto via Jitsi Meet com tempo para questões.',
+      'Aulas em vídeo em direto com tempo para questões.',
       'Conteúdo alinhado com o teste de conhecimentos e a prática clínica sueca.',
       'Subscrição mensal—cancele quando quiser.',
     ],
@@ -2720,10 +2720,10 @@ export const pt = {
     register: { title: 'Criar uma conta', subtitle: 'Registe-se para começar.', nameLabel: 'Nome completo', namePlaceholder: 'O seu nome', emailLabel: 'E-mail', emailPlaceholder: 'o.seu.email@exemplo.com', passwordLabel: 'Palavra-passe', passwordPlaceholder: 'Escolha uma palavra-passe', confirmPasswordLabel: 'Confirmar palavra-passe', confirmPasswordPlaceholder: 'Escreva novamente a palavra-passe', agreePrefix: 'Concordo com os ', termsLink: 'termos de serviço', agreeMiddle: ' e a ', privacyLink: 'política de privacidade', agreeSuffix: '.', acceptTermsError: 'Tem de aceitar os termos para se registar.', submit: 'Registar', submitting: 'A enviar...', haveAccount: 'Já tem conta?', signInLink: 'Entrar' },
     swish: { label: 'Swish', title: 'Pagar com', highlight: 'Swish', description: 'Aqui encontra o nosso link e número Swish.', cardTitle: 'Pagamento Swish', numberLabel: 'Número Swish', openSwish: 'Abrir Swish', note: 'Dica: Abra esta página no telemóvel para lançar a app Swish.' },
     kunskapstest: { label: 'Teste diagnóstico', title: 'Bem-vindo ao teste diagnóstico Mediready', description: 'Para médicos formados fora da Suécia.', swedishRequirement: 'São necessários conhecimentos básicos de sueco.', infoTitle: 'Sobre o teste', infoIntro: 'Este teste tem 150 perguntas de escolha múltipla e foi concebido para dar uma visão geral do seu nível antes do exame de licença médica sueca. Leia atentamente as informações abaixo antes de começar.', contentTitle: 'O conteúdo do teste divide-se aproximadamente em:', preclinicalTitle: 'Perguntas pré-clínicas', preclinicalExamples: 'ex. biologia celular, fisiologia, genética, imunologia', clinicalTitle: 'Perguntas clínicas', clinicalExamples: 'ex. medicina interna, cirurgia, pediatria, ginecologia, psiquiatria, neurologia, doenças infeciosas', startButton: 'Clique aqui para avançar para o teste', startButtonMobile: 'Para o teste', note: 'O teste demora aproximadamente 2–3 horas. Pode pausar e continuar mais tarde.', ctaTitle: 'Alguma questão?', ctaDescription: 'Contacte-nos se tiver questões sobre o teste ou os nossos serviços.', ctaButton: 'Contacte-nos' },
-    buyCourse: { label: 'Subscrição', title: 'Aulas em direto para o teste de conhecimentos', description: 'Pague mensalmente e aceda a todas as aulas em direto via Jitsi Meet. Somos médicos a lecionar a médicos formados no estrangeiro para que possa passar no teste de conhecimentos sueco.', badge: 'Subsc.', courseTitle: 'Subscrição – todas as aulas em direto', courseDescription: 'A Mediready são médicos a lecionar a outros médicos formados no estrangeiro para o teste de licença médica sueca. Paga mensalmente e tem acesso a todas as aulas em direto via Jitsi Meet.', priceLabel: 'Preço', price: '2500 kr', pricePeriod: '/ mês', includesTitle: 'O que está incluído:', includes: ['Acesso a todas as aulas em direto via Jitsi Meet', 'Médicos a lecionar—focados no teste de conhecimentos', 'Disciplinas clínicas (medicina interna, cirurgia, pediatria, etc.)', 'Disciplinas pré-clínicas (fisiologia, imunologia, etc.)', 'Formação em língua com terminologia médica em sueco'], registerPrompt: 'Para subscrever precisa de criar uma conta e registar-se aqui', formTitle: 'Começar – crie a sua conta', formIntro: 'Preencha os seus dados para avançar para o pagamento.', nameLabel: 'Nome completo', namePlaceholder: 'O seu nome', emailLabel: 'E-mail', emailPlaceholder: 'o.seu.email@exemplo.com', passwordLabel: 'Palavra-passe', passwordPlaceholder: 'A sua palavra-passe', confirmPasswordLabel: 'Confirmar palavra-passe', confirmPasswordPlaceholder: 'Escreva novamente a palavra-passe', passwordMismatchError: 'As palavras-passe não coincidem.', messageLabel: 'Mensagem (opcional)', messagePlaceholder: 'Escreva aqui eventuais questões...', submitButton: 'Avançar para o pagamento', formNote: 'Tem acesso imediato ao curso após uma subscrição ativa.', successMessage: 'Obrigado pelo seu registo! Entraremos em contacto em breve.', ctaTitle: 'Alguma questão?', ctaDescription: 'Não hesite em contactar-nos se tiver questões.', ctaButton: 'Contacte-nos' },
+    buyCourse: { label: 'Subscrição', title: 'Aulas em direto para o teste de conhecimentos', description: 'Pague mensalmente e aceda a todas as aulas em vídeo em direto. Somos médicos a lecionar a médicos formados no estrangeiro para que possa passar no teste de conhecimentos sueco.', badge: 'Subsc.', courseTitle: 'Subscrição – todas as aulas em direto', courseDescription: 'A Mediready são médicos a lecionar a outros médicos formados no estrangeiro para o teste de licença médica sueca. Paga mensalmente e tem acesso a todas as aulas em vídeo em direto.', priceLabel: 'Preço', price: '2500 kr', pricePeriod: '/ mês', includesTitle: 'O que está incluído:', includes: ['Acesso a todas as aulas em vídeo em direto', 'Médicos a lecionar—focados no teste de conhecimentos', 'Disciplinas clínicas (medicina interna, cirurgia, pediatria, etc.)', 'Disciplinas pré-clínicas (fisiologia, imunologia, etc.)', 'Formação em língua com terminologia médica em sueco'], registerPrompt: 'Para subscrever precisa de criar uma conta e registar-se aqui', formTitle: 'Começar – crie a sua conta', formIntro: 'Preencha os seus dados para avançar para o pagamento.', nameLabel: 'Nome completo', namePlaceholder: 'O seu nome', emailLabel: 'E-mail', emailPlaceholder: 'o.seu.email@exemplo.com', passwordLabel: 'Palavra-passe', passwordPlaceholder: 'A sua palavra-passe', confirmPasswordLabel: 'Confirmar palavra-passe', confirmPasswordPlaceholder: 'Escreva novamente a palavra-passe', passwordMismatchError: 'As palavras-passe não coincidem.', messageLabel: 'Mensagem (opcional)', messagePlaceholder: 'Escreva aqui eventuais questões...', submitButton: 'Avançar para o pagamento', formNote: 'Tem acesso imediato ao curso após uma subscrição ativa.', successMessage: 'Obrigado pelo seu registo! Entraremos em contacto em breve.', ctaTitle: 'Alguma questão?', ctaDescription: 'Não hesite em contactar-nos se tiver questões.', ctaButton: 'Contacte-nos' },
     privacy: { label: 'Legal', title: 'Política de privacidade', lastUpdated: 'Última atualização: fevereiro 2026', sections: [{ heading: 'Introdução', paragraphs: ['A Mediready ("nós") está empenhada em proteger a sua privacidade. Esta política descreve como recolhemos, utilizamos e protegemos os seus dados pessoais quando utiliza os nossos serviços.'] }, { heading: 'Dados pessoais que recolhemos', paragraphs: ['Recolhemos as informações que nos fornece ao registar-se e utilizar o serviço, como nome e e-mail. Também armazenamos informações relacionadas com a sua subscrição e participação nas nossas sessões.'] }, { heading: 'Pagamentos via Stripe', paragraphs: ['Os pagamentos da nossa subscrição mensal são processados pelo nosso fornecedor Stripe. Ao pagar, partilhamos os dados necessários (ex. e-mail, referência de pagamento) com o Stripe para concluir a transação. Os dados do cartão são processados diretamente pelo Stripe e não são armazenados por nós.', 'Mais informações sobre o tratamento de dados pelo Stripe: https://stripe.com/privacy'] }, { heading: 'Reuniões via Jitsi Meet', paragraphs: ['As nossas aulas e reuniões em direto realizam-se via Jitsi Meet. Ao juntar-se a uma sessão, o Jitsi processa dados pessoais da reunião (nome, e-mail, vídeo/áudio durante a sessão).', 'Mais informações: https://jitsi.org/meet-jit-si-privacy/'] }, { heading: 'Contacto', paragraphs: ['Para questões sobre esta política ou o nosso tratamento de dados pessoais, contacte-nos em hej@mediready.se.'] }] },
-    terms: { label: 'Legal', title: 'Termos de serviço', lastUpdated: 'Última atualização: fevereiro 2026', sections: [{ heading: 'Aceitação dos termos', paragraphs: ['Ao utilizar os serviços da Mediready, concorda com estes termos de serviço. Se não aceitar, não pode utilizar os serviços.'] }, { heading: 'Conta pessoal', paragraphs: ['Cada conta só pode ser utilizada por uma pessoa. Duas ou mais pessoas não podem partilhar o mesmo login ou a mesma conta.'] }, { heading: 'Subscrição e pagamento', paragraphs: ['A subscrição dos nossos serviços é mensal e faturada via Stripe. Pode cancelar a subscrição a qualquer momento; continuará até ao fim do período pago. O Stripe gere o fluxo de pagamento; os seus termos estão em https://stripe.com/legal.'] }, { heading: 'Participação em sessões via Jitsi Meet', paragraphs: ['As aulas e reuniões em direto realizam-se via Jitsi Meet. Ao participar, concorda que o Jitsi Meet é utilizado para as reuniões e que seguirá os termos de utilização do Jitsi e as nossas instruções durante as sessões.'] }, { heading: 'Contacto', paragraphs: ['Para questões sobre os termos de serviço, contacte-nos em hej@mediready.se.'] }] },
-    services: { label: 'Serviços', title: 'Prepare-se para o ', highlight: 'teste de conhecimentos', description: 'Aulas interativas em todas as áreas médicas, com base no teste de conhecimentos sueco—alinhadas com a prática e orientações clínicas suecas.', contactMore: 'Contacte-nos para saber mais', ctaTitle: 'Pronto para começar?', ctaDesc: 'Contacte-nos em hej@mediready.se ou siga-nos no Instagram @mediready.se', ctaBtn: 'Contacte-nos', programs: [{ id: 'lectures', title: 'Aulas interativas', description: 'Sessões por Jitsi Meet/vídeo em que participa ativamente e pode colocar questões em tempo real.', details: ['Sessões em direto com a nossa equipa', 'Coloque questões diretamente', 'Discussão interativa com participantes', 'Gravações disponíveis depois', 'Sessões agendadas regularmente'] }, { id: 'test', title: 'Teste de conhecimentos diagnóstico', description: '150 perguntas de escolha múltipla para uma visão geral do seu nível atual.', details: ['150 perguntas de escolha múltipla', '~1/3 pré-clínicas', '~2/3 clínicas', 'Feedback imediato', 'Identifique as suas áreas fracas'] }, { id: 'clinical', title: 'Disciplinas clínicas', description: 'Visão estruturada das disciplinas clínicas cobertas pelo teste de conhecimentos.', details: ['Medicina interna', 'Cirurgia', 'Pediatria', 'Ginecologia e obstetrícia', 'Psiquiatria', 'Neurologia', 'Doenças infeciosas'] }, { id: 'preclinical', title: 'Disciplinas pré-clínicas', description: 'Tópicos médicos fundamentais necessários para o teste de conhecimentos.', details: ['Biologia celular', 'Fisiologia', 'Genética', 'Imunologia', 'Farmacologia', 'Patologia', 'Microbiologia'] }, { id: 'language', title: 'Formação em língua', description: 'Pratique o sueco médico enquanto aprende o fluxo clínico sueco.', details: ['Terminologia médica em sueco', 'Comunicação com o doente', 'Documentação', 'Comunicação com colegas', 'Orientações clínicas suecas'] }, { id: 'guidelines', title: 'Orientações suecas', description: 'Alinhadas com a prática clínica sueca e orientações de tratamento atuais.', details: ['Orientações nacionais atuais', 'Recomendações das autoridades', 'Programas de cuidados regionais', 'Registos de qualidade', 'Prática clínica sueca'] }, { id: 'subscription', title: 'Subscrição', description: 'Aceda a todos os nossos serviços através de uma subscrição.', details: ['Acesso a todas as aulas interativas', 'Testes diagnósticos ilimitados', 'Todo o conteúdo clínico e pré-clínico', 'Formação em língua incluída', 'Contacte-nos para detalhes'] }] },
+    terms: { label: 'Legal', title: 'Termos de serviço', lastUpdated: 'Última atualização: fevereiro 2026', sections: [{ heading: 'Aceitação dos termos', paragraphs: ['Ao utilizar os serviços da Mediready, concorda com estes termos de serviço. Se não aceitar, não pode utilizar os serviços.'] }, { heading: 'Conta pessoal', paragraphs: ['Cada conta só pode ser utilizada por uma pessoa. Duas ou mais pessoas não podem partilhar o mesmo login ou a mesma conta.'] }, { heading: 'Subscrição e pagamento', paragraphs: ['A subscrição dos nossos serviços é mensal e faturada via Stripe. Pode cancelar a subscrição a qualquer momento; continuará até ao fim do período pago. O Stripe gere o fluxo de pagamento; os seus termos estão em https://stripe.com/legal.'] }, { heading: 'Participação em aulas em vídeo', paragraphs: ['As aulas e reuniões em direto realizam-se via Jitsi Meet. Ao participar, concorda que o Jitsi Meet é utilizado para as reuniões e que seguirá os termos de utilização do Jitsi e as nossas instruções durante as sessões.'] }, { heading: 'Contacto', paragraphs: ['Para questões sobre os termos de serviço, contacte-nos em hej@mediready.se.'] }] },
+    services: { label: 'Serviços', title: 'Prepare-se para o ', highlight: 'teste de conhecimentos', description: 'Aulas interativas em todas as áreas médicas, com base no teste de conhecimentos sueco—alinhadas com a prática e orientações clínicas suecas.', contactMore: 'Contacte-nos para saber mais', ctaTitle: 'Pronto para começar?', ctaDesc: 'Contacte-nos em hej@mediready.se ou siga-nos no Instagram @mediready.se', ctaBtn: 'Contacte-nos', programs: [{ id: 'lectures', title: 'Aulas interativas', description: 'Sessões em vídeo em que participa ativamente e pode colocar questões em tempo real.', details: ['Sessões em direto com a nossa equipa', 'Coloque questões diretamente', 'Discussão interativa com participantes', 'Gravações disponíveis depois', 'Sessões agendadas regularmente'] }, { id: 'test', title: 'Teste de conhecimentos diagnóstico', description: '150 perguntas de escolha múltipla para uma visão geral do seu nível atual.', details: ['150 perguntas de escolha múltipla', '~1/3 pré-clínicas', '~2/3 clínicas', 'Feedback imediato', 'Identifique as suas áreas fracas'] }, { id: 'clinical', title: 'Disciplinas clínicas', description: 'Visão estruturada das disciplinas clínicas cobertas pelo teste de conhecimentos.', details: ['Medicina interna', 'Cirurgia', 'Pediatria', 'Ginecologia e obstetrícia', 'Psiquiatria', 'Neurologia', 'Doenças infeciosas'] }, { id: 'preclinical', title: 'Disciplinas pré-clínicas', description: 'Tópicos médicos fundamentais necessários para o teste de conhecimentos.', details: ['Biologia celular', 'Fisiologia', 'Genética', 'Imunologia', 'Farmacologia', 'Patologia', 'Microbiologia'] }, { id: 'language', title: 'Formação em língua', description: 'Pratique o sueco médico enquanto aprende o fluxo clínico sueco.', details: ['Terminologia médica em sueco', 'Comunicação com o doente', 'Documentação', 'Comunicação com colegas', 'Orientações clínicas suecas'] }, { id: 'guidelines', title: 'Orientações suecas', description: 'Alinhadas com a prática clínica sueca e orientações de tratamento atuais.', details: ['Orientações nacionais atuais', 'Recomendações das autoridades', 'Programas de cuidados regionais', 'Registos de qualidade', 'Prática clínica sueca'] }, { id: 'subscription', title: 'Subscrição', description: 'Aceda a todos os nossos serviços através de uma subscrição.', details: ['Acesso a todas as aulas interativas', 'Testes diagnósticos ilimitados', 'Todo o conteúdo clínico e pré-clínico', 'Formação em língua incluída', 'Contacte-nos para detalhes'] }] },
     contact: { label: 'Contacto', title: 'Entre em contacto ', highlight: 'connosco', description: 'Questões sobre os nossos serviços ou quer saber como podemos ajudar? Responderemos o mais breve possível.', faqTitle: 'Perguntas frequentes', faqs: [{ q: 'O que é o teste de conhecimentos?', a: 'O teste de conhecimentos sueco é obrigatório para médicos formados fora da UE/EEE para obter a licença médica sueca. Cobre conhecimentos pré-clínicos e clínicos.' }, { q: 'Como funcionam as vossas aulas?', a: 'Oferecemos aulas interativas por Jitsi Meet/vídeo em que participa ativamente e pode colocar questões em tempo real.' }, { q: 'Quanto custa a subscrição?', a: 'Envie-nos um e-mail para hej@mediready.se para preços e opções de subscrição.' }, { q: 'Posso testar o meu nível primeiro?', a: 'Sim! O nosso teste diagnóstico de 150 perguntas ajuda-o a perceber o seu nível atual e onde se focar.' }], followTitle: 'Siga-nos', followDesc: 'Mantenha-se a par de novidades e dicas.' },
   },
 }
