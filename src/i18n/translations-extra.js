@@ -19,7 +19,8 @@ export const ar = {
     langEn: 'EN',
   },
   hero: {
-    badge: 'التقديم مفتوح لعام 2026',
+    badge: 'بداية جديدة في مطلع كل شهر',
+    badgeNextStart: 'البداية القادمة {{date}}',
     titleLine1: 'نساعدك في طريقك إلى',
     titleHighlight: ' الترخيص الطبي السويدي',
     description: 'محاضرات تفاعلية عبر زووم مع أطباء ذوي خبرة.',
@@ -649,7 +650,8 @@ export const es = {
     langEn: 'EN',
   },
   hero: {
-    badge: 'Inscripción abierta para 2026',
+    badge: 'Nuevo grupo al inicio de cada mes',
+    badgeNextStart: 'Próximo inicio {{date}}',
     titleLine1: 'Te ayudamos en tu camino hacia',
     titleHighlight: ' la licencia médica sueca',
     description: 'Clases en vídeo interactivas con médicos con experiencia.',
@@ -1287,7 +1289,8 @@ export const fr = {
     langEn: 'EN',
   },
   hero: {
-    badge: 'Candidatures ouvertes pour 2026',
+    badge: 'Nouveau groupe en début de chaque mois',
+    badgeNextStart: 'Prochain début {{date}}',
     titleLine1: 'Nous vous accompagnons vers',
     titleHighlight: ' l\'autorisation d\'exercer en Suède',
     description: 'Cours en vidéo interactifs avec des médecins expérimentés.',
@@ -1923,7 +1926,8 @@ export const fa = {
     langEn: 'EN',
   },
   hero: {
-    badge: 'ثبت\u200cنام برای ۲۰۲۶ باز است',
+    badge: 'شروع در ابتدای هر ماه',
+    badgeNextStart: 'شروع بعدی {{date}}',
     titleLine1: 'ما شما را در مسیر',
     titleHighlight: ' اخذ مجوز پزشکی سوئد',
     description: 'همایش‌های تعاملی از طریق زوم با پزشکان با تجربه.',
@@ -2315,7 +2319,8 @@ export const zh = {
     langEn: 'EN',
   },
   hero: {
-    badge: '2026年开放申请',
+    badge: '每月初新班开课',
+    badgeNextStart: '下次开课 {{date}}',
     titleLine1: '我们助您通往',
     titleHighlight: '瑞典医师执照',
     description: '与经验丰富的医生进行互动视频讲座。',
@@ -2526,7 +2531,8 @@ export const pt = {
     langEn: 'EN',
   },
   hero: {
-    badge: 'Candidaturas abertas para 2026',
+    badge: 'Novo grupo no início de cada mês',
+    badgeNextStart: 'Próximo início {{date}}',
     titleLine1: 'Ajudamo-lo no caminho para',
     titleHighlight: ' a licença médica sueca',
     description: 'Aulas em vídeo interativas com médicos experientes.',

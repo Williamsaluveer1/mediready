@@ -9,3 +9,13 @@ export const ADMIN_EMAILS = [
 export const isAdminEmail = (email) => {
   return ADMIN_EMAILS.includes(email?.toLowerCase())
 }
+
+// E-postadresser som alltid räknas som "aktiv prenumeration" (ser schema utan att prenumerera).
+// OBS: Lägg till samma adress(er) i supabase/rls-always-active.sql så att RLS tillåter att de läser lektioner.
+export const ALWAYS_ACTIVE_EMAILS = [
+  // 'exempel@mediready.se',
+]
+
+export const isAlwaysActiveEmail = (email) => {
+  return ALWAYS_ACTIVE_EMAILS.includes(email?.toLowerCase())
+}

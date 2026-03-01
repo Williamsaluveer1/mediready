@@ -1,8 +1,22 @@
 import './Hero.css'
 import { useI18n } from '../i18n/I18nProvider'
 
+// Nästa start: 1:a i innevarande månad fram till 2:a, därefter 1:a nästa månad
+function getNextStartDate(locale) {
+  const now = new Date()
+  const day = now.getDate()
+  const year = now.getFullYear()
+  const month = now.getMonth()
+  const nextStart = day >= 3
+    ? new Date(year, month + 1, 1)
+    : new Date(year, month, 1)
+  const monthName = new Intl.DateTimeFormat(locale, { month: 'long' }).format(nextStart)
+  return `1 ${monthName}`
+}
+
 function Hero() {
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
+  const nextStartDate = getNextStartDate(lang === 'zh' ? 'zh-CN' : lang)
 
   return (
     <section className="hero" aria-labelledby="hero-heading">
@@ -15,7 +29,7 @@ function Hero() {
         <div className="hero-content">
           <div className="hero-badge">
             <span className="badge-dot"></span>
-            {t('hero.badge')}
+            {t('hero.badgeNextStart', { date: nextStartDate })}
           </div>
           
           <h1 id="hero-heading" className="hero-title">

@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, useCallback } from 'react'
 import { supabase } from '../lib/supabase'
-import { isAdminEmail } from '../config/admin'
+import { isAdminEmail, isAlwaysActiveEmail } from '../config/admin'
 
 const AuthContext = createContext({})
 
@@ -139,7 +139,7 @@ export function AuthProvider({ children }) {
   }
 
   const isAdmin = user ? isAdminEmail(user.email) : false
-  const isSubscribed = subscriptionStatus === 'active'
+  const isSubscribed = subscriptionStatus === 'active' || (user ? isAlwaysActiveEmail(user.email) : false)
 
   const value = {
     user,

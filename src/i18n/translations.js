@@ -20,7 +20,8 @@ export const translations = {
       langEn: 'EN',
     },
     hero: {
-      badge: 'Anmälan öppen för 2026',
+      badge: 'Start i början av varje månad',
+      badgeNextStart: 'Nästa start {{date}}',
       titleLine1: 'Förbered dig inför ',
       titleHighlight: 'kunskapsprovet',
       description: 'Interaktiva videoföreläsningar med erfarna läkare. Din väg mot svensk läkarlegitimation.',
@@ -658,7 +659,8 @@ export const translations = {
       langEn: 'EN',
     },
     hero: {
-      badge: 'Application open for 2026',
+      badge: 'New group at the start of each month',
+      badgeNextStart: 'Next start {{date}}',
       titleLine1: 'We help you on your way to',
       titleHighlight: ' Swedish medical licensure',
       description: 'Interactive video lectures with experienced doctors.',

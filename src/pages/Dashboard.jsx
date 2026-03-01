@@ -121,12 +121,14 @@ function Dashboard() {
     }
   }, [user, isAdmin])
 
-  // Fetch messages history (admin only)
+  // Fetch messages history (admin only) – senaste 24 h
   const fetchMessagesHistory = async () => {
     setMessagesHistoryLoading(true)
+    const since = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString()
     const { data, error } = await supabase
       .from('messages')
       .select('id, subject, message, status, created_at, updated_at')
+      .gte('created_at', since)
       .order('created_at', { ascending: false })
       .limit(50)
     if (!error && data) {
@@ -403,7 +405,7 @@ function Dashboard() {
                     }}
                     disabled={portalLoading}
                   >
-                    {portalLoading ? 'Laddar...' : 'Hantera prenumeration i Stripe'}
+                    {portalLoading ? 'Laddar...' : 'Hantera prenumeration'}
                     {!portalLoading && (
                       <img src="/external-link-svgrepo-com.svg" alt="" aria-hidden="true" className="external-link-icon" />
                     )}
@@ -619,7 +621,7 @@ function Dashboard() {
               {/* Admin: Skicka utskick – sparas i public.messages */}
               <div className="dashboard-card email-card">
                 <div className="dashboard-card-header">
-                  <h2>Skicka mail till alla deltagare med aktiv prenumeration</h2>
+                  <h2>Skicka mail till alla deltagare med aktiv prenumeration. Max 100 mails per dag free limit.</h2>
                 </div>
                 <div className="dashboard-card-body">
                 <form className="email-form" onSubmit={handleSendEmail}>
@@ -684,14 +686,14 @@ function Dashboard() {
 
                   {/* Historik över utskick */}
                   <div className="email-history">
-                    <h3>Historik – utskick</h3>
+                    <h3>Historik senaste 24 h</h3>
                     {messagesHistoryLoading ? (
                       <div className="schedule-loading">
                         <div className="loading-spinner"></div>
                         <p>Laddar historik...</p>
                       </div>
                     ) : messagesHistory.length === 0 ? (
-                      <p className="email-history-empty">Inga utskick ännu.</p>
+                      <p className="email-history-empty">Inga utskick senaste 24 h.</p>
                     ) : (
                       <ul className="email-history-list">
                         {messagesHistory.map((msg) => (
@@ -838,7 +840,6 @@ function Dashboard() {
                     onChange={handleFormChange}
                     required
                     disabled={formLoading}
-                    placeholder="T.ex. Introduktion till svensk sjukvård"
                   />
                 </div>
                 <div className="form-group">
@@ -850,7 +851,6 @@ function Dashboard() {
                     value={formData.instructor}
                     onChange={handleFormChange}
                     disabled={formLoading}
-                    placeholder="T.ex. Dr. Andersson"
                   />
                 </div>
               </div>
@@ -864,7 +864,6 @@ function Dashboard() {
                   onChange={handleFormChange}
                   rows="3"
                   disabled={formLoading}
-                  placeholder="Beskriv lektionens innehåll..."
                 />
               </div>
 
