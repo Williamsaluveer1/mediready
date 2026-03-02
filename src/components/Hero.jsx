@@ -2,15 +2,20 @@ import './Hero.css'
 import { useI18n } from '../i18n/I18nProvider'
 
 // Nästa start: 1:a i innevarande månad fram till 2:a, därefter 1:a nästa månad
-function getNextStartDate(locale) {
+function getNextStartDate(locale = 'sv-SE') {
   const now = new Date()
-  const day = now.getDate()
-  const year = now.getFullYear()
-  const month = now.getMonth()
-  const nextStart = day >= 3
-    ? new Date(year, month + 1, 1)
-    : new Date(year, month, 1)
-  const monthName = new Intl.DateTimeFormat(locale, { month: 'long' }).format(nextStart)
+  const cutoffDay = 2
+
+  const nextStart =
+    now.getDate() >= cutoffDay
+      ? new Date(now.getFullYear(), now.getMonth() + 1, 1)
+      : new Date(now.getFullYear(), now.getMonth(), 1)
+
+  const monthName = new Intl.DateTimeFormat(locale, {
+    month: 'long',
+    timeZone: 'Europe/Stockholm'
+  }).format(nextStart)
+
   return `1 ${monthName}`
 }
 
