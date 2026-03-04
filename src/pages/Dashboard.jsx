@@ -840,6 +840,7 @@ function Dashboard() {
                     onChange={handleFormChange}
                     required
                     disabled={formLoading}
+                    placeholder="Titel"
                   />
                 </div>
                 <div className="form-group">
@@ -851,6 +852,7 @@ function Dashboard() {
                     value={formData.instructor}
                     onChange={handleFormChange}
                     disabled={formLoading}
+                    placeholder="Föreläsare"
                   />
                 </div>
               </div>
@@ -864,6 +866,7 @@ function Dashboard() {
                   onChange={handleFormChange}
                   rows="3"
                   disabled={formLoading}
+                  placeholder="Beskrivning"
                 />
               </div>
 
