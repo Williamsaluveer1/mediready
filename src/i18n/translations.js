@@ -192,8 +192,8 @@ export const translations = {
         },
         {
           name: 'Mats Ek',
-          role: 'Allmänmedicin/Preklin',
-          specialty: 'Allmänmedicin',
+          role: 'Psykiatri',
+          specialty: 'Psykiatri',
           image: '/Mats.JPEG',
           shortBio:
             'Överläkare i psykiatri på WeMind Psykiatri. Ordförande i Region Stockholms Läkemedelskommitté. Doktorerat i psykiatrisk epidemiologi vid Karolinska Institutet.',
