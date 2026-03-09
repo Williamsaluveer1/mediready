@@ -208,7 +208,7 @@ function Navbar() {
           </ul>
         </nav>
 
-        <div className="mobile-menu-actions" aria-label="Snabbval">
+        <div className="mobile-menu-actions" aria-label="Språk">
           <div className="nav-lang-dropdown nav-lang-dropdown--mobile" ref={langDropdownMobileRef}>
             <button
               type="button"
@@ -253,9 +253,19 @@ function Navbar() {
               ))}
             </div>
           </div>
+        </div>
+
+        <div className="mobile-menu-cta-bottom">
+          <Link
+            to="/register"
+            className="mobile-menu-cta mobile-menu-cta--primary"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            {t('nav.register')}
+          </Link>
           <Link
             to="/kunskapstest"
-            className="mobile-menu-cta mobile-menu-cta--primary"
+            className="mobile-menu-cta mobile-menu-cta--secondary"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             {t('nav.cta')}

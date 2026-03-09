@@ -210,7 +210,27 @@
   }
 
   .register-left {
-    padding: 48px var(--space-md);
+    flex-direction: column;
+    align-items: center;
+    padding: 48px var(--space-md) var(--space-xl);
+    justify-content: flex-start;
+  }
+
+  .register-logo {
+    position: static;
+    margin-bottom: var(--space-xl);
+    flex-shrink: 0;
+  }
+
+  .register-logo img {
+    height: 88px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .register-left-inner {
+    width: 100%;
+    padding-top: 0;
   }
 
   .register-title {
@@ -220,15 +240,6 @@
 
   .register-subtitle {
     font-size: 0.95rem;
-  }
-
-  .register-logo {
-    left: var(--space-md);
-    top: var(--space-md);
-  }
-
-  .register-left-inner {
-    padding-top: 56px;
   }
 }
 
