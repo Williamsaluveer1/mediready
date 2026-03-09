@@ -22,6 +22,9 @@ export const translations = {
     hero: {
       badge: 'Start i början av varje månad',
       badgeNextStart: 'Nästa start {{date}}',
+      badgeCourseStart: 'Kurstart {{date}}. Maila intresseanmälan ',
+      badgeCourseStartLink: 'HÄR',
+      badgeMailSubject: 'Intresseanmälan',
       titleLine1: 'Förbered dig inför ',
       titleHighlight: 'kunskapsprovet',
       description: 'Interaktiva videoföreläsningar med erfarna läkare. Din väg mot svensk läkarlegitimation.',
@@ -661,6 +664,9 @@ export const translations = {
     hero: {
       badge: 'New group at the start of each month',
       badgeNextStart: 'Next start {{date}}',
+      badgeCourseStart: 'Course start {{date}}. Email interest application ',
+      badgeCourseStartLink: 'HERE',
+      badgeMailSubject: 'Course interest application',
       titleLine1: 'We help you on your way to',
       titleHighlight: ' Swedish medical licensure',
       description: 'Interactive video lectures with experienced doctors.',

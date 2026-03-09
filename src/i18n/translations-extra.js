@@ -21,6 +21,9 @@ export const ar = {
   hero: {
     badge: 'بداية جديدة في مطلع كل شهر',
     badgeNextStart: 'البداية القادمة {{date}}',
+    badgeCourseStart: 'بداية الدورة {{date}}. أرسل طلب اهتمام ',
+    badgeCourseStartLink: 'هنا',
+    badgeMailSubject: 'طلب اهتمام بالدورة',
     titleLine1: 'نساعدك في طريقك إلى',
     titleHighlight: ' الترخيص الطبي السويدي',
     description: 'محاضرات تفاعلية عبر زووم مع أطباء ذوي خبرة.',
@@ -652,6 +655,9 @@ export const es = {
   hero: {
     badge: 'Nuevo grupo al inicio de cada mes',
     badgeNextStart: 'Próximo inicio {{date}}',
+    badgeCourseStart: 'Inicio del curso {{date}}. Envía solicitud de interés ',
+    badgeCourseStartLink: 'AQUÍ',
+    badgeMailSubject: 'Solicitud de interés en el curso',
     titleLine1: 'Te ayudamos en tu camino hacia',
     titleHighlight: ' la licencia médica sueca',
     description: 'Clases en vídeo interactivas con médicos con experiencia.',
@@ -1291,6 +1297,9 @@ export const fr = {
   hero: {
     badge: 'Nouveau groupe en début de chaque mois',
     badgeNextStart: 'Prochain début {{date}}',
+    badgeCourseStart: 'Début du cours {{date}}. Envoyez votre demande d\'intérêt ',
+    badgeCourseStartLink: 'ICI',
+    badgeMailSubject: 'Demande d\'intérêt pour le cours',
     titleLine1: 'Nous vous accompagnons vers',
     titleHighlight: ' l\'autorisation d\'exercer en Suède',
     description: 'Cours en vidéo interactifs avec des médecins expérimentés.',
@@ -1928,6 +1937,9 @@ export const fa = {
   hero: {
     badge: 'شروع در ابتدای هر ماه',
     badgeNextStart: 'شروع بعدی {{date}}',
+    badgeCourseStart: 'شروع دوره {{date}}. درخواست علاقه‌مندی را ایمیل کنید ',
+    badgeCourseStartLink: 'اینجا',
+    badgeMailSubject: 'درخواست علاقه‌مندی به دوره',
     titleLine1: 'ما شما را در مسیر',
     titleHighlight: ' اخذ مجوز پزشکی سوئد',
     description: 'همایش‌های تعاملی از طریق زوم با پزشکان با تجربه.',
@@ -2321,6 +2333,9 @@ export const zh = {
   hero: {
     badge: '每月初新班开课',
     badgeNextStart: '下次开课 {{date}}',
+    badgeCourseStart: '课程开始 {{date}}。发送兴趣申请',
+    badgeCourseStartLink: '此处',
+    badgeMailSubject: '课程兴趣申请',
     titleLine1: '我们助您通往',
     titleHighlight: '瑞典医师执照',
     description: '与经验丰富的医生进行互动视频讲座。',
@@ -2533,6 +2548,9 @@ export const pt = {
   hero: {
     badge: 'Novo grupo no início de cada mês',
     badgeNextStart: 'Próximo início {{date}}',
+    badgeCourseStart: 'Início do curso {{date}}. Envie pedido de interesse ',
+    badgeCourseStartLink: 'AQUI',
+    badgeMailSubject: 'Pedido de interesse no curso',
     titleLine1: 'Ajudamo-lo no caminho para',
     titleHighlight: ' a licença médica sueca',
     description: 'Aulas em vídeo interativas com médicos experientes.',

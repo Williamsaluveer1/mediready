@@ -89,6 +89,13 @@
   animation: pulse 2s ease-in-out infinite;
 }
 
+.hero-badge-link {
+  color: var(--primary-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  margin-left: -0.15em;
+}
+
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.6; transform: scale(1.1); }

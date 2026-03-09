@@ -34,7 +34,8 @@ function Hero() {
         <div className="hero-content">
           <div className="hero-badge">
             <span className="badge-dot"></span>
-            {t('hero.badgeNextStart', { date: nextStartDate })}
+            {t('hero.badgeCourseStart', { date: nextStartDate })}
+            <a href={`mailto:hej@mediready.se?subject=${encodeURIComponent(t('hero.badgeMailSubject'))}`} className="hero-badge-link">{t('hero.badgeCourseStartLink')}</a>
           </div>
           
           <h1 id="hero-heading" className="hero-title">
