@@ -352,13 +352,8 @@ function Dashboard() {
   }
 
   // Redirect when not logged in (in effect to avoid setState during render)
-  useEffect(() => {
-    if (!loading && !user) {
-      navigate('/login', { replace: true })
-    }
-  }, [loading, user, navigate])
-
   if (!user) {
+    navigate('/login', { replace: true })
     return null
   }
 
