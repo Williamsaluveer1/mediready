@@ -352,14 +352,10 @@ function Dashboard() {
   }
 
   // Redirect when not logged in (in effect to avoid setState during render)
-  useEffect(() => {
-    if (!loading && !user) {
-      navigate("/login", { replace: true })
-    }
-  }, [loading, user, navigate])
-  
-  if (loading) return null
-  if (!user) return null
+  if (!user) {
+    navigate('/login', { replace: true })
+    return null
+  }
 
   const userName = user.user_metadata?.full_name || user.email?.split('@')[0] || 'Användare'
 
