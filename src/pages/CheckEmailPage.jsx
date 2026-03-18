@@ -33,6 +33,7 @@ function CheckEmailPage() {
               <p>Vi har skickat en verifieringslänk till:</p>
               <span className="email-sent-to">{email}</span>
               <p>Klicka på länken i e-postmeddelandet för att bekräfta din adress och komma igång.</p>
+              <p className="check-spam-note">Kolla även skräpposten om du inte hittar mailet.</p>
               <Link to="/login" className="btn-primary check-email-back">
                 Till inloggning
               </Link>

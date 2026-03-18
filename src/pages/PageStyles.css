@@ -1896,6 +1896,13 @@
   margin-bottom: var(--space-lg);
 }
 
+.check-spam-note {
+  font-size: 0.9rem;
+  color: var(--text-muted, var(--text-secondary));
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
 .signup-success .email-sent-to {
   display: inline-block;
   font-weight: 600;
@@ -2031,6 +2038,10 @@
     padding: var(--space-xl);
   }
 
+  .welcome-card {
+    border-radius: 4px;
+  }
+
   .welcome-header {
     grid-template-columns: 1fr;
     justify-items: center;
@@ -2038,8 +2049,19 @@
     gap: var(--space-md);
   }
 
+  .welcome-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
   .welcome-info h1 {
     font-size: 1.2rem;
+  }
+
+  .welcome-meta {
+    justify-content: center;
   }
 
   .subscription-btn {
@@ -2231,6 +2253,10 @@
 .forgot-password-success p strong {
   color: var(--slate-900);
   font-weight: 600;
+}
+
+.forgot-password-success .check-spam-note {
+  margin-bottom: var(--space-md);
 }
 
 .forgot-password-success .btn-primary {

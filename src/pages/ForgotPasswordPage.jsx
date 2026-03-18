@@ -50,6 +50,7 @@ function ForgotPasswordPage() {
                     Vi har skickat en länk för att återställa ditt lösenord till <strong>{email}</strong>.
                   </p>
                   <p>Kontrollera din inkorg och klicka på länken för att fortsätta.</p>
+                  <p className="check-spam-note">Kolla även skräpposten om du inte hittar mailet.</p>
                   <Link to="/login" className="btn-primary register-btn">
                     Tillbaka till inloggning
                   </Link>
