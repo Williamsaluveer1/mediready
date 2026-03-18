@@ -1,0 +1,57 @@
+/* ====================================
+   HERO QUOTE – enkel testimonial under hero
+   ==================================== */
+
+.hero-quote {
+  background: #fff;
+  padding: var(--space-2xl) var(--space-xl);
+}
+
+.hero-quote-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-md);
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-2xl);
+}
+
+.hero-quote-text {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--slate-700);
+  margin: 0;
+}
+
+.hero-quote-author {
+  font-family: var(--font-display);
+  font-style: normal;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--slate-800);
+}
+
+.hero-quote-note {
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .hero-quote {
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .hero-quote-inner {
+    padding-top: var(--space-xl);
+  }
+
+  .hero-quote-text {
+    font-size: 0.975rem;
+  }
+}

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import HeroQuote from './HeroQuote'
 import './TrustSection.css'
 import { useI18n } from '../i18n/I18nProvider'
 
@@ -41,6 +42,9 @@ function TrustSection() {
               <ShieldIcon />
             </div>
           </div>
+        </div>
+        <div className="trust-quote-slot">
+          <HeroQuote />
         </div>
         <div className="trust-content">
           <h2 id="trust-heading" className="trust-title">
