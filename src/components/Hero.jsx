@@ -1,20 +1,13 @@
 import './Hero.css'
 import { useI18n } from '../i18n/I18nProvider'
 
-// Nästa start: 1:a i innevarande månad fram till 2:a, därefter 1:a nästa månad
+// Fast kursstart: 1 september
 function getNextStartDate(locale = 'sv-SE') {
-  const now = new Date()
-  const cutoffDay = 2
-
-  const nextStart =
-    now.getDate() >= cutoffDay
-      ? new Date(now.getFullYear(), now.getMonth() + 1, 1)
-      : new Date(now.getFullYear(), now.getMonth(), 1)
-
+  const fixedStart = new Date(2026, 8, 1)
   const monthName = new Intl.DateTimeFormat(locale, {
     month: 'long',
     timeZone: 'Europe/Stockholm'
-  }).format(nextStart)
+  }).format(fixedStart)
 
   return `1 ${monthName}`
 }
